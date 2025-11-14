@@ -14,75 +14,72 @@ func main() {
 	datasets := map[string]struct {
 		Samples [][]float64
 		Targets [][]float64
+		Index   int // индекс выхода для этой задачи
 	}{
 		"XOR": {
 			Samples: [][]float64{
-				{0, 0},
-				{0, 1},
-				{1, 0},
-				{1, 1},
+				{0, 0}, {0, 1}, {1, 0}, {1, 1},
 			},
 			Targets: [][]float64{
-				{0}, {1}, {1}, {0},
+				{1, 0, 0}, {0, 1, 0}, {0, 1, 0}, {1, 0, 0},
 			},
+			Index: 0,
 		},
 		"AND": {
 			Samples: [][]float64{
-				{0, 0},
-				{0, 1},
-				{1, 0},
-				{1, 1},
+				{0, 0}, {0, 1}, {1, 0}, {1, 1},
 			},
 			Targets: [][]float64{
-				{0}, {0}, {0}, {1},
+				{0, 1, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0},
 			},
+			Index: 1,
 		},
 		"OR": {
 			Samples: [][]float64{
-				{0, 0},
-				{0, 1},
-				{1, 0},
-				{1, 1},
+				{0, 0}, {0, 1}, {1, 0}, {1, 1},
 			},
 			Targets: [][]float64{
-				{0}, {1}, {1}, {1},
+				{0, 0, 1}, {0, 0, 1}, {0, 0, 1}, {0, 0, 1},
 			},
+			Index: 2,
 		},
 	}
 
 	// ========================
-	// Объединяем все данные для обучения одной сети
+	// Объединяем все данные
 	// ========================
 	allSamples := [][]float64{}
 	allTargets := [][]float64{}
-
 	for _, data := range datasets {
 		allSamples = append(allSamples, data.Samples...)
 		allTargets = append(allTargets, data.Targets...)
 	}
 
 	// ========================
-	// Создаем сеть
-	// 2 входа -> 4 скрытых -> 1 выход
-	// Скрытый слой больше, чтобы сеть могла справиться с разными задачами
+	// Создаем сеть: 2 → 6 → 3
 	// ========================
-	net := nn.NewNetwork([]int{2, 4, 1})
+	net := nn.NewNetwork([]int{2, 6, 3})
 
+	// ========================
 	// Обучение
+	// ========================
 	epochs := 20000
 	lr := 0.5
 	net.TrainBatch(allSamples, allTargets, epochs, lr)
 	fmt.Println("Training done!")
 
+	// ========================
 	// Сохранение модели
+	// ========================
 	modelFile := "all_tasks_model.json"
-	err := net.SaveModel(modelFile)
-	if err != nil {
+	if err := net.SaveModel(modelFile); err != nil {
 		panic(err)
 	}
-	fmt.Printf("Model saved to %s\n", modelFile)
+	fmt.Println("Model saved!")
 
+	// ========================
 	// Загрузка модели
+	// ========================
 	loaded, err := nn.LoadModel(modelFile)
 	if err != nil {
 		panic(err)
@@ -96,8 +93,10 @@ func main() {
 		fmt.Printf("\n=== Predictions for %s ===\n", name)
 		for i, s := range data.Samples {
 			out := loaded.Predict(s)
-			fmt.Printf("Input: %v → Output: %.4f (rounded %d), Target: %v\n",
-				s, out[0], int(math.Round(out[0])), data.Targets[i])
+			// выбираем соответствующий выход
+			val := out[data.Index]
+			fmt.Printf("Input: %v → Output: %.4f (rounded %d), Target: %.0f\n",
+				s, val, int(math.Round(val)), data.Targets[i][data.Index])
 		}
 	}
 }
