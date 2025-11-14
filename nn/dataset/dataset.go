@@ -1,22 +1,22 @@
 package dataset
 
-import "fmt"
-
-type DataSet struct {
-	Samples [][]float64
-	Targets [][]float64
+type Dataset struct {
+    Name     string
+    TaskType string     // "logic", "classification", "regression"
+    Samples  [][]float64
+    Targets  [][]float64
 }
 
-var registry = map[string]DataSet{}
+var registry = map[string]Dataset{}
 
-func Register(name string, ds DataSet) {
-	registry[name] = ds
+func Register(ds Dataset) {
+    registry[ds.Name] = ds
 }
 
-func MustGet(name string) DataSet {
-	ds, ok := registry[name]
-	if !ok {
-		panic(fmt.Sprintf("dataset '%s' not found", name))
-	}
-	return ds
+func MustGet(name string) Dataset {
+    ds, ok := registry[name]
+    if !ok {
+        panic("dataset not found: " + name)
+    }
+    return ds
 }

@@ -1,33 +1,229 @@
 package nn
 
-type Trainer interface {
-	Update(net *Network, samples, targets [][]float64, epochs int)
-}
+import (
+	"fmt"
+	"math"
+	"math/rand"
+	"time"
+)
 
 type Network struct {
-	Layers []*Layer
+	Layers []Layer `json:"layers"`
 }
 
+// -----------------------------
+// Constructors
+// -----------------------------
+
 func NewNetwork(sizes []int) *Network {
-	layers := make([]*Layer, 0)
+	rand.Seed(time.Now().UnixNano())
+
+	layers := make([]Layer, len(sizes)-1)
+
 	for i := 0; i < len(sizes)-1; i++ {
-		layers = append(layers, NewLayer(sizes[i], sizes[i+1]))
+		in := sizes[i]
+		out := sizes[i+1]
+
+		w := make([][]float64, out)
+		b := make([]float64, out)
+
+		for o := 0; o < out; o++ {
+			b[o] = rand.NormFloat64() * 0.1
+			w[o] = make([]float64, in)
+			for j := 0; j < in; j++ {
+				w[o][j] = rand.NormFloat64() * 0.1
+			}
+		}
+
+		layers[i] = Layer{
+			Weights: w,
+			Biases:  b,
+		}
 	}
+
 	return &Network{Layers: layers}
 }
 
-func (net *Network) Feedforward(x []float64) []float64 {
-	in := x
+// -----------------------------
+// Activation
+// -----------------------------
+
+func sigmoid(x float64) float64 {
+	return 1 / (1 + math.Exp(-x))
+}
+
+func sigmoidPrime(x float64) float64 {
+	s := sigmoid(x)
+	return s * (1 - s)
+}
+
+// -----------------------------
+// Forward
+// -----------------------------
+
+func (net *Network) Predict(input []float64) []float64 {
+	a := input
+
 	for _, L := range net.Layers {
-		in = L.Forward(in)
+		next := make([]float64, len(L.Biases))
+		for i := range next {
+			sum := L.Biases[i]
+			for j := range a {
+				sum += L.Weights[i][j] * a[j]
+			}
+			next[i] = sigmoid(sum)
+		}
+		a = next
 	}
-	return in
+
+	return a
 }
 
-func (net *Network) Fit(t Trainer, samples, targets [][]float64, epochs int) {
-	t.Update(net, samples, targets, epochs)
+// Возвращает output + все активации + z-values
+func (net *Network) ForwardFull(input []float64) ([]float64, [][]float64, [][]float64) {
+	activations := [][]float64{input}
+	zvals := [][]float64{}
+	a := input
+
+	for _, L := range net.Layers {
+		z := make([]float64, len(L.Biases))
+		a2 := make([]float64, len(L.Biases))
+
+		for i := range z {
+			sum := L.Biases[i]
+			for j := range a {
+				sum += L.Weights[i][j] * a[j]
+			}
+			z[i] = sum
+			a2[i] = sigmoid(sum)
+		}
+
+		zvals = append(zvals, z)
+		activations = append(activations, a2)
+		a = a2
+	}
+
+	return a, activations, zvals
 }
 
-func (net *Network) Predict(x []float64) []float64 {
-	return net.Feedforward(x)
+// -----------------------------
+// Backpropagation
+// -----------------------------
+
+func (net *Network) Backpropagate(target []float64, activations [][]float64, zvals [][]float64) [][]float64 {
+	L := len(net.Layers)
+	deltas := make([][]float64, L)
+
+	// Выходной слой
+	last := L - 1
+	outAct := activations[last+1]
+	outZ := zvals[last]
+
+	deltas[last] = make([]float64, len(outAct))
+	for i := range deltas[last] {
+		deltas[last][i] = (outAct[i] - target[i]) * sigmoidPrime(outZ[i])
+	}
+
+	// Скрытые слои
+	for l := L - 2; l >= 0; l-- {
+		nextLayer := net.Layers[l+1]
+
+		z := zvals[l]
+		deltas[l] = make([]float64, len(z))
+
+		for i := range z {
+			sum := 0.0
+			for k := range nextLayer.Biases {
+				sum += nextLayer.Weights[k][i] * deltas[l+1][k]
+			}
+			deltas[l][i] = sum * sigmoidPrime(z[i])
+		}
+	}
+
+	return deltas
+}
+
+// -----------------------------
+// Apply gradients
+// -----------------------------
+
+func (net *Network) ApplyGradients(lr float64, deltas [][]float64, activations [][]float64) {
+	for l := range net.Layers {
+		L := &net.Layers[l]
+
+		for i := range L.Biases {
+			L.Biases[i] -= lr * deltas[l][i]
+		}
+
+		for i := range L.Weights {
+			for j := range L.Weights[i] {
+				L.Weights[i][j] -= lr * deltas[l][i] * activations[l][j]
+			}
+		}
+	}
+}
+
+// -----------------------------
+// Train Batch
+// -----------------------------
+
+func (net *Network) TrainBatch(samples [][]float64, targets [][]float64, epochs int, lr float64) {
+	for e := 0; e < epochs; e++ {
+		L := len(net.Layers)
+
+		// накопители градиентов
+		accDeltas := make([][]float64, L)
+		accWeightGrads := make([][][]float64, L)
+		for l := range net.Layers {
+			accDeltas[l] = make([]float64, len(net.Layers[l].Biases))
+			accWeightGrads[l] = make([][]float64, len(net.Layers[l].Weights))
+			for i := range net.Layers[l].Weights {
+				accWeightGrads[l][i] = make([]float64, len(net.Layers[l].Weights[i]))
+			}
+		}
+
+		totalLoss := 0.0
+
+		for idx, x := range samples {
+			y := targets[idx]
+
+			// forward
+			output, activations, zvals := net.ForwardFull(x)
+
+			// loss
+			for i := range y {
+				diff := output[i] - y[i]
+				totalLoss += 0.5 * diff * diff
+			}
+
+			// backprop
+			deltas := net.Backpropagate(y, activations, zvals)
+
+			// accumulate gradients
+			for l := range net.Layers {
+				for i := range deltas[l] {
+					accDeltas[l][i] += deltas[l][i]
+					for j := range net.Layers[l].Weights[i] {
+						accWeightGrads[l][i][j] += deltas[l][i] * activations[l][j]
+					}
+				}
+			}
+		}
+
+		// apply averaged gradients
+		for l := range net.Layers {
+			for i := range net.Layers[l].Biases {
+				net.Layers[l].Biases[i] -= lr * accDeltas[l][i] / float64(len(samples))
+			}
+			for i := range net.Layers[l].Weights {
+				for j := range net.Layers[l].Weights[i] {
+					net.Layers[l].Weights[i][j] -= lr * accWeightGrads[l][i][j] / float64(len(samples))
+				}
+			}
+		}
+
+		if e%1000 == 0 || e == epochs-1 {
+			fmt.Printf("Epoch %d, avg loss: %.6f\n", e, totalLoss/float64(len(samples)))
+		}
+	}
 }
