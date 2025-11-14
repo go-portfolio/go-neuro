@@ -37,7 +37,9 @@ func main() {
 	// ========================
 	// Обучение с логом в файл
 	// ========================
-	net.TrainBatch(samples, targets, 20000, 0.5, f)
+	// SGD с мини-батчами
+	net.TrainMiniBatchSGD(samples, targets, 20000, 0.5, 2, f)
+
 	fmt.Fprintln(f, "Training done!\n")
 
 	// ========================
@@ -80,4 +82,5 @@ func main() {
 				s, out[idx], int(math.Round(out[idx])), targets[i][idx])
 		}
 	}
+	fmt.Printf("Модель создана успешно. Логи выложены в файл `full_log.txt`")
 }

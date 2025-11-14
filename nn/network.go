@@ -175,35 +175,57 @@ func (net *Network) Predict(input []float64) []float64 {
 // -----------------------------
 // TrainBatch с кратким логом по эпохам
 // -----------------------------
-func (net *Network) TrainBatch(samples [][]float64, targets [][]float64, epochs int, lr float64, f *os.File) {
+// -----------------------------
+// TrainMiniBatchSGD
+// -----------------------------
+func (net *Network) TrainMiniBatchSGD(samples [][]float64, targets [][]float64, epochs int, lr float64, batchSize int, f *os.File) {
+	n := len(samples)
+	rand.Seed(time.Now().UnixNano())
+
 	for e := 0; e < epochs; e++ {
+		// Перемешиваем данные каждый раз
+		perm := rand.Perm(n)
+
 		totalLoss := 0.0
 		var maxWeightChange, maxBiasChange float64
 
-		for idx, x := range samples {
-			y := targets[idx]
-
-			out, activations, zvals := net.ForwardFull(x)
-
-			sampleLoss := 0.0
-			for i := range y {
-				diff := out[i] - y[i]
-				sampleLoss += 0.5 * diff * diff
+		for start := 0; start < n; start += batchSize {
+			end := start + batchSize
+			if end > n {
+				end = n
 			}
-			totalLoss += sampleLoss
 
-			deltas := net.Backpropagate(y, activations, zvals)
-			wChange, bChange := net.ApplyGradients(lr, deltas, activations)
-			if wChange > maxWeightChange {
-				maxWeightChange = wChange
-			}
-			if bChange > maxBiasChange {
-				maxBiasChange = bChange
+			for _, idx := range perm[start:end] {
+				x := samples[idx]
+				y := targets[idx]
+
+				out, activations, zvals := net.ForwardFull(x)
+
+				// Считаем loss
+				sampleLoss := 0.0
+				for i := range y {
+					diff := out[i] - y[i]
+					sampleLoss += 0.5 * diff * diff
+				}
+				totalLoss += sampleLoss
+
+				// Градиенты
+				deltas := net.Backpropagate(y, activations, zvals)
+
+				// Применяем градиенты сразу (по одному примеру)
+				wChange, bChange := net.ApplyGradients(lr, deltas, activations)
+				if wChange > maxWeightChange {
+					maxWeightChange = wChange
+				}
+				if bChange > maxBiasChange {
+					maxBiasChange = bChange
+				}
 			}
 		}
 
-		avgLoss := totalLoss / float64(len(samples))
+		avgLoss := totalLoss / float64(n)
 		fmt.Fprintf(f, "Epoch %d avg loss: %.6f | max weight change: %.6f | max bias change: %.6f\n",
 			e, avgLoss, maxWeightChange, maxBiasChange)
 	}
 }
+
