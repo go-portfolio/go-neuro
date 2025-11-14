@@ -1,10 +1,5 @@
 package nn
 
-import (
-	"math"
-	"math/rand"
-)
-
 // коэффициент утечки
 const leakyAlpha = 0.01
 
@@ -19,35 +14,29 @@ type Layer struct {
 	Z           []float64
 	A           []float64
 	DropoutProb float64
+	Velocities  [][]float64 // для Momentum весов
+	BiasVel     []float64   // для Momentum смещений
 }
 
 // ========================
 // Создание нового слоя (Xavier Init)
 // ========================
 func NewLayer(in, out int) *Layer {
-	L := &Layer{
-		In:          in,
-		Out:         out,
-		Weights:     make([][]float64, out),
-		Biases:      make([]float64, out),
-		Z:           make([]float64, out),
-		A:           make([]float64, out),
-		DropoutProb: 0.0,
+	w := make([][]float64, out)
+	v := make([][]float64, out)
+	for i := range w {
+		w[i] = make([]float64, in)
+		v[i] = make([]float64, in) // инициализация Velocity
+		// здесь можно случайно заполнить веса
 	}
-
-	// Xavier normal init
-	std := math.Sqrt(2.0 / float64(in+out))
-
-	for i := 0; i < out; i++ {
-		L.Weights[i] = make([]float64, in)
-		L.Biases[i] = 0.0
-
-		for j := 0; j < in; j++ {
-			L.Weights[i][j] = rand.NormFloat64() * std
-		}
+	return &Layer{
+		In:         in,
+		Out:        out,
+		Weights:    w,
+		Biases:     make([]float64, out),
+		Velocities: v,
+		BiasVel:    make([]float64, out),
 	}
-
-	return L
 }
 
 // ========================

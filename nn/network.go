@@ -147,17 +147,18 @@ func (net *Network) ForwardDebug(input []float64) ([]float64, [][]float64, [][]f
 // ===============================
 // Применение градиентов
 // ===============================
-
-func (net *Network) ApplyGradients(deltas [][]float64, activations [][]float64) {
-	lr := net.LR
-
+func (net *Network) ApplyGradientsMomentum(deltas [][]float64, activations [][]float64, lr, beta float64) {
 	for l := range net.Layers {
 		layer := &net.Layers[l]
 		for i := 0; i < layer.Out; i++ {
-			layer.Biases[i] -= lr * deltas[l][i]
+			// обновляем скорость для смещений
+			layer.BiasVel[i] = beta*layer.BiasVel[i] + (1-beta)*deltas[l][i]
+			layer.Biases[i] -= lr * layer.BiasVel[i]
 
+			// обновляем веса с учетом Momentum
 			for j := 0; j < layer.In; j++ {
-				layer.Weights[i][j] -= lr * deltas[l][i] * activations[l][j]
+				layer.Velocities[i][j] = beta*layer.Velocities[i][j] + (1-beta)*deltas[l][i]*activations[l][j]
+				layer.Weights[i][j] -= lr * layer.Velocities[i][j]
 			}
 		}
 	}
@@ -173,8 +174,8 @@ func (net *Network) Train(samples, targets [][]float64, epochs int, batchSize in
 	bestLoss := 1e9
 	wait := 0
 	patience := 500  // количество эпох без улучшения
-	minEpochs := 100  // минимальное число эпох перед ранней остановкой
-	delta := 1e-8     // минимальное улучшение, чтобы считать loss значимым
+	minEpochs := 100 // минимальное число эпох перед ранней остановкой
+	delta := 1e-8    // минимальное улучшение, чтобы считать loss значимым
 
 	for e := 0; e < epochs; e++ {
 		totalLoss := 0.0
@@ -191,7 +192,7 @@ func (net *Network) Train(samples, targets [][]float64, epochs int, batchSize in
 			totalLoss += sampleLoss
 
 			deltas := net.Backpropagate(y, activations, zvals)
-			net.ApplyGradients(deltas, activations)
+			net.ApplyGradientsMomentum(deltas, activations, net.LR, 0.9)
 		}
 
 		avgLoss := totalLoss / float64(n)
