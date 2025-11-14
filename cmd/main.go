@@ -15,7 +15,7 @@ func main() {
 	rand.Seed(time.Now().UnixNano())
 
 	// Выбираем датасет
-	ds := dataset.MustGet("xor")
+	ds := dataset.MustGet("and")
 
 	// Архитектура нейросети
 	net := nn.NewNetwork([]int{2, 2, 1})
