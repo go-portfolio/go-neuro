@@ -12,7 +12,7 @@ func main() {
 	// Создаём/пересоздаём общий лог
 	f, err := os.Create("full_log.txt")
 	if err != nil {
-		fmt.Println("Error creating log file:", err)
+		fmt.Println("Ошибка создания файла:", err)
 		return
 	}
 	defer f.Close()
@@ -31,7 +31,7 @@ func main() {
 	// ========================
 	// Создаем сеть
 	// ========================
-	net := nn.NewNetwork([]int{2, 6, 3})
+	net := nn.NewNetwork([]int{2, 10, 3})
 
 	fmt.Fprintln(f, "=== Training Start ===")
 	// ========================
@@ -47,7 +47,8 @@ func main() {
 	// ========================
 	for si, s := range samples {
 		fmt.Fprintf(f, "\n=== Sample %d: Input=%v ===\n", si, s)
-		out, activations, zvals := net.ForwardFull(s)
+		out, activations, zvals := net.ForwardFull(s, false)
+
 
 		for li := 0; li < len(activations); li++ {
 			if li == 0 {

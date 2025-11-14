@@ -37,12 +37,13 @@ func NewNetwork(sizes []int) *Network {
 		}
 
 		layers[i] = Layer{
-			In:      in,
-			Out:     out,
-			Weights: w,
-			Biases:  b,
-			Z:       make([]float64, out),
-			A:       make([]float64, out),
+			In:          in,
+			Out:         out,
+			Weights:     w,
+			Biases:      b,
+			Z:           make([]float64, out),
+			A:           make([]float64, out),
+			DropoutProb: 0.2, // по умолчанию 20% dropout, можно менять
 		}
 	}
 
@@ -62,9 +63,9 @@ func sigmoidPrime(x float64) float64 {
 }
 
 // -----------------------------
-// Forward pass
+// Forward pass с Dropout
 // -----------------------------
-func (net *Network) ForwardFull(input []float64) ([]float64, [][]float64, [][]float64) {
+func (net *Network) ForwardFull(input []float64, training bool) ([]float64, [][]float64, [][]float64) {
 	activations := [][]float64{input}
 	zvals := [][]float64{}
 	a := input
@@ -81,9 +82,21 @@ func (net *Network) ForwardFull(input []float64) ([]float64, [][]float64, [][]fl
 			}
 			z[j] = sum
 			a2[j] = sigmoid(sum)
-			layer.Z[j] = sum
-			layer.A[j] = a2[j]
 		}
+
+		// --- Dropout ---
+		if training && layer.DropoutProb > 0 {
+			for j := 0; j < layer.Out; j++ {
+				if rand.Float64() < layer.DropoutProb {
+					a2[j] = 0
+				} else {
+					a2[j] /= (1 - layer.DropoutProb)
+				}
+			}
+		}
+
+		layer.Z = z
+		layer.A = a2
 
 		zvals = append(zvals, z)
 		activations = append(activations, a2)
@@ -127,9 +140,9 @@ func (net *Network) Backpropagate(target []float64, activations [][]float64, zva
 }
 
 // -----------------------------
-// Apply gradients (коротко)
+// Применение градиентов с L2
 // -----------------------------
-func (net *Network) ApplyGradients(lr float64, deltas [][]float64, activations [][]float64) (maxWeightChange, maxBiasChange float64) {
+func (net *Network) ApplyGradients(lr float64, deltas [][]float64, activations [][]float64, lambda float64) (maxWeightChange, maxBiasChange float64) {
 	for l := range net.Layers {
 		layer := &net.Layers[l]
 		for i := 0; i < layer.Out; i++ {
@@ -142,7 +155,7 @@ func (net *Network) ApplyGradients(lr float64, deltas [][]float64, activations [
 
 			for j := 0; j < layer.In; j++ {
 				oldWeight := layer.Weights[i][j]
-				layer.Weights[i][j] -= lr * deltas[l][i] * activations[l][j]
+				layer.Weights[i][j] -= lr * (deltas[l][i]*activations[l][j] + lambda*layer.Weights[i][j])
 				weightChange := math.Abs(layer.Weights[i][j] - oldWeight)
 				if weightChange > maxWeightChange {
 					maxWeightChange = weightChange
@@ -154,7 +167,7 @@ func (net *Network) ApplyGradients(lr float64, deltas [][]float64, activations [
 }
 
 // -----------------------------
-// Predict — простой forward pass
+// Predict — forward без dropout
 // -----------------------------
 func (net *Network) Predict(input []float64) []float64 {
 	a := input
@@ -165,7 +178,8 @@ func (net *Network) Predict(input []float64) []float64 {
 			for j := 0; j < layer.In; j++ {
 				sum += layer.Weights[i][j] * a[j]
 			}
-			next[i] = sigmoid(sum)
+			// Масштабируем на (1 - p) для компенсации dropout
+			next[i] = sigmoid(sum) // используем все нейроны
 		}
 		a = next
 	}
@@ -173,25 +187,20 @@ func (net *Network) Predict(input []float64) []float64 {
 }
 
 // -----------------------------
-// TrainBatch с кратким логом по эпохам
-// -----------------------------
-// -----------------------------
-// TrainMiniBatchSGD
+// TrainMiniBatchSGD с L2, Dropout и EarlyStopping
 // -----------------------------
 func (net *Network) TrainMiniBatchSGD(samples [][]float64, targets [][]float64, epochs int, lr float64, batchSize int, f *os.File) {
 	n := len(samples)
 	rand.Seed(time.Now().UnixNano())
 
-	// --- Параметры ---
 	lambda := 0.001       // L2 регуляризация
-	patience := 500       // эпох без улучшения для Early Stopping
+	patience := 1000       // эпох без улучшения для Early Stopping
 	minEpochs := 100      // минимальное число эпох перед проверкой Early Stopping
 
 	bestLoss := math.MaxFloat64
 	wait := 0
 
 	for e := 0; e < epochs; e++ {
-		// Перемешиваем данные каждый раз
 		perm := rand.Perm(n)
 
 		totalLoss := 0.0
@@ -207,9 +216,9 @@ func (net *Network) TrainMiniBatchSGD(samples [][]float64, targets [][]float64, 
 				x := samples[idx]
 				y := targets[idx]
 
-				out, activations, zvals := net.ForwardFull(x)
+				out, activations, zvals := net.ForwardFull(x, true)
 
-				// Считаем loss
+				// loss
 				sampleLoss := 0.0
 				for i := range y {
 					diff := out[i] - y[i]
@@ -217,40 +226,24 @@ func (net *Network) TrainMiniBatchSGD(samples [][]float64, targets [][]float64, 
 				}
 				totalLoss += sampleLoss
 
-				// Градиенты
+				// backprop + L2
 				deltas := net.Backpropagate(y, activations, zvals)
-
-				// Применяем градиенты с L2 регуляризацией
-				for l := range net.Layers {
-					layer := &net.Layers[l]
-					for i := 0; i < layer.Out; i++ {
-						oldBias := layer.Biases[i]
-						layer.Biases[i] -= lr * deltas[l][i]
-						biasChange := math.Abs(layer.Biases[i] - oldBias)
-						if biasChange > maxBiasChange {
-							maxBiasChange = biasChange
-						}
-
-						for j := 0; j < layer.In; j++ {
-							oldWeight := layer.Weights[i][j]
-							layer.Weights[i][j] -= lr * (deltas[l][i]*activations[l][j] + lambda*layer.Weights[i][j])
-							weightChange := math.Abs(layer.Weights[i][j] - oldWeight)
-							if weightChange > maxWeightChange {
-								maxWeightChange = weightChange
-							}
-						}
-					}
+				wChange, bChange := net.ApplyGradients(lr, deltas, activations, lambda)
+				if wChange > maxWeightChange {
+					maxWeightChange = wChange
+				}
+				if bChange > maxBiasChange {
+					maxBiasChange = bChange
 				}
 			}
 		}
 
 		avgLoss := totalLoss / float64(n)
-		// --- Логируем и сбрасываем буфер ---
 		fmt.Fprintf(f, "Epoch %d avg loss: %.6f | max weight change: %.6f | max bias change: %.6f\n",
 			e, avgLoss, maxWeightChange, maxBiasChange)
-		f.Sync() // обязательно сбросить буфер на диск
+		f.Sync()
 
-		// --- Early Stopping ---
+		// Early Stopping
 		if e >= minEpochs {
 			if avgLoss < bestLoss {
 				bestLoss = avgLoss
@@ -258,7 +251,7 @@ func (net *Network) TrainMiniBatchSGD(samples [][]float64, targets [][]float64, 
 			} else {
 				wait++
 				if wait >= patience {
-					fmt.Fprintf(f, "Ранняя остановка запущена для эпох %d (нет улучшений для %d эпох)\n", e, patience)
+					fmt.Fprintf(f, "Ранняя остановка запущена на эпохе %d (нет улучшений для %d эпох)\n", e, patience)
 					f.Sync()
 					break
 				}
@@ -266,5 +259,3 @@ func (net *Network) TrainMiniBatchSGD(samples [][]float64, targets [][]float64, 
 		}
 	}
 }
-
-
