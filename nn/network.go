@@ -4,9 +4,9 @@ import (
 	"fmt"
 	"math"
 	"math/rand"
+	"os"
 	"time"
 )
-
 
 // -----------------------------
 // Сеть (Network)
@@ -81,8 +81,6 @@ func (net *Network) ForwardFull(input []float64) ([]float64, [][]float64, [][]fl
 			}
 			z[j] = sum
 			a2[j] = sigmoid(sum)
-
-			// сохраняем в слой
 			layer.Z[j] = sum
 			layer.A[j] = a2[j]
 		}
@@ -95,26 +93,6 @@ func (net *Network) ForwardFull(input []float64) ([]float64, [][]float64, [][]fl
 	return a, activations, zvals
 }
 
-// Простое предсказание
-func (net *Network) Predict(input []float64) []float64 {
-	a := input
-	for i := range net.Layers {
-		layer := &net.Layers[i]
-		next := make([]float64, layer.Out)
-		for j := 0; j < layer.Out; j++ {
-			sum := layer.Biases[j]
-			for k := 0; k < layer.In; k++ {
-				sum += layer.Weights[j][k] * a[k]
-			}
-			next[j] = sigmoid(sum)
-			layer.Z[j] = sum
-			layer.A[j] = next[j]
-		}
-		a = next
-	}
-	return a
-}
-
 // -----------------------------
 // Backpropagation
 // -----------------------------
@@ -122,7 +100,6 @@ func (net *Network) Backpropagate(target []float64, activations [][]float64, zva
 	L := len(net.Layers)
 	deltas := make([][]float64, L)
 
-	// Выходной слой
 	last := L - 1
 	outAct := activations[last+1]
 	outZ := zvals[last]
@@ -132,7 +109,6 @@ func (net *Network) Backpropagate(target []float64, activations [][]float64, zva
 		deltas[last][i] = (outAct[i] - target[i]) * sigmoidPrime(outZ[i])
 	}
 
-	// Скрытые слои
 	for l := L - 2; l >= 0; l-- {
 		nextLayer := net.Layers[l+1]
 		z := zvals[l]
@@ -151,59 +127,83 @@ func (net *Network) Backpropagate(target []float64, activations [][]float64, zva
 }
 
 // -----------------------------
-// Apply gradients
+// Apply gradients (коротко)
 // -----------------------------
-func (net *Network) ApplyGradients(lr float64, deltas [][]float64, activations [][]float64) {
+func (net *Network) ApplyGradients(lr float64, deltas [][]float64, activations [][]float64) (maxWeightChange, maxBiasChange float64) {
 	for l := range net.Layers {
 		layer := &net.Layers[l]
 		for i := 0; i < layer.Out; i++ {
+			oldBias := layer.Biases[i]
 			layer.Biases[i] -= lr * deltas[l][i]
+			biasChange := math.Abs(layer.Biases[i] - oldBias)
+			if biasChange > maxBiasChange {
+				maxBiasChange = biasChange
+			}
+
 			for j := 0; j < layer.In; j++ {
+				oldWeight := layer.Weights[i][j]
 				layer.Weights[i][j] -= lr * deltas[l][i] * activations[l][j]
+				weightChange := math.Abs(layer.Weights[i][j] - oldWeight)
+				if weightChange > maxWeightChange {
+					maxWeightChange = weightChange
+				}
 			}
 		}
 	}
+	return
 }
 
 // -----------------------------
-// TrainBatch
+// Predict — простой forward pass
 // -----------------------------
-func (net *Network) TrainBatch(samples [][]float64, targets [][]float64, epochs int, lr float64) {
+func (net *Network) Predict(input []float64) []float64 {
+	a := input
+	for _, layer := range net.Layers {
+		next := make([]float64, layer.Out)
+		for i := 0; i < layer.Out; i++ {
+			sum := layer.Biases[i]
+			for j := 0; j < layer.In; j++ {
+				sum += layer.Weights[i][j] * a[j]
+			}
+			next[i] = sigmoid(sum)
+		}
+		a = next
+	}
+	return a
+}
+
+// -----------------------------
+// TrainBatch с кратким логом по эпохам
+// -----------------------------
+func (net *Network) TrainBatch(samples [][]float64, targets [][]float64, epochs int, lr float64, f *os.File) {
 	for e := 0; e < epochs; e++ {
 		totalLoss := 0.0
+		var maxWeightChange, maxBiasChange float64
+
 		for idx, x := range samples {
 			y := targets[idx]
 
 			out, activations, zvals := net.ForwardFull(x)
+
+			sampleLoss := 0.0
 			for i := range y {
 				diff := out[i] - y[i]
-				totalLoss += 0.5 * diff * diff
+				sampleLoss += 0.5 * diff * diff
 			}
+			totalLoss += sampleLoss
 
 			deltas := net.Backpropagate(y, activations, zvals)
-			net.ApplyGradients(lr, deltas, activations)
+			wChange, bChange := net.ApplyGradients(lr, deltas, activations)
+			if wChange > maxWeightChange {
+				maxWeightChange = wChange
+			}
+			if bChange > maxBiasChange {
+				maxBiasChange = bChange
+			}
 		}
 
-		if e%1000 == 0 || e == epochs-1 {
-			fmt.Printf("Epoch %d, avg loss: %.6f\n", e, totalLoss/float64(len(samples)))
-		}
-	}
-}
-
-// -----------------------------
-// Печать состояния слоя
-// -----------------------------
-func PrintLayerState(name string, L *Layer) {
-	fmt.Printf("--- %s ---\n", name)
-	fmt.Printf("Inputs: %d, Outputs: %d\n", L.In, L.Out)
-	fmt.Println("Weights:")
-	for i := range L.Weights {
-		fmt.Println(L.Weights[i])
-	}
-	fmt.Println("Biases:")
-	fmt.Println(L.Biases)
-	fmt.Println("Z (w*x+b) and activations (A):")
-	for i := range L.Z {
-		fmt.Printf("Neuron %d: Z=%.4f, A=%.4f\n", i, L.Z[i], L.A[i])
+		avgLoss := totalLoss / float64(len(samples))
+		fmt.Fprintf(f, "Epoch %d avg loss: %.6f | max weight change: %.6f | max bias change: %.6f\n",
+			e, avgLoss, maxWeightChange, maxBiasChange)
 	}
 }
