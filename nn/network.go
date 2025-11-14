@@ -2,79 +2,40 @@ package nn
 
 import (
 	"fmt"
-	"math"
 	"math/rand"
 	"os"
 	"time"
 )
 
-// -----------------------------
-// Сеть (Network)
-// -----------------------------
+// ===============================
+// Структура сети
+// ===============================
+
 type Network struct {
-	Layers []Layer `json:"layers"`
+	Layers []Layer
+	LR     float64 // learning rate
 }
 
-
-// -----------------------------
-// Конструктор сети (Xavier init)
-// -----------------------------
-func NewNetwork(sizes []int) *Network {
+// Создание сети
+func NewNetwork(sizes []int, lr float64) *Network {
 	rand.Seed(time.Now().UnixNano())
 
 	layers := make([]Layer, len(sizes)-1)
+
 	for i := 0; i < len(sizes)-1; i++ {
-		in := sizes[i]
-		out := sizes[i+1]
-
-		w := make([][]float64, out)
-		b := make([]float64, out)
-
-		// Xavier / Glorot normal: std = sqrt(2 / (fan_in + fan_out))
-		std := math.Sqrt(2.0 / float64(in+out))
-
-		for o := 0; o < out; o++ {
-			b[o] = 0.0 // часто инициализируют смещения нулями
-			w[o] = make([]float64, in)
-			for j := 0; j < in; j++ {
-				w[o][j] = rand.NormFloat64() * std
-			}
-		}
-
-		layers[i] = Layer{
-			In:          in,
-			Out:         out,
-			Weights:     w,
-			Biases:      b,
-			Z:           make([]float64, out),
-			A:           make([]float64, out),
-			DropoutProb: 0.2, // по умолчанию 20% dropout, можно менять
-		}
+		layers[i] = *NewLayer(sizes[i], sizes[i+1])
 	}
 
-	return &Network{Layers: layers}
-}
-
-// -----------------------------
-// ReLU и производная
-// -----------------------------
-func relu(x float64) float64 {
-	if x > 0 {
-		return x
+	return &Network{
+		Layers: layers,
+		LR:     lr,
 	}
-	return 0
 }
 
-func reluPrime(x float64) float64 {
-	if x > 0 {
-		return 1
-	}
-	return 0
-}
+// ===============================
+// Forward pass (полный, с логами)
+// ===============================
 
-// -----------------------------
-// Forward pass с Dropout (инвертированный dropout)
-// -----------------------------
 func (net *Network) ForwardFull(input []float64, training bool) ([]float64, [][]float64, [][]float64) {
 	activations := [][]float64{input}
 	zvals := [][]float64{}
@@ -91,13 +52,14 @@ func (net *Network) ForwardFull(input []float64, training bool) ([]float64, [][]
 				sum += layer.Weights[j][k] * a[k]
 			}
 			z[j] = sum
-			a2[j] = relu(sum)
+			a2[j] = leakyReLU(sum)
 		}
 
-		// --- Dropout (inverted dropout) ---
+		// dropout (inverted)
 		if training && layer.DropoutProb > 0 {
 			p := layer.DropoutProb
 			scale := 1.0 / (1.0 - p)
+
 			for j := 0; j < layer.Out; j++ {
 				if rand.Float64() < p {
 					a2[j] = 0
@@ -110,31 +72,35 @@ func (net *Network) ForwardFull(input []float64, training bool) ([]float64, [][]
 		layer.Z = z
 		layer.A = a2
 
-		zvals = append(zvals, z)
 		activations = append(activations, a2)
+		zvals = append(zvals, z)
+
 		a = a2
 	}
 
 	return a, activations, zvals
 }
 
-// -----------------------------
-// Backpropagation (ReLU)
-// -----------------------------
+// ===============================
+// Backpropagation
+// ===============================
+
 func (net *Network) Backpropagate(target []float64, activations [][]float64, zvals [][]float64) [][]float64 {
 	L := len(net.Layers)
 	deltas := make([][]float64, L)
 
+	// последний слой
 	last := L - 1
 	outAct := activations[last+1]
 	outZ := zvals[last]
 
 	deltas[last] = make([]float64, len(outAct))
+
 	for i := range deltas[last] {
-		// MSE loss: dL/da = a - y
-		deltas[last][i] = (outAct[i] - target[i]) * reluPrime(outZ[i])
+		deltas[last][i] = (outAct[i] - target[i]) * leakyReLUPrime(outZ[i])
 	}
 
+	// скрытые слои
 	for l := L - 2; l >= 0; l-- {
 		nextLayer := net.Layers[l+1]
 		z := zvals[l]
@@ -145,127 +111,104 @@ func (net *Network) Backpropagate(target []float64, activations [][]float64, zva
 			for k := range nextLayer.Biases {
 				sum += nextLayer.Weights[k][i] * deltas[l+1][k]
 			}
-			deltas[l][i] = sum * reluPrime(z[i])
+			deltas[l][i] = sum * leakyReLUPrime(z[i])
 		}
 	}
 
 	return deltas
 }
 
-// -----------------------------
-// Применение градиентов с L2
-// -----------------------------
-func (net *Network) ApplyGradients(lr float64, deltas [][]float64, activations [][]float64, lambda float64) (maxWeightChange, maxBiasChange float64) {
-	for l := range net.Layers {
-		layer := &net.Layers[l]
-		for i := 0; i < layer.Out; i++ {
-			oldBias := layer.Biases[i]
-			layer.Biases[i] -= lr * deltas[l][i]
-			biasChange := math.Abs(layer.Biases[i] - oldBias)
-			if biasChange > maxBiasChange {
-				maxBiasChange = biasChange
-			}
+// ===============================
+// Predict (без dropout)
+// ===============================
 
-			for j := 0; j < layer.In; j++ {
-				oldWeight := layer.Weights[i][j]
-				// L2 регуляризация (добавляется к градиенту весов)
-				layer.Weights[i][j] -= lr * (deltas[l][i]*activations[l][j] + lambda*layer.Weights[i][j])
-				weightChange := math.Abs(layer.Weights[i][j] - oldWeight)
-				if weightChange > maxWeightChange {
-					maxWeightChange = weightChange
-				}
-			}
-		}
-	}
-	return
-}
-
-// -----------------------------
-// Predict — forward без dropout
-// -----------------------------
 func (net *Network) Predict(input []float64) []float64 {
 	a := input
+
 	for _, layer := range net.Layers {
-		next := make([]float64, layer.Out)
+		out := make([]float64, layer.Out)
 		for i := 0; i < layer.Out; i++ {
 			sum := layer.Biases[i]
 			for j := 0; j < layer.In; j++ {
 				sum += layer.Weights[i][j] * a[j]
 			}
-			next[i] = relu(sum)
+			out[i] = leakyReLU(sum)
 		}
-		a = next
+		a = out
 	}
+
 	return a
 }
 
-// -----------------------------
-// TrainMiniBatchSGD с L2, Dropout и EarlyStopping
-// -----------------------------
-func (net *Network) TrainMiniBatchSGD(samples [][]float64, targets [][]float64, epochs int, lr float64, batchSize int, f *os.File) {
+func (net *Network) ForwardDebug(input []float64) ([]float64, [][]float64, [][]float64) {
+	return net.ForwardFull(input, false)
+}
+
+// ===============================
+// Применение градиентов
+// ===============================
+
+func (net *Network) ApplyGradients(deltas [][]float64, activations [][]float64) {
+	lr := net.LR
+
+	for l := range net.Layers {
+		layer := &net.Layers[l]
+		for i := 0; i < layer.Out; i++ {
+			layer.Biases[i] -= lr * deltas[l][i]
+
+			for j := 0; j < layer.In; j++ {
+				layer.Weights[i][j] -= lr * deltas[l][i] * activations[l][j]
+			}
+		}
+	}
+}
+
+// ===============================
+// Обучение с мини-батчами и ранней остановкой
+// ===============================
+
+func (net *Network) Train(samples, targets [][]float64, epochs int, batchSize int, f *os.File) {
 	n := len(samples)
-	rand.Seed(time.Now().UnixNano())
 
-	lambda := 0.001  // L2 регуляризация
-	patience := 1000 // эпох без улучшения для Early Stopping
-	minEpochs := 100 // минимальное число эпох перед проверкой Early Stopping
-
-	bestLoss := math.MaxFloat64
+	bestLoss := 1e9
 	wait := 0
+	patience := 500  // количество эпох без улучшения
+	minEpochs := 100  // минимальное число эпох перед ранней остановкой
+	delta := 1e-8     // минимальное улучшение, чтобы считать loss значимым
 
 	for e := 0; e < epochs; e++ {
-		perm := rand.Perm(n)
-
 		totalLoss := 0.0
-		var maxWeightChange, maxBiasChange float64
+		for i := 0; i < n; i++ {
+			x := samples[i]
+			y := targets[i]
+			out, activations, zvals := net.ForwardFull(x, true)
 
-		for start := 0; start < n; start += batchSize {
-			end := start + batchSize
-			if end > n {
-				end = n
+			sampleLoss := 0.0
+			for j := range y {
+				diff := out[j] - y[j]
+				sampleLoss += 0.5 * diff * diff
 			}
+			totalLoss += sampleLoss
 
-			for _, idx := range perm[start:end] {
-				x := samples[idx]
-				y := targets[idx]
-
-				out, activations, zvals := net.ForwardFull(x, true)
-
-				// loss (MSE)
-				sampleLoss := 0.0
-				for i := range y {
-					diff := out[i] - y[i]
-					sampleLoss += 0.5 * diff * diff
-				}
-				totalLoss += sampleLoss
-
-				// backprop + L2
-				deltas := net.Backpropagate(y, activations, zvals)
-				wChange, bChange := net.ApplyGradients(lr, deltas, activations, lambda)
-				if wChange > maxWeightChange {
-					maxWeightChange = wChange
-				}
-				if bChange > maxBiasChange {
-					maxBiasChange = bChange
-				}
-			}
+			deltas := net.Backpropagate(y, activations, zvals)
+			net.ApplyGradients(deltas, activations)
 		}
 
 		avgLoss := totalLoss / float64(n)
-		fmt.Fprintf(f, "Epoch %d avg loss: %.6f | max weight change: %.6f | max bias change: %.6f\n",
-			e, avgLoss, maxWeightChange, maxBiasChange)
-		f.Sync()
 
-		// Early Stopping
+		if e%200 == 0 {
+			fmt.Fprintf(f, "Epoch %d — loss=%.6f\n", e, avgLoss)
+		}
+
+		// === Ранняя остановка ===
 		if e >= minEpochs {
-			if avgLoss < bestLoss {
+			if bestLoss-avgLoss > delta {
 				bestLoss = avgLoss
 				wait = 0
 			} else {
 				wait++
 				if wait >= patience {
-					fmt.Fprintf(f, "Ранняя остановка запущена на эпохе %d (нет улучшений для %d эпох)\n", e, patience)
-					f.Sync()
+					fmt.Fprintf(f, "Ранняя остановка на эпохе %d (нет улучшений %d эпох)\n", e, patience)
 					break
 				}
 			}

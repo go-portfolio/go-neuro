@@ -1,1106 +1,19 @@
 === Training Start ===
-Epoch 0 avg loss: 3.730382 | max weight change: 4.988423 | max bias change: 4.988202
-Epoch 1 avg loss: 0.754530 | max weight change: 0.058413 | max bias change: 0.095184
-Epoch 2 avg loss: 0.750000 | max weight change: 0.002267 | max bias change: 0.000000
-Epoch 3 avg loss: 0.750017 | max weight change: 0.003352 | max bias change: 0.005905
-Epoch 4 avg loss: 0.750000 | max weight change: 0.002258 | max bias change: 0.000000
-Epoch 5 avg loss: 0.750000 | max weight change: 0.002253 | max bias change: 0.000000
-Epoch 6 avg loss: 0.750000 | max weight change: 0.002249 | max bias change: 0.000000
-Epoch 7 avg loss: 0.750000 | max weight change: 0.002244 | max bias change: 0.000000
-Epoch 8 avg loss: 0.750000 | max weight change: 0.002240 | max bias change: 0.000000
-Epoch 9 avg loss: 0.750000 | max weight change: 0.002235 | max bias change: 0.000000
-Epoch 10 avg loss: 0.750000 | max weight change: 0.002231 | max bias change: 0.000000
-Epoch 11 avg loss: 0.750000 | max weight change: 0.002226 | max bias change: 0.000000
-Epoch 12 avg loss: 0.750000 | max weight change: 0.002222 | max bias change: 0.000000
-Epoch 13 avg loss: 0.750000 | max weight change: 0.002218 | max bias change: 0.000000
-Epoch 14 avg loss: 0.750000 | max weight change: 0.002213 | max bias change: 0.000000
-Epoch 15 avg loss: 0.750000 | max weight change: 0.002209 | max bias change: 0.000000
-Epoch 16 avg loss: 0.750000 | max weight change: 0.002204 | max bias change: 0.000000
-Epoch 17 avg loss: 0.750000 | max weight change: 0.002200 | max bias change: 0.000000
-Epoch 18 avg loss: 0.750000 | max weight change: 0.002196 | max bias change: 0.000000
-Epoch 19 avg loss: 0.750000 | max weight change: 0.002191 | max bias change: 0.000000
-Epoch 20 avg loss: 0.750000 | max weight change: 0.002187 | max bias change: 0.000000
-Epoch 21 avg loss: 0.750000 | max weight change: 0.002182 | max bias change: 0.000000
-Epoch 22 avg loss: 0.750000 | max weight change: 0.002178 | max bias change: 0.000000
-Epoch 23 avg loss: 0.750000 | max weight change: 0.002174 | max bias change: 0.000000
-Epoch 24 avg loss: 0.750000 | max weight change: 0.002169 | max bias change: 0.000000
-Epoch 25 avg loss: 0.750000 | max weight change: 0.002165 | max bias change: 0.000000
-Epoch 26 avg loss: 0.750000 | max weight change: 0.002161 | max bias change: 0.000000
-Epoch 27 avg loss: 0.750000 | max weight change: 0.002156 | max bias change: 0.000000
-Epoch 28 avg loss: 0.750000 | max weight change: 0.002152 | max bias change: 0.000000
-Epoch 29 avg loss: 0.750000 | max weight change: 0.002148 | max bias change: 0.000000
-Epoch 30 avg loss: 0.750000 | max weight change: 0.002143 | max bias change: 0.000000
-Epoch 31 avg loss: 0.750000 | max weight change: 0.002139 | max bias change: 0.000000
-Epoch 32 avg loss: 0.750000 | max weight change: 0.002135 | max bias change: 0.000000
-Epoch 33 avg loss: 0.750000 | max weight change: 0.002131 | max bias change: 0.000000
-Epoch 34 avg loss: 0.750000 | max weight change: 0.002126 | max bias change: 0.000000
-Epoch 35 avg loss: 0.750000 | max weight change: 0.002122 | max bias change: 0.000000
-Epoch 36 avg loss: 0.750000 | max weight change: 0.002118 | max bias change: 0.000000
-Epoch 37 avg loss: 0.750000 | max weight change: 0.002114 | max bias change: 0.000000
-Epoch 38 avg loss: 0.750000 | max weight change: 0.002109 | max bias change: 0.000000
-Epoch 39 avg loss: 0.750000 | max weight change: 0.002105 | max bias change: 0.000000
-Epoch 40 avg loss: 0.750000 | max weight change: 0.002101 | max bias change: 0.000000
-Epoch 41 avg loss: 0.750000 | max weight change: 0.002097 | max bias change: 0.000000
-Epoch 42 avg loss: 0.750000 | max weight change: 0.002093 | max bias change: 0.000000
-Epoch 43 avg loss: 0.750000 | max weight change: 0.002088 | max bias change: 0.000000
-Epoch 44 avg loss: 0.750000 | max weight change: 0.002084 | max bias change: 0.000000
-Epoch 45 avg loss: 0.750000 | max weight change: 0.002080 | max bias change: 0.000000
-Epoch 46 avg loss: 0.750000 | max weight change: 0.002076 | max bias change: 0.000000
-Epoch 47 avg loss: 0.750000 | max weight change: 0.002072 | max bias change: 0.000000
-Epoch 48 avg loss: 0.750000 | max weight change: 0.002068 | max bias change: 0.000000
-Epoch 49 avg loss: 0.750000 | max weight change: 0.002064 | max bias change: 0.000000
-Epoch 50 avg loss: 0.750000 | max weight change: 0.002059 | max bias change: 0.000000
-Epoch 51 avg loss: 0.750000 | max weight change: 0.002055 | max bias change: 0.000000
-Epoch 52 avg loss: 0.750000 | max weight change: 0.002051 | max bias change: 0.000000
-Epoch 53 avg loss: 0.750000 | max weight change: 0.002047 | max bias change: 0.000000
-Epoch 54 avg loss: 0.750000 | max weight change: 0.002043 | max bias change: 0.000000
-Epoch 55 avg loss: 0.750000 | max weight change: 0.002039 | max bias change: 0.000000
-Epoch 56 avg loss: 0.750000 | max weight change: 0.002035 | max bias change: 0.000000
-Epoch 57 avg loss: 0.750000 | max weight change: 0.002031 | max bias change: 0.000000
-Epoch 58 avg loss: 0.750000 | max weight change: 0.002027 | max bias change: 0.000000
-Epoch 59 avg loss: 0.750000 | max weight change: 0.002023 | max bias change: 0.000000
-Epoch 60 avg loss: 0.750000 | max weight change: 0.002019 | max bias change: 0.000000
-Epoch 61 avg loss: 0.750000 | max weight change: 0.002015 | max bias change: 0.000000
-Epoch 62 avg loss: 0.750000 | max weight change: 0.002011 | max bias change: 0.000000
-Epoch 63 avg loss: 0.750000 | max weight change: 0.002007 | max bias change: 0.000000
-Epoch 64 avg loss: 0.750000 | max weight change: 0.002003 | max bias change: 0.000000
-Epoch 65 avg loss: 0.750000 | max weight change: 0.001999 | max bias change: 0.000000
-Epoch 66 avg loss: 0.750000 | max weight change: 0.001995 | max bias change: 0.000000
-Epoch 67 avg loss: 0.750000 | max weight change: 0.001991 | max bias change: 0.000000
-Epoch 68 avg loss: 0.750000 | max weight change: 0.001987 | max bias change: 0.000000
-Epoch 69 avg loss: 0.750000 | max weight change: 0.001983 | max bias change: 0.000000
-Epoch 70 avg loss: 0.750000 | max weight change: 0.001979 | max bias change: 0.000000
-Epoch 71 avg loss: 0.750000 | max weight change: 0.001975 | max bias change: 0.000000
-Epoch 72 avg loss: 0.750000 | max weight change: 0.001971 | max bias change: 0.000000
-Epoch 73 avg loss: 0.750000 | max weight change: 0.001967 | max bias change: 0.000000
-Epoch 74 avg loss: 0.750000 | max weight change: 0.001963 | max bias change: 0.000000
-Epoch 75 avg loss: 0.750000 | max weight change: 0.001959 | max bias change: 0.000000
-Epoch 76 avg loss: 0.750000 | max weight change: 0.001955 | max bias change: 0.000000
-Epoch 77 avg loss: 0.750000 | max weight change: 0.001951 | max bias change: 0.000000
-Epoch 78 avg loss: 0.750000 | max weight change: 0.001947 | max bias change: 0.000000
-Epoch 79 avg loss: 0.750000 | max weight change: 0.001943 | max bias change: 0.000000
-Epoch 80 avg loss: 0.750000 | max weight change: 0.001939 | max bias change: 0.000000
-Epoch 81 avg loss: 0.750000 | max weight change: 0.001936 | max bias change: 0.000000
-Epoch 82 avg loss: 0.750000 | max weight change: 0.001932 | max bias change: 0.000000
-Epoch 83 avg loss: 0.750000 | max weight change: 0.001928 | max bias change: 0.000000
-Epoch 84 avg loss: 0.750000 | max weight change: 0.001924 | max bias change: 0.000000
-Epoch 85 avg loss: 0.750000 | max weight change: 0.001920 | max bias change: 0.000000
-Epoch 86 avg loss: 0.750000 | max weight change: 0.001916 | max bias change: 0.000000
-Epoch 87 avg loss: 0.750000 | max weight change: 0.001912 | max bias change: 0.000000
-Epoch 88 avg loss: 0.750000 | max weight change: 0.001909 | max bias change: 0.000000
-Epoch 89 avg loss: 0.750000 | max weight change: 0.001905 | max bias change: 0.000000
-Epoch 90 avg loss: 0.750000 | max weight change: 0.001901 | max bias change: 0.000000
-Epoch 91 avg loss: 0.750000 | max weight change: 0.001897 | max bias change: 0.000000
-Epoch 92 avg loss: 0.750000 | max weight change: 0.001893 | max bias change: 0.000000
-Epoch 93 avg loss: 0.750000 | max weight change: 0.001890 | max bias change: 0.000000
-Epoch 94 avg loss: 0.750000 | max weight change: 0.001886 | max bias change: 0.000000
-Epoch 95 avg loss: 0.750000 | max weight change: 0.001882 | max bias change: 0.000000
-Epoch 96 avg loss: 0.750000 | max weight change: 0.001878 | max bias change: 0.000000
-Epoch 97 avg loss: 0.750000 | max weight change: 0.001875 | max bias change: 0.000000
-Epoch 98 avg loss: 0.750000 | max weight change: 0.001871 | max bias change: 0.000000
-Epoch 99 avg loss: 0.750000 | max weight change: 0.001867 | max bias change: 0.000000
-Epoch 100 avg loss: 0.750000 | max weight change: 0.001863 | max bias change: 0.000000
-Epoch 101 avg loss: 0.750000 | max weight change: 0.001860 | max bias change: 0.000000
-Epoch 102 avg loss: 0.750000 | max weight change: 0.001856 | max bias change: 0.000000
-Epoch 103 avg loss: 0.750000 | max weight change: 0.001852 | max bias change: 0.000000
-Epoch 104 avg loss: 0.750000 | max weight change: 0.001849 | max bias change: 0.000000
-Epoch 105 avg loss: 0.750000 | max weight change: 0.001845 | max bias change: 0.000000
-Epoch 106 avg loss: 0.750000 | max weight change: 0.001841 | max bias change: 0.000000
-Epoch 107 avg loss: 0.750000 | max weight change: 0.001837 | max bias change: 0.000000
-Epoch 108 avg loss: 0.750000 | max weight change: 0.001834 | max bias change: 0.000000
-Epoch 109 avg loss: 0.750000 | max weight change: 0.001830 | max bias change: 0.000000
-Epoch 110 avg loss: 0.750000 | max weight change: 0.001826 | max bias change: 0.000000
-Epoch 111 avg loss: 0.750000 | max weight change: 0.001823 | max bias change: 0.000000
-Epoch 112 avg loss: 0.750000 | max weight change: 0.001819 | max bias change: 0.000000
-Epoch 113 avg loss: 0.750000 | max weight change: 0.001816 | max bias change: 0.000000
-Epoch 114 avg loss: 0.750000 | max weight change: 0.001812 | max bias change: 0.000000
-Epoch 115 avg loss: 0.750000 | max weight change: 0.001808 | max bias change: 0.000000
-Epoch 116 avg loss: 0.750000 | max weight change: 0.001805 | max bias change: 0.000000
-Epoch 117 avg loss: 0.750000 | max weight change: 0.001801 | max bias change: 0.000000
-Epoch 118 avg loss: 0.750000 | max weight change: 0.001797 | max bias change: 0.000000
-Epoch 119 avg loss: 0.750000 | max weight change: 0.001794 | max bias change: 0.000000
-Epoch 120 avg loss: 0.750000 | max weight change: 0.001790 | max bias change: 0.000000
-Epoch 121 avg loss: 0.750000 | max weight change: 0.001787 | max bias change: 0.000000
-Epoch 122 avg loss: 0.750000 | max weight change: 0.001783 | max bias change: 0.000000
-Epoch 123 avg loss: 0.750000 | max weight change: 0.001780 | max bias change: 0.000000
-Epoch 124 avg loss: 0.750000 | max weight change: 0.001776 | max bias change: 0.000000
-Epoch 125 avg loss: 0.750000 | max weight change: 0.001772 | max bias change: 0.000000
-Epoch 126 avg loss: 0.750000 | max weight change: 0.001769 | max bias change: 0.000000
-Epoch 127 avg loss: 0.750000 | max weight change: 0.001765 | max bias change: 0.000000
-Epoch 128 avg loss: 0.750000 | max weight change: 0.001762 | max bias change: 0.000000
-Epoch 129 avg loss: 0.750000 | max weight change: 0.001758 | max bias change: 0.000000
-Epoch 130 avg loss: 0.750000 | max weight change: 0.001755 | max bias change: 0.000000
-Epoch 131 avg loss: 0.750000 | max weight change: 0.001751 | max bias change: 0.000000
-Epoch 132 avg loss: 0.750000 | max weight change: 0.001748 | max bias change: 0.000000
-Epoch 133 avg loss: 0.750000 | max weight change: 0.001744 | max bias change: 0.000000
-Epoch 134 avg loss: 0.750000 | max weight change: 0.001741 | max bias change: 0.000000
-Epoch 135 avg loss: 0.750000 | max weight change: 0.001737 | max bias change: 0.000000
-Epoch 136 avg loss: 0.750000 | max weight change: 0.001734 | max bias change: 0.000000
-Epoch 137 avg loss: 0.750000 | max weight change: 0.001730 | max bias change: 0.000000
-Epoch 138 avg loss: 0.750000 | max weight change: 0.001727 | max bias change: 0.000000
-Epoch 139 avg loss: 0.750000 | max weight change: 0.001724 | max bias change: 0.000000
-Epoch 140 avg loss: 0.750000 | max weight change: 0.001720 | max bias change: 0.000000
-Epoch 141 avg loss: 0.750000 | max weight change: 0.001717 | max bias change: 0.000000
-Epoch 142 avg loss: 0.750000 | max weight change: 0.001713 | max bias change: 0.000000
-Epoch 143 avg loss: 0.750000 | max weight change: 0.001710 | max bias change: 0.000000
-Epoch 144 avg loss: 0.750000 | max weight change: 0.001706 | max bias change: 0.000000
-Epoch 145 avg loss: 0.750000 | max weight change: 0.001703 | max bias change: 0.000000
-Epoch 146 avg loss: 0.750000 | max weight change: 0.001700 | max bias change: 0.000000
-Epoch 147 avg loss: 0.750000 | max weight change: 0.001696 | max bias change: 0.000000
-Epoch 148 avg loss: 0.750000 | max weight change: 0.001693 | max bias change: 0.000000
-Epoch 149 avg loss: 0.750000 | max weight change: 0.001689 | max bias change: 0.000000
-Epoch 150 avg loss: 0.750000 | max weight change: 0.001686 | max bias change: 0.000000
-Epoch 151 avg loss: 0.750000 | max weight change: 0.001683 | max bias change: 0.000000
-Epoch 152 avg loss: 0.750000 | max weight change: 0.001679 | max bias change: 0.000000
-Epoch 153 avg loss: 0.750000 | max weight change: 0.001676 | max bias change: 0.000000
-Epoch 154 avg loss: 0.750000 | max weight change: 0.001673 | max bias change: 0.000000
-Epoch 155 avg loss: 0.750000 | max weight change: 0.001669 | max bias change: 0.000000
-Epoch 156 avg loss: 0.750000 | max weight change: 0.001666 | max bias change: 0.000000
-Epoch 157 avg loss: 0.750000 | max weight change: 0.001663 | max bias change: 0.000000
-Epoch 158 avg loss: 0.750000 | max weight change: 0.001659 | max bias change: 0.000000
-Epoch 159 avg loss: 0.750000 | max weight change: 0.001656 | max bias change: 0.000000
-Epoch 160 avg loss: 0.750000 | max weight change: 0.001653 | max bias change: 0.000000
-Epoch 161 avg loss: 0.750000 | max weight change: 0.001649 | max bias change: 0.000000
-Epoch 162 avg loss: 0.750000 | max weight change: 0.001646 | max bias change: 0.000000
-Epoch 163 avg loss: 0.750000 | max weight change: 0.001643 | max bias change: 0.000000
-Epoch 164 avg loss: 0.750000 | max weight change: 0.001639 | max bias change: 0.000000
-Epoch 165 avg loss: 0.750000 | max weight change: 0.001636 | max bias change: 0.000000
-Epoch 166 avg loss: 0.750000 | max weight change: 0.001633 | max bias change: 0.000000
-Epoch 167 avg loss: 0.750000 | max weight change: 0.001630 | max bias change: 0.000000
-Epoch 168 avg loss: 0.750000 | max weight change: 0.001626 | max bias change: 0.000000
-Epoch 169 avg loss: 0.750000 | max weight change: 0.001623 | max bias change: 0.000000
-Epoch 170 avg loss: 0.750000 | max weight change: 0.001620 | max bias change: 0.000000
-Epoch 171 avg loss: 0.750000 | max weight change: 0.001617 | max bias change: 0.000000
-Epoch 172 avg loss: 0.750000 | max weight change: 0.001613 | max bias change: 0.000000
-Epoch 173 avg loss: 0.750000 | max weight change: 0.001610 | max bias change: 0.000000
-Epoch 174 avg loss: 0.750000 | max weight change: 0.001607 | max bias change: 0.000000
-Epoch 175 avg loss: 0.750000 | max weight change: 0.001604 | max bias change: 0.000000
-Epoch 176 avg loss: 0.750000 | max weight change: 0.001601 | max bias change: 0.000000
-Epoch 177 avg loss: 0.750000 | max weight change: 0.001597 | max bias change: 0.000000
-Epoch 178 avg loss: 0.750000 | max weight change: 0.001594 | max bias change: 0.000000
-Epoch 179 avg loss: 0.750000 | max weight change: 0.001591 | max bias change: 0.000000
-Epoch 180 avg loss: 0.750000 | max weight change: 0.001588 | max bias change: 0.000000
-Epoch 181 avg loss: 0.750000 | max weight change: 0.001585 | max bias change: 0.000000
-Epoch 182 avg loss: 0.750000 | max weight change: 0.001581 | max bias change: 0.000000
-Epoch 183 avg loss: 0.750000 | max weight change: 0.001578 | max bias change: 0.000000
-Epoch 184 avg loss: 0.750000 | max weight change: 0.001575 | max bias change: 0.000000
-Epoch 185 avg loss: 0.750000 | max weight change: 0.001572 | max bias change: 0.000000
-Epoch 186 avg loss: 0.750000 | max weight change: 0.001569 | max bias change: 0.000000
-Epoch 187 avg loss: 0.750000 | max weight change: 0.001566 | max bias change: 0.000000
-Epoch 188 avg loss: 0.750000 | max weight change: 0.001563 | max bias change: 0.000000
-Epoch 189 avg loss: 0.750000 | max weight change: 0.001559 | max bias change: 0.000000
-Epoch 190 avg loss: 0.750000 | max weight change: 0.001556 | max bias change: 0.000000
-Epoch 191 avg loss: 0.750000 | max weight change: 0.001553 | max bias change: 0.000000
-Epoch 192 avg loss: 0.750000 | max weight change: 0.001550 | max bias change: 0.000000
-Epoch 193 avg loss: 0.750000 | max weight change: 0.001547 | max bias change: 0.000000
-Epoch 194 avg loss: 0.750000 | max weight change: 0.001544 | max bias change: 0.000000
-Epoch 195 avg loss: 0.750000 | max weight change: 0.001541 | max bias change: 0.000000
-Epoch 196 avg loss: 0.750000 | max weight change: 0.001538 | max bias change: 0.000000
-Epoch 197 avg loss: 0.750000 | max weight change: 0.001535 | max bias change: 0.000000
-Epoch 198 avg loss: 0.750000 | max weight change: 0.001532 | max bias change: 0.000000
-Epoch 199 avg loss: 0.750000 | max weight change: 0.001529 | max bias change: 0.000000
-Epoch 200 avg loss: 0.750000 | max weight change: 0.001526 | max bias change: 0.000000
-Epoch 201 avg loss: 0.750000 | max weight change: 0.001522 | max bias change: 0.000000
-Epoch 202 avg loss: 0.750000 | max weight change: 0.001519 | max bias change: 0.000000
-Epoch 203 avg loss: 0.750000 | max weight change: 0.001516 | max bias change: 0.000000
-Epoch 204 avg loss: 0.750000 | max weight change: 0.001513 | max bias change: 0.000000
-Epoch 205 avg loss: 0.750000 | max weight change: 0.001510 | max bias change: 0.000000
-Epoch 206 avg loss: 0.750000 | max weight change: 0.001507 | max bias change: 0.000000
-Epoch 207 avg loss: 0.750000 | max weight change: 0.001504 | max bias change: 0.000000
-Epoch 208 avg loss: 0.750000 | max weight change: 0.001501 | max bias change: 0.000000
-Epoch 209 avg loss: 0.750000 | max weight change: 0.001498 | max bias change: 0.000000
-Epoch 210 avg loss: 0.750000 | max weight change: 0.001495 | max bias change: 0.000000
-Epoch 211 avg loss: 0.750000 | max weight change: 0.001492 | max bias change: 0.000000
-Epoch 212 avg loss: 0.750000 | max weight change: 0.001489 | max bias change: 0.000000
-Epoch 213 avg loss: 0.750000 | max weight change: 0.001486 | max bias change: 0.000000
-Epoch 214 avg loss: 0.750000 | max weight change: 0.001483 | max bias change: 0.000000
-Epoch 215 avg loss: 0.750000 | max weight change: 0.001480 | max bias change: 0.000000
-Epoch 216 avg loss: 0.750000 | max weight change: 0.001477 | max bias change: 0.000000
-Epoch 217 avg loss: 0.750000 | max weight change: 0.001475 | max bias change: 0.000000
-Epoch 218 avg loss: 0.750000 | max weight change: 0.001472 | max bias change: 0.000000
-Epoch 219 avg loss: 0.750000 | max weight change: 0.001469 | max bias change: 0.000000
-Epoch 220 avg loss: 0.750000 | max weight change: 0.001466 | max bias change: 0.000000
-Epoch 221 avg loss: 0.750000 | max weight change: 0.001463 | max bias change: 0.000000
-Epoch 222 avg loss: 0.750000 | max weight change: 0.001460 | max bias change: 0.000000
-Epoch 223 avg loss: 0.750000 | max weight change: 0.001457 | max bias change: 0.000000
-Epoch 224 avg loss: 0.750000 | max weight change: 0.001454 | max bias change: 0.000000
-Epoch 225 avg loss: 0.750000 | max weight change: 0.001451 | max bias change: 0.000000
-Epoch 226 avg loss: 0.750000 | max weight change: 0.001448 | max bias change: 0.000000
-Epoch 227 avg loss: 0.750000 | max weight change: 0.001445 | max bias change: 0.000000
-Epoch 228 avg loss: 0.750000 | max weight change: 0.001442 | max bias change: 0.000000
-Epoch 229 avg loss: 0.750000 | max weight change: 0.001440 | max bias change: 0.000000
-Epoch 230 avg loss: 0.750000 | max weight change: 0.001437 | max bias change: 0.000000
-Epoch 231 avg loss: 0.750000 | max weight change: 0.001434 | max bias change: 0.000000
-Epoch 232 avg loss: 0.750000 | max weight change: 0.001431 | max bias change: 0.000000
-Epoch 233 avg loss: 0.750000 | max weight change: 0.001428 | max bias change: 0.000000
-Epoch 234 avg loss: 0.750000 | max weight change: 0.001425 | max bias change: 0.000000
-Epoch 235 avg loss: 0.750000 | max weight change: 0.001422 | max bias change: 0.000000
-Epoch 236 avg loss: 0.750000 | max weight change: 0.001420 | max bias change: 0.000000
-Epoch 237 avg loss: 0.750000 | max weight change: 0.001417 | max bias change: 0.000000
-Epoch 238 avg loss: 0.750000 | max weight change: 0.001414 | max bias change: 0.000000
-Epoch 239 avg loss: 0.750000 | max weight change: 0.001411 | max bias change: 0.000000
-Epoch 240 avg loss: 0.750000 | max weight change: 0.001408 | max bias change: 0.000000
-Epoch 241 avg loss: 0.750000 | max weight change: 0.001405 | max bias change: 0.000000
-Epoch 242 avg loss: 0.750000 | max weight change: 0.001403 | max bias change: 0.000000
-Epoch 243 avg loss: 0.750000 | max weight change: 0.001400 | max bias change: 0.000000
-Epoch 244 avg loss: 0.750000 | max weight change: 0.001397 | max bias change: 0.000000
-Epoch 245 avg loss: 0.750000 | max weight change: 0.001394 | max bias change: 0.000000
-Epoch 246 avg loss: 0.750000 | max weight change: 0.001391 | max bias change: 0.000000
-Epoch 247 avg loss: 0.750000 | max weight change: 0.001389 | max bias change: 0.000000
-Epoch 248 avg loss: 0.750000 | max weight change: 0.001386 | max bias change: 0.000000
-Epoch 249 avg loss: 0.750000 | max weight change: 0.001383 | max bias change: 0.000000
-Epoch 250 avg loss: 0.750000 | max weight change: 0.001380 | max bias change: 0.000000
-Epoch 251 avg loss: 0.750000 | max weight change: 0.001378 | max bias change: 0.000000
-Epoch 252 avg loss: 0.750000 | max weight change: 0.001375 | max bias change: 0.000000
-Epoch 253 avg loss: 0.750000 | max weight change: 0.001372 | max bias change: 0.000000
-Epoch 254 avg loss: 0.750000 | max weight change: 0.001369 | max bias change: 0.000000
-Epoch 255 avg loss: 0.750000 | max weight change: 0.001367 | max bias change: 0.000000
-Epoch 256 avg loss: 0.750000 | max weight change: 0.001364 | max bias change: 0.000000
-Epoch 257 avg loss: 0.750000 | max weight change: 0.001361 | max bias change: 0.000000
-Epoch 258 avg loss: 0.750000 | max weight change: 0.001358 | max bias change: 0.000000
-Epoch 259 avg loss: 0.750000 | max weight change: 0.001356 | max bias change: 0.000000
-Epoch 260 avg loss: 0.750000 | max weight change: 0.001353 | max bias change: 0.000000
-Epoch 261 avg loss: 0.750000 | max weight change: 0.001350 | max bias change: 0.000000
-Epoch 262 avg loss: 0.750000 | max weight change: 0.001348 | max bias change: 0.000000
-Epoch 263 avg loss: 0.750000 | max weight change: 0.001345 | max bias change: 0.000000
-Epoch 264 avg loss: 0.750000 | max weight change: 0.001342 | max bias change: 0.000000
-Epoch 265 avg loss: 0.750000 | max weight change: 0.001340 | max bias change: 0.000000
-Epoch 266 avg loss: 0.750000 | max weight change: 0.001337 | max bias change: 0.000000
-Epoch 267 avg loss: 0.750000 | max weight change: 0.001334 | max bias change: 0.000000
-Epoch 268 avg loss: 0.750000 | max weight change: 0.001331 | max bias change: 0.000000
-Epoch 269 avg loss: 0.750000 | max weight change: 0.001329 | max bias change: 0.000000
-Epoch 270 avg loss: 0.750000 | max weight change: 0.001326 | max bias change: 0.000000
-Epoch 271 avg loss: 0.750000 | max weight change: 0.001324 | max bias change: 0.000000
-Epoch 272 avg loss: 0.750000 | max weight change: 0.001321 | max bias change: 0.000000
-Epoch 273 avg loss: 0.750000 | max weight change: 0.001318 | max bias change: 0.000000
-Epoch 274 avg loss: 0.750000 | max weight change: 0.001316 | max bias change: 0.000000
-Epoch 275 avg loss: 0.750000 | max weight change: 0.001313 | max bias change: 0.000000
-Epoch 276 avg loss: 0.750000 | max weight change: 0.001310 | max bias change: 0.000000
-Epoch 277 avg loss: 0.750000 | max weight change: 0.001308 | max bias change: 0.000000
-Epoch 278 avg loss: 0.750000 | max weight change: 0.001305 | max bias change: 0.000000
-Epoch 279 avg loss: 0.750000 | max weight change: 0.001303 | max bias change: 0.000000
-Epoch 280 avg loss: 0.750000 | max weight change: 0.001300 | max bias change: 0.000000
-Epoch 281 avg loss: 0.750000 | max weight change: 0.001297 | max bias change: 0.000000
-Epoch 282 avg loss: 0.750000 | max weight change: 0.001295 | max bias change: 0.000000
-Epoch 283 avg loss: 0.750000 | max weight change: 0.001292 | max bias change: 0.000000
-Epoch 284 avg loss: 0.750000 | max weight change: 0.001290 | max bias change: 0.000000
-Epoch 285 avg loss: 0.750000 | max weight change: 0.001287 | max bias change: 0.000000
-Epoch 286 avg loss: 0.750000 | max weight change: 0.001284 | max bias change: 0.000000
-Epoch 287 avg loss: 0.750000 | max weight change: 0.001282 | max bias change: 0.000000
-Epoch 288 avg loss: 0.750000 | max weight change: 0.001279 | max bias change: 0.000000
-Epoch 289 avg loss: 0.750000 | max weight change: 0.001277 | max bias change: 0.000000
-Epoch 290 avg loss: 0.750000 | max weight change: 0.001274 | max bias change: 0.000000
-Epoch 291 avg loss: 0.750000 | max weight change: 0.001272 | max bias change: 0.000000
-Epoch 292 avg loss: 0.750000 | max weight change: 0.001269 | max bias change: 0.000000
-Epoch 293 avg loss: 0.750000 | max weight change: 0.001267 | max bias change: 0.000000
-Epoch 294 avg loss: 0.750000 | max weight change: 0.001264 | max bias change: 0.000000
-Epoch 295 avg loss: 0.750000 | max weight change: 0.001261 | max bias change: 0.000000
-Epoch 296 avg loss: 0.750000 | max weight change: 0.001259 | max bias change: 0.000000
-Epoch 297 avg loss: 0.750000 | max weight change: 0.001256 | max bias change: 0.000000
-Epoch 298 avg loss: 0.750000 | max weight change: 0.001254 | max bias change: 0.000000
-Epoch 299 avg loss: 0.750000 | max weight change: 0.001251 | max bias change: 0.000000
-Epoch 300 avg loss: 0.750000 | max weight change: 0.001249 | max bias change: 0.000000
-Epoch 301 avg loss: 0.750000 | max weight change: 0.001246 | max bias change: 0.000000
-Epoch 302 avg loss: 0.750000 | max weight change: 0.001244 | max bias change: 0.000000
-Epoch 303 avg loss: 0.750000 | max weight change: 0.001241 | max bias change: 0.000000
-Epoch 304 avg loss: 0.750000 | max weight change: 0.001239 | max bias change: 0.000000
-Epoch 305 avg loss: 0.750000 | max weight change: 0.001236 | max bias change: 0.000000
-Epoch 306 avg loss: 0.750000 | max weight change: 0.001234 | max bias change: 0.000000
-Epoch 307 avg loss: 0.750000 | max weight change: 0.001232 | max bias change: 0.000000
-Epoch 308 avg loss: 0.750000 | max weight change: 0.001229 | max bias change: 0.000000
-Epoch 309 avg loss: 0.750000 | max weight change: 0.001227 | max bias change: 0.000000
-Epoch 310 avg loss: 0.750000 | max weight change: 0.001224 | max bias change: 0.000000
-Epoch 311 avg loss: 0.750000 | max weight change: 0.001222 | max bias change: 0.000000
-Epoch 312 avg loss: 0.750000 | max weight change: 0.001219 | max bias change: 0.000000
-Epoch 313 avg loss: 0.750000 | max weight change: 0.001217 | max bias change: 0.000000
-Epoch 314 avg loss: 0.750000 | max weight change: 0.001214 | max bias change: 0.000000
-Epoch 315 avg loss: 0.750000 | max weight change: 0.001212 | max bias change: 0.000000
-Epoch 316 avg loss: 0.750000 | max weight change: 0.001210 | max bias change: 0.000000
-Epoch 317 avg loss: 0.750000 | max weight change: 0.001207 | max bias change: 0.000000
-Epoch 318 avg loss: 0.750000 | max weight change: 0.001205 | max bias change: 0.000000
-Epoch 319 avg loss: 0.750000 | max weight change: 0.001202 | max bias change: 0.000000
-Epoch 320 avg loss: 0.750000 | max weight change: 0.001200 | max bias change: 0.000000
-Epoch 321 avg loss: 0.750000 | max weight change: 0.001198 | max bias change: 0.000000
-Epoch 322 avg loss: 0.750000 | max weight change: 0.001195 | max bias change: 0.000000
-Epoch 323 avg loss: 0.750000 | max weight change: 0.001193 | max bias change: 0.000000
-Epoch 324 avg loss: 0.750000 | max weight change: 0.001190 | max bias change: 0.000000
-Epoch 325 avg loss: 0.750000 | max weight change: 0.001188 | max bias change: 0.000000
-Epoch 326 avg loss: 0.750000 | max weight change: 0.001186 | max bias change: 0.000000
-Epoch 327 avg loss: 0.750000 | max weight change: 0.001183 | max bias change: 0.000000
-Epoch 328 avg loss: 0.750000 | max weight change: 0.001181 | max bias change: 0.000000
-Epoch 329 avg loss: 0.750000 | max weight change: 0.001179 | max bias change: 0.000000
-Epoch 330 avg loss: 0.750000 | max weight change: 0.001176 | max bias change: 0.000000
-Epoch 331 avg loss: 0.750000 | max weight change: 0.001174 | max bias change: 0.000000
-Epoch 332 avg loss: 0.750000 | max weight change: 0.001171 | max bias change: 0.000000
-Epoch 333 avg loss: 0.750000 | max weight change: 0.001169 | max bias change: 0.000000
-Epoch 334 avg loss: 0.750000 | max weight change: 0.001167 | max bias change: 0.000000
-Epoch 335 avg loss: 0.750000 | max weight change: 0.001164 | max bias change: 0.000000
-Epoch 336 avg loss: 0.750000 | max weight change: 0.001162 | max bias change: 0.000000
-Epoch 337 avg loss: 0.750000 | max weight change: 0.001160 | max bias change: 0.000000
-Epoch 338 avg loss: 0.750000 | max weight change: 0.001158 | max bias change: 0.000000
-Epoch 339 avg loss: 0.750000 | max weight change: 0.001155 | max bias change: 0.000000
-Epoch 340 avg loss: 0.750000 | max weight change: 0.001153 | max bias change: 0.000000
-Epoch 341 avg loss: 0.750000 | max weight change: 0.001151 | max bias change: 0.000000
-Epoch 342 avg loss: 0.750000 | max weight change: 0.001148 | max bias change: 0.000000
-Epoch 343 avg loss: 0.750000 | max weight change: 0.001146 | max bias change: 0.000000
-Epoch 344 avg loss: 0.750000 | max weight change: 0.001144 | max bias change: 0.000000
-Epoch 345 avg loss: 0.750000 | max weight change: 0.001141 | max bias change: 0.000000
-Epoch 346 avg loss: 0.750000 | max weight change: 0.001139 | max bias change: 0.000000
-Epoch 347 avg loss: 0.750000 | max weight change: 0.001137 | max bias change: 0.000000
-Epoch 348 avg loss: 0.750000 | max weight change: 0.001135 | max bias change: 0.000000
-Epoch 349 avg loss: 0.750000 | max weight change: 0.001132 | max bias change: 0.000000
-Epoch 350 avg loss: 0.750000 | max weight change: 0.001130 | max bias change: 0.000000
-Epoch 351 avg loss: 0.750000 | max weight change: 0.001128 | max bias change: 0.000000
-Epoch 352 avg loss: 0.750000 | max weight change: 0.001126 | max bias change: 0.000000
-Epoch 353 avg loss: 0.750000 | max weight change: 0.001123 | max bias change: 0.000000
-Epoch 354 avg loss: 0.750000 | max weight change: 0.001121 | max bias change: 0.000000
-Epoch 355 avg loss: 0.750000 | max weight change: 0.001119 | max bias change: 0.000000
-Epoch 356 avg loss: 0.750000 | max weight change: 0.001117 | max bias change: 0.000000
-Epoch 357 avg loss: 0.750000 | max weight change: 0.001114 | max bias change: 0.000000
-Epoch 358 avg loss: 0.750000 | max weight change: 0.001112 | max bias change: 0.000000
-Epoch 359 avg loss: 0.750000 | max weight change: 0.001110 | max bias change: 0.000000
-Epoch 360 avg loss: 0.750000 | max weight change: 0.001108 | max bias change: 0.000000
-Epoch 361 avg loss: 0.750000 | max weight change: 0.001105 | max bias change: 0.000000
-Epoch 362 avg loss: 0.750000 | max weight change: 0.001103 | max bias change: 0.000000
-Epoch 363 avg loss: 0.750000 | max weight change: 0.001101 | max bias change: 0.000000
-Epoch 364 avg loss: 0.750000 | max weight change: 0.001099 | max bias change: 0.000000
-Epoch 365 avg loss: 0.750000 | max weight change: 0.001097 | max bias change: 0.000000
-Epoch 366 avg loss: 0.750000 | max weight change: 0.001094 | max bias change: 0.000000
-Epoch 367 avg loss: 0.750000 | max weight change: 0.001092 | max bias change: 0.000000
-Epoch 368 avg loss: 0.750000 | max weight change: 0.001090 | max bias change: 0.000000
-Epoch 369 avg loss: 0.750000 | max weight change: 0.001088 | max bias change: 0.000000
-Epoch 370 avg loss: 0.750000 | max weight change: 0.001086 | max bias change: 0.000000
-Epoch 371 avg loss: 0.750000 | max weight change: 0.001084 | max bias change: 0.000000
-Epoch 372 avg loss: 0.750000 | max weight change: 0.001081 | max bias change: 0.000000
-Epoch 373 avg loss: 0.750000 | max weight change: 0.001079 | max bias change: 0.000000
-Epoch 374 avg loss: 0.750000 | max weight change: 0.001077 | max bias change: 0.000000
-Epoch 375 avg loss: 0.750000 | max weight change: 0.001075 | max bias change: 0.000000
-Epoch 376 avg loss: 0.750000 | max weight change: 0.001073 | max bias change: 0.000000
-Epoch 377 avg loss: 0.750000 | max weight change: 0.001071 | max bias change: 0.000000
-Epoch 378 avg loss: 0.750000 | max weight change: 0.001068 | max bias change: 0.000000
-Epoch 379 avg loss: 0.750000 | max weight change: 0.001066 | max bias change: 0.000000
-Epoch 380 avg loss: 0.750000 | max weight change: 0.001064 | max bias change: 0.000000
-Epoch 381 avg loss: 0.750000 | max weight change: 0.001062 | max bias change: 0.000000
-Epoch 382 avg loss: 0.750000 | max weight change: 0.001060 | max bias change: 0.000000
-Epoch 383 avg loss: 0.750000 | max weight change: 0.001058 | max bias change: 0.000000
-Epoch 384 avg loss: 0.750000 | max weight change: 0.001056 | max bias change: 0.000000
-Epoch 385 avg loss: 0.750000 | max weight change: 0.001054 | max bias change: 0.000000
-Epoch 386 avg loss: 0.750000 | max weight change: 0.001052 | max bias change: 0.000000
-Epoch 387 avg loss: 0.750000 | max weight change: 0.001049 | max bias change: 0.000000
-Epoch 388 avg loss: 0.750000 | max weight change: 0.001047 | max bias change: 0.000000
-Epoch 389 avg loss: 0.750000 | max weight change: 0.001045 | max bias change: 0.000000
-Epoch 390 avg loss: 0.750000 | max weight change: 0.001043 | max bias change: 0.000000
-Epoch 391 avg loss: 0.750000 | max weight change: 0.001041 | max bias change: 0.000000
-Epoch 392 avg loss: 0.750000 | max weight change: 0.001039 | max bias change: 0.000000
-Epoch 393 avg loss: 0.750000 | max weight change: 0.001037 | max bias change: 0.000000
-Epoch 394 avg loss: 0.750000 | max weight change: 0.001035 | max bias change: 0.000000
-Epoch 395 avg loss: 0.750000 | max weight change: 0.001033 | max bias change: 0.000000
-Epoch 396 avg loss: 0.750000 | max weight change: 0.001031 | max bias change: 0.000000
-Epoch 397 avg loss: 0.750000 | max weight change: 0.001029 | max bias change: 0.000000
-Epoch 398 avg loss: 0.750000 | max weight change: 0.001027 | max bias change: 0.000000
-Epoch 399 avg loss: 0.750000 | max weight change: 0.001025 | max bias change: 0.000000
-Epoch 400 avg loss: 0.750000 | max weight change: 0.001022 | max bias change: 0.000000
-Epoch 401 avg loss: 0.750000 | max weight change: 0.001020 | max bias change: 0.000000
-Epoch 402 avg loss: 0.750000 | max weight change: 0.001018 | max bias change: 0.000000
-Epoch 403 avg loss: 0.750000 | max weight change: 0.001016 | max bias change: 0.000000
-Epoch 404 avg loss: 0.750000 | max weight change: 0.001014 | max bias change: 0.000000
-Epoch 405 avg loss: 0.750000 | max weight change: 0.001012 | max bias change: 0.000000
-Epoch 406 avg loss: 0.750000 | max weight change: 0.001010 | max bias change: 0.000000
-Epoch 407 avg loss: 0.750000 | max weight change: 0.001008 | max bias change: 0.000000
-Epoch 408 avg loss: 0.750000 | max weight change: 0.001006 | max bias change: 0.000000
-Epoch 409 avg loss: 0.750000 | max weight change: 0.001004 | max bias change: 0.000000
-Epoch 410 avg loss: 0.750000 | max weight change: 0.001002 | max bias change: 0.000000
-Epoch 411 avg loss: 0.750000 | max weight change: 0.001000 | max bias change: 0.000000
-Epoch 412 avg loss: 0.750000 | max weight change: 0.000998 | max bias change: 0.000000
-Epoch 413 avg loss: 0.750000 | max weight change: 0.000996 | max bias change: 0.000000
-Epoch 414 avg loss: 0.750000 | max weight change: 0.000994 | max bias change: 0.000000
-Epoch 415 avg loss: 0.750000 | max weight change: 0.000992 | max bias change: 0.000000
-Epoch 416 avg loss: 0.750000 | max weight change: 0.000990 | max bias change: 0.000000
-Epoch 417 avg loss: 0.750000 | max weight change: 0.000988 | max bias change: 0.000000
-Epoch 418 avg loss: 0.750000 | max weight change: 0.000986 | max bias change: 0.000000
-Epoch 419 avg loss: 0.750000 | max weight change: 0.000984 | max bias change: 0.000000
-Epoch 420 avg loss: 0.750000 | max weight change: 0.000982 | max bias change: 0.000000
-Epoch 421 avg loss: 0.750000 | max weight change: 0.000980 | max bias change: 0.000000
-Epoch 422 avg loss: 0.750000 | max weight change: 0.000978 | max bias change: 0.000000
-Epoch 423 avg loss: 0.750000 | max weight change: 0.000977 | max bias change: 0.000000
-Epoch 424 avg loss: 0.750000 | max weight change: 0.000975 | max bias change: 0.000000
-Epoch 425 avg loss: 0.750000 | max weight change: 0.000973 | max bias change: 0.000000
-Epoch 426 avg loss: 0.750000 | max weight change: 0.000971 | max bias change: 0.000000
-Epoch 427 avg loss: 0.750000 | max weight change: 0.000969 | max bias change: 0.000000
-Epoch 428 avg loss: 0.750000 | max weight change: 0.000967 | max bias change: 0.000000
-Epoch 429 avg loss: 0.750000 | max weight change: 0.000965 | max bias change: 0.000000
-Epoch 430 avg loss: 0.750000 | max weight change: 0.000963 | max bias change: 0.000000
-Epoch 431 avg loss: 0.750000 | max weight change: 0.000961 | max bias change: 0.000000
-Epoch 432 avg loss: 0.750000 | max weight change: 0.000959 | max bias change: 0.000000
-Epoch 433 avg loss: 0.750000 | max weight change: 0.000957 | max bias change: 0.000000
-Epoch 434 avg loss: 0.750000 | max weight change: 0.000955 | max bias change: 0.000000
-Epoch 435 avg loss: 0.750000 | max weight change: 0.000953 | max bias change: 0.000000
-Epoch 436 avg loss: 0.750000 | max weight change: 0.000951 | max bias change: 0.000000
-Epoch 437 avg loss: 0.750000 | max weight change: 0.000950 | max bias change: 0.000000
-Epoch 438 avg loss: 0.750000 | max weight change: 0.000948 | max bias change: 0.000000
-Epoch 439 avg loss: 0.750000 | max weight change: 0.000946 | max bias change: 0.000000
-Epoch 440 avg loss: 0.750000 | max weight change: 0.000944 | max bias change: 0.000000
-Epoch 441 avg loss: 0.750000 | max weight change: 0.000942 | max bias change: 0.000000
-Epoch 442 avg loss: 0.750000 | max weight change: 0.000940 | max bias change: 0.000000
-Epoch 443 avg loss: 0.750000 | max weight change: 0.000938 | max bias change: 0.000000
-Epoch 444 avg loss: 0.750000 | max weight change: 0.000936 | max bias change: 0.000000
-Epoch 445 avg loss: 0.750000 | max weight change: 0.000934 | max bias change: 0.000000
-Epoch 446 avg loss: 0.750000 | max weight change: 0.000933 | max bias change: 0.000000
-Epoch 447 avg loss: 0.750000 | max weight change: 0.000931 | max bias change: 0.000000
-Epoch 448 avg loss: 0.750000 | max weight change: 0.000929 | max bias change: 0.000000
-Epoch 449 avg loss: 0.750000 | max weight change: 0.000927 | max bias change: 0.000000
-Epoch 450 avg loss: 0.750000 | max weight change: 0.000925 | max bias change: 0.000000
-Epoch 451 avg loss: 0.750000 | max weight change: 0.000923 | max bias change: 0.000000
-Epoch 452 avg loss: 0.750000 | max weight change: 0.000921 | max bias change: 0.000000
-Epoch 453 avg loss: 0.750000 | max weight change: 0.000920 | max bias change: 0.000000
-Epoch 454 avg loss: 0.750000 | max weight change: 0.000918 | max bias change: 0.000000
-Epoch 455 avg loss: 0.750000 | max weight change: 0.000916 | max bias change: 0.000000
-Epoch 456 avg loss: 0.750000 | max weight change: 0.000914 | max bias change: 0.000000
-Epoch 457 avg loss: 0.750000 | max weight change: 0.000912 | max bias change: 0.000000
-Epoch 458 avg loss: 0.750000 | max weight change: 0.000910 | max bias change: 0.000000
-Epoch 459 avg loss: 0.750000 | max weight change: 0.000909 | max bias change: 0.000000
-Epoch 460 avg loss: 0.750000 | max weight change: 0.000907 | max bias change: 0.000000
-Epoch 461 avg loss: 0.750000 | max weight change: 0.000905 | max bias change: 0.000000
-Epoch 462 avg loss: 0.750000 | max weight change: 0.000903 | max bias change: 0.000000
-Epoch 463 avg loss: 0.750000 | max weight change: 0.000901 | max bias change: 0.000000
-Epoch 464 avg loss: 0.750000 | max weight change: 0.000900 | max bias change: 0.000000
-Epoch 465 avg loss: 0.750000 | max weight change: 0.000898 | max bias change: 0.000000
-Epoch 466 avg loss: 0.750000 | max weight change: 0.000896 | max bias change: 0.000000
-Epoch 467 avg loss: 0.750000 | max weight change: 0.000894 | max bias change: 0.000000
-Epoch 468 avg loss: 0.750000 | max weight change: 0.000892 | max bias change: 0.000000
-Epoch 469 avg loss: 0.750000 | max weight change: 0.000891 | max bias change: 0.000000
-Epoch 470 avg loss: 0.750000 | max weight change: 0.000889 | max bias change: 0.000000
-Epoch 471 avg loss: 0.750000 | max weight change: 0.000887 | max bias change: 0.000000
-Epoch 472 avg loss: 0.750000 | max weight change: 0.000885 | max bias change: 0.000000
-Epoch 473 avg loss: 0.750000 | max weight change: 0.000884 | max bias change: 0.000000
-Epoch 474 avg loss: 0.750000 | max weight change: 0.000882 | max bias change: 0.000000
-Epoch 475 avg loss: 0.750000 | max weight change: 0.000880 | max bias change: 0.000000
-Epoch 476 avg loss: 0.750000 | max weight change: 0.000878 | max bias change: 0.000000
-Epoch 477 avg loss: 0.750000 | max weight change: 0.000877 | max bias change: 0.000000
-Epoch 478 avg loss: 0.750000 | max weight change: 0.000875 | max bias change: 0.000000
-Epoch 479 avg loss: 0.750000 | max weight change: 0.000873 | max bias change: 0.000000
-Epoch 480 avg loss: 0.750000 | max weight change: 0.000871 | max bias change: 0.000000
-Epoch 481 avg loss: 0.750000 | max weight change: 0.000870 | max bias change: 0.000000
-Epoch 482 avg loss: 0.750000 | max weight change: 0.000868 | max bias change: 0.000000
-Epoch 483 avg loss: 0.750000 | max weight change: 0.000866 | max bias change: 0.000000
-Epoch 484 avg loss: 0.750000 | max weight change: 0.000864 | max bias change: 0.000000
-Epoch 485 avg loss: 0.750000 | max weight change: 0.000863 | max bias change: 0.000000
-Epoch 486 avg loss: 0.750000 | max weight change: 0.000861 | max bias change: 0.000000
-Epoch 487 avg loss: 0.750000 | max weight change: 0.000859 | max bias change: 0.000000
-Epoch 488 avg loss: 0.750000 | max weight change: 0.000857 | max bias change: 0.000000
-Epoch 489 avg loss: 0.750000 | max weight change: 0.000856 | max bias change: 0.000000
-Epoch 490 avg loss: 0.750000 | max weight change: 0.000854 | max bias change: 0.000000
-Epoch 491 avg loss: 0.750000 | max weight change: 0.000852 | max bias change: 0.000000
-Epoch 492 avg loss: 0.750000 | max weight change: 0.000851 | max bias change: 0.000000
-Epoch 493 avg loss: 0.750000 | max weight change: 0.000849 | max bias change: 0.000000
-Epoch 494 avg loss: 0.750000 | max weight change: 0.000847 | max bias change: 0.000000
-Epoch 495 avg loss: 0.750000 | max weight change: 0.000846 | max bias change: 0.000000
-Epoch 496 avg loss: 0.750000 | max weight change: 0.000844 | max bias change: 0.000000
-Epoch 497 avg loss: 0.750000 | max weight change: 0.000842 | max bias change: 0.000000
-Epoch 498 avg loss: 0.750000 | max weight change: 0.000840 | max bias change: 0.000000
-Epoch 499 avg loss: 0.750000 | max weight change: 0.000839 | max bias change: 0.000000
-Epoch 500 avg loss: 0.750000 | max weight change: 0.000837 | max bias change: 0.000000
-Epoch 501 avg loss: 0.750000 | max weight change: 0.000835 | max bias change: 0.000000
-Epoch 502 avg loss: 0.750000 | max weight change: 0.000834 | max bias change: 0.000000
-Epoch 503 avg loss: 0.750000 | max weight change: 0.000832 | max bias change: 0.000000
-Epoch 504 avg loss: 0.750000 | max weight change: 0.000830 | max bias change: 0.000000
-Epoch 505 avg loss: 0.750000 | max weight change: 0.000829 | max bias change: 0.000000
-Epoch 506 avg loss: 0.750000 | max weight change: 0.000827 | max bias change: 0.000000
-Epoch 507 avg loss: 0.750000 | max weight change: 0.000825 | max bias change: 0.000000
-Epoch 508 avg loss: 0.750000 | max weight change: 0.000824 | max bias change: 0.000000
-Epoch 509 avg loss: 0.750000 | max weight change: 0.000822 | max bias change: 0.000000
-Epoch 510 avg loss: 0.750000 | max weight change: 0.000821 | max bias change: 0.000000
-Epoch 511 avg loss: 0.750000 | max weight change: 0.000819 | max bias change: 0.000000
-Epoch 512 avg loss: 0.750000 | max weight change: 0.000817 | max bias change: 0.000000
-Epoch 513 avg loss: 0.750000 | max weight change: 0.000816 | max bias change: 0.000000
-Epoch 514 avg loss: 0.750000 | max weight change: 0.000814 | max bias change: 0.000000
-Epoch 515 avg loss: 0.750000 | max weight change: 0.000812 | max bias change: 0.000000
-Epoch 516 avg loss: 0.750000 | max weight change: 0.000811 | max bias change: 0.000000
-Epoch 517 avg loss: 0.750000 | max weight change: 0.000809 | max bias change: 0.000000
-Epoch 518 avg loss: 0.750000 | max weight change: 0.000807 | max bias change: 0.000000
-Epoch 519 avg loss: 0.750000 | max weight change: 0.000806 | max bias change: 0.000000
-Epoch 520 avg loss: 0.750000 | max weight change: 0.000804 | max bias change: 0.000000
-Epoch 521 avg loss: 0.750000 | max weight change: 0.000803 | max bias change: 0.000000
-Epoch 522 avg loss: 0.750000 | max weight change: 0.000801 | max bias change: 0.000000
-Epoch 523 avg loss: 0.750000 | max weight change: 0.000799 | max bias change: 0.000000
-Epoch 524 avg loss: 0.750000 | max weight change: 0.000798 | max bias change: 0.000000
-Epoch 525 avg loss: 0.750000 | max weight change: 0.000796 | max bias change: 0.000000
-Epoch 526 avg loss: 0.750000 | max weight change: 0.000795 | max bias change: 0.000000
-Epoch 527 avg loss: 0.750000 | max weight change: 0.000793 | max bias change: 0.000000
-Epoch 528 avg loss: 0.750000 | max weight change: 0.000791 | max bias change: 0.000000
-Epoch 529 avg loss: 0.750000 | max weight change: 0.000790 | max bias change: 0.000000
-Epoch 530 avg loss: 0.750000 | max weight change: 0.000788 | max bias change: 0.000000
-Epoch 531 avg loss: 0.750000 | max weight change: 0.000787 | max bias change: 0.000000
-Epoch 532 avg loss: 0.750000 | max weight change: 0.000785 | max bias change: 0.000000
-Epoch 533 avg loss: 0.750000 | max weight change: 0.000784 | max bias change: 0.000000
-Epoch 534 avg loss: 0.750000 | max weight change: 0.000782 | max bias change: 0.000000
-Epoch 535 avg loss: 0.750000 | max weight change: 0.000780 | max bias change: 0.000000
-Epoch 536 avg loss: 0.750000 | max weight change: 0.000779 | max bias change: 0.000000
-Epoch 537 avg loss: 0.750000 | max weight change: 0.000777 | max bias change: 0.000000
-Epoch 538 avg loss: 0.750000 | max weight change: 0.000776 | max bias change: 0.000000
-Epoch 539 avg loss: 0.750000 | max weight change: 0.000774 | max bias change: 0.000000
-Epoch 540 avg loss: 0.750000 | max weight change: 0.000773 | max bias change: 0.000000
-Epoch 541 avg loss: 0.750000 | max weight change: 0.000771 | max bias change: 0.000000
-Epoch 542 avg loss: 0.750000 | max weight change: 0.000770 | max bias change: 0.000000
-Epoch 543 avg loss: 0.750000 | max weight change: 0.000768 | max bias change: 0.000000
-Epoch 544 avg loss: 0.750000 | max weight change: 0.000767 | max bias change: 0.000000
-Epoch 545 avg loss: 0.750000 | max weight change: 0.000765 | max bias change: 0.000000
-Epoch 546 avg loss: 0.750000 | max weight change: 0.000764 | max bias change: 0.000000
-Epoch 547 avg loss: 0.750000 | max weight change: 0.000762 | max bias change: 0.000000
-Epoch 548 avg loss: 0.750000 | max weight change: 0.000760 | max bias change: 0.000000
-Epoch 549 avg loss: 0.750000 | max weight change: 0.000759 | max bias change: 0.000000
-Epoch 550 avg loss: 0.750000 | max weight change: 0.000757 | max bias change: 0.000000
-Epoch 551 avg loss: 0.750000 | max weight change: 0.000756 | max bias change: 0.000000
-Epoch 552 avg loss: 0.750000 | max weight change: 0.000754 | max bias change: 0.000000
-Epoch 553 avg loss: 0.750000 | max weight change: 0.000753 | max bias change: 0.000000
-Epoch 554 avg loss: 0.750000 | max weight change: 0.000751 | max bias change: 0.000000
-Epoch 555 avg loss: 0.750000 | max weight change: 0.000750 | max bias change: 0.000000
-Epoch 556 avg loss: 0.750000 | max weight change: 0.000748 | max bias change: 0.000000
-Epoch 557 avg loss: 0.750000 | max weight change: 0.000747 | max bias change: 0.000000
-Epoch 558 avg loss: 0.750000 | max weight change: 0.000745 | max bias change: 0.000000
-Epoch 559 avg loss: 0.750000 | max weight change: 0.000744 | max bias change: 0.000000
-Epoch 560 avg loss: 0.750000 | max weight change: 0.000742 | max bias change: 0.000000
-Epoch 561 avg loss: 0.750000 | max weight change: 0.000741 | max bias change: 0.000000
-Epoch 562 avg loss: 0.750000 | max weight change: 0.000739 | max bias change: 0.000000
-Epoch 563 avg loss: 0.750000 | max weight change: 0.000738 | max bias change: 0.000000
-Epoch 564 avg loss: 0.750000 | max weight change: 0.000736 | max bias change: 0.000000
-Epoch 565 avg loss: 0.750000 | max weight change: 0.000735 | max bias change: 0.000000
-Epoch 566 avg loss: 0.750000 | max weight change: 0.000734 | max bias change: 0.000000
-Epoch 567 avg loss: 0.750000 | max weight change: 0.000732 | max bias change: 0.000000
-Epoch 568 avg loss: 0.750000 | max weight change: 0.000731 | max bias change: 0.000000
-Epoch 569 avg loss: 0.750000 | max weight change: 0.000729 | max bias change: 0.000000
-Epoch 570 avg loss: 0.750000 | max weight change: 0.000728 | max bias change: 0.000000
-Epoch 571 avg loss: 0.750000 | max weight change: 0.000726 | max bias change: 0.000000
-Epoch 572 avg loss: 0.750000 | max weight change: 0.000725 | max bias change: 0.000000
-Epoch 573 avg loss: 0.750000 | max weight change: 0.000723 | max bias change: 0.000000
-Epoch 574 avg loss: 0.750000 | max weight change: 0.000722 | max bias change: 0.000000
-Epoch 575 avg loss: 0.750000 | max weight change: 0.000720 | max bias change: 0.000000
-Epoch 576 avg loss: 0.750000 | max weight change: 0.000719 | max bias change: 0.000000
-Epoch 577 avg loss: 0.750000 | max weight change: 0.000718 | max bias change: 0.000000
-Epoch 578 avg loss: 0.750000 | max weight change: 0.000716 | max bias change: 0.000000
-Epoch 579 avg loss: 0.750000 | max weight change: 0.000715 | max bias change: 0.000000
-Epoch 580 avg loss: 0.750000 | max weight change: 0.000713 | max bias change: 0.000000
-Epoch 581 avg loss: 0.750000 | max weight change: 0.000712 | max bias change: 0.000000
-Epoch 582 avg loss: 0.750000 | max weight change: 0.000710 | max bias change: 0.000000
-Epoch 583 avg loss: 0.750000 | max weight change: 0.000709 | max bias change: 0.000000
-Epoch 584 avg loss: 0.750000 | max weight change: 0.000708 | max bias change: 0.000000
-Epoch 585 avg loss: 0.750000 | max weight change: 0.000706 | max bias change: 0.000000
-Epoch 586 avg loss: 0.750000 | max weight change: 0.000705 | max bias change: 0.000000
-Epoch 587 avg loss: 0.750000 | max weight change: 0.000703 | max bias change: 0.000000
-Epoch 588 avg loss: 0.750000 | max weight change: 0.000702 | max bias change: 0.000000
-Epoch 589 avg loss: 0.750000 | max weight change: 0.000701 | max bias change: 0.000000
-Epoch 590 avg loss: 0.750000 | max weight change: 0.000699 | max bias change: 0.000000
-Epoch 591 avg loss: 0.750000 | max weight change: 0.000698 | max bias change: 0.000000
-Epoch 592 avg loss: 0.750000 | max weight change: 0.000696 | max bias change: 0.000000
-Epoch 593 avg loss: 0.750000 | max weight change: 0.000695 | max bias change: 0.000000
-Epoch 594 avg loss: 0.750000 | max weight change: 0.000694 | max bias change: 0.000000
-Epoch 595 avg loss: 0.750000 | max weight change: 0.000692 | max bias change: 0.000000
-Epoch 596 avg loss: 0.750000 | max weight change: 0.000691 | max bias change: 0.000000
-Epoch 597 avg loss: 0.750000 | max weight change: 0.000689 | max bias change: 0.000000
-Epoch 598 avg loss: 0.750000 | max weight change: 0.000688 | max bias change: 0.000000
-Epoch 599 avg loss: 0.750000 | max weight change: 0.000687 | max bias change: 0.000000
-Epoch 600 avg loss: 0.750000 | max weight change: 0.000685 | max bias change: 0.000000
-Epoch 601 avg loss: 0.750000 | max weight change: 0.000684 | max bias change: 0.000000
-Epoch 602 avg loss: 0.750000 | max weight change: 0.000683 | max bias change: 0.000000
-Epoch 603 avg loss: 0.750000 | max weight change: 0.000681 | max bias change: 0.000000
-Epoch 604 avg loss: 0.750000 | max weight change: 0.000680 | max bias change: 0.000000
-Epoch 605 avg loss: 0.750000 | max weight change: 0.000679 | max bias change: 0.000000
-Epoch 606 avg loss: 0.750000 | max weight change: 0.000677 | max bias change: 0.000000
-Epoch 607 avg loss: 0.750000 | max weight change: 0.000676 | max bias change: 0.000000
-Epoch 608 avg loss: 0.750000 | max weight change: 0.000674 | max bias change: 0.000000
-Epoch 609 avg loss: 0.750000 | max weight change: 0.000673 | max bias change: 0.000000
-Epoch 610 avg loss: 0.750000 | max weight change: 0.000672 | max bias change: 0.000000
-Epoch 611 avg loss: 0.750000 | max weight change: 0.000670 | max bias change: 0.000000
-Epoch 612 avg loss: 0.750000 | max weight change: 0.000669 | max bias change: 0.000000
-Epoch 613 avg loss: 0.750000 | max weight change: 0.000668 | max bias change: 0.000000
-Epoch 614 avg loss: 0.750000 | max weight change: 0.000666 | max bias change: 0.000000
-Epoch 615 avg loss: 0.750000 | max weight change: 0.000665 | max bias change: 0.000000
-Epoch 616 avg loss: 0.750000 | max weight change: 0.000664 | max bias change: 0.000000
-Epoch 617 avg loss: 0.750000 | max weight change: 0.000662 | max bias change: 0.000000
-Epoch 618 avg loss: 0.750000 | max weight change: 0.000661 | max bias change: 0.000000
-Epoch 619 avg loss: 0.750000 | max weight change: 0.000660 | max bias change: 0.000000
-Epoch 620 avg loss: 0.750000 | max weight change: 0.000658 | max bias change: 0.000000
-Epoch 621 avg loss: 0.750000 | max weight change: 0.000657 | max bias change: 0.000000
-Epoch 622 avg loss: 0.750000 | max weight change: 0.000656 | max bias change: 0.000000
-Epoch 623 avg loss: 0.750000 | max weight change: 0.000655 | max bias change: 0.000000
-Epoch 624 avg loss: 0.750000 | max weight change: 0.000653 | max bias change: 0.000000
-Epoch 625 avg loss: 0.750000 | max weight change: 0.000652 | max bias change: 0.000000
-Epoch 626 avg loss: 0.750000 | max weight change: 0.000651 | max bias change: 0.000000
-Epoch 627 avg loss: 0.750000 | max weight change: 0.000649 | max bias change: 0.000000
-Epoch 628 avg loss: 0.750000 | max weight change: 0.000648 | max bias change: 0.000000
-Epoch 629 avg loss: 0.750000 | max weight change: 0.000647 | max bias change: 0.000000
-Epoch 630 avg loss: 0.750000 | max weight change: 0.000645 | max bias change: 0.000000
-Epoch 631 avg loss: 0.750000 | max weight change: 0.000644 | max bias change: 0.000000
-Epoch 632 avg loss: 0.750000 | max weight change: 0.000643 | max bias change: 0.000000
-Epoch 633 avg loss: 0.750000 | max weight change: 0.000642 | max bias change: 0.000000
-Epoch 634 avg loss: 0.750000 | max weight change: 0.000640 | max bias change: 0.000000
-Epoch 635 avg loss: 0.750000 | max weight change: 0.000639 | max bias change: 0.000000
-Epoch 636 avg loss: 0.750000 | max weight change: 0.000638 | max bias change: 0.000000
-Epoch 637 avg loss: 0.750000 | max weight change: 0.000636 | max bias change: 0.000000
-Epoch 638 avg loss: 0.750000 | max weight change: 0.000635 | max bias change: 0.000000
-Epoch 639 avg loss: 0.750000 | max weight change: 0.000634 | max bias change: 0.000000
-Epoch 640 avg loss: 0.750000 | max weight change: 0.000633 | max bias change: 0.000000
-Epoch 641 avg loss: 0.750000 | max weight change: 0.000631 | max bias change: 0.000000
-Epoch 642 avg loss: 0.750000 | max weight change: 0.000630 | max bias change: 0.000000
-Epoch 643 avg loss: 0.750000 | max weight change: 0.000629 | max bias change: 0.000000
-Epoch 644 avg loss: 0.750000 | max weight change: 0.000628 | max bias change: 0.000000
-Epoch 645 avg loss: 0.750000 | max weight change: 0.000626 | max bias change: 0.000000
-Epoch 646 avg loss: 0.750000 | max weight change: 0.000625 | max bias change: 0.000000
-Epoch 647 avg loss: 0.750000 | max weight change: 0.000624 | max bias change: 0.000000
-Epoch 648 avg loss: 0.750000 | max weight change: 0.000623 | max bias change: 0.000000
-Epoch 649 avg loss: 0.750000 | max weight change: 0.000621 | max bias change: 0.000000
-Epoch 650 avg loss: 0.750000 | max weight change: 0.000620 | max bias change: 0.000000
-Epoch 651 avg loss: 0.750000 | max weight change: 0.000619 | max bias change: 0.000000
-Epoch 652 avg loss: 0.750000 | max weight change: 0.000618 | max bias change: 0.000000
-Epoch 653 avg loss: 0.750000 | max weight change: 0.000616 | max bias change: 0.000000
-Epoch 654 avg loss: 0.750000 | max weight change: 0.000615 | max bias change: 0.000000
-Epoch 655 avg loss: 0.750000 | max weight change: 0.000614 | max bias change: 0.000000
-Epoch 656 avg loss: 0.750000 | max weight change: 0.000613 | max bias change: 0.000000
-Epoch 657 avg loss: 0.750000 | max weight change: 0.000611 | max bias change: 0.000000
-Epoch 658 avg loss: 0.750000 | max weight change: 0.000610 | max bias change: 0.000000
-Epoch 659 avg loss: 0.750000 | max weight change: 0.000609 | max bias change: 0.000000
-Epoch 660 avg loss: 0.750000 | max weight change: 0.000608 | max bias change: 0.000000
-Epoch 661 avg loss: 0.750000 | max weight change: 0.000607 | max bias change: 0.000000
-Epoch 662 avg loss: 0.750000 | max weight change: 0.000605 | max bias change: 0.000000
-Epoch 663 avg loss: 0.750000 | max weight change: 0.000604 | max bias change: 0.000000
-Epoch 664 avg loss: 0.750000 | max weight change: 0.000603 | max bias change: 0.000000
-Epoch 665 avg loss: 0.750000 | max weight change: 0.000602 | max bias change: 0.000000
-Epoch 666 avg loss: 0.750000 | max weight change: 0.000601 | max bias change: 0.000000
-Epoch 667 avg loss: 0.750000 | max weight change: 0.000599 | max bias change: 0.000000
-Epoch 668 avg loss: 0.750000 | max weight change: 0.000598 | max bias change: 0.000000
-Epoch 669 avg loss: 0.750000 | max weight change: 0.000597 | max bias change: 0.000000
-Epoch 670 avg loss: 0.750000 | max weight change: 0.000596 | max bias change: 0.000000
-Epoch 671 avg loss: 0.750000 | max weight change: 0.000595 | max bias change: 0.000000
-Epoch 672 avg loss: 0.750000 | max weight change: 0.000593 | max bias change: 0.000000
-Epoch 673 avg loss: 0.750000 | max weight change: 0.000592 | max bias change: 0.000000
-Epoch 674 avg loss: 0.750000 | max weight change: 0.000591 | max bias change: 0.000000
-Epoch 675 avg loss: 0.750000 | max weight change: 0.000590 | max bias change: 0.000000
-Epoch 676 avg loss: 0.750000 | max weight change: 0.000589 | max bias change: 0.000000
-Epoch 677 avg loss: 0.750000 | max weight change: 0.000587 | max bias change: 0.000000
-Epoch 678 avg loss: 0.750000 | max weight change: 0.000586 | max bias change: 0.000000
-Epoch 679 avg loss: 0.750000 | max weight change: 0.000585 | max bias change: 0.000000
-Epoch 680 avg loss: 0.750000 | max weight change: 0.000584 | max bias change: 0.000000
-Epoch 681 avg loss: 0.750000 | max weight change: 0.000583 | max bias change: 0.000000
-Epoch 682 avg loss: 0.750000 | max weight change: 0.000582 | max bias change: 0.000000
-Epoch 683 avg loss: 0.750000 | max weight change: 0.000580 | max bias change: 0.000000
-Epoch 684 avg loss: 0.750000 | max weight change: 0.000579 | max bias change: 0.000000
-Epoch 685 avg loss: 0.750000 | max weight change: 0.000578 | max bias change: 0.000000
-Epoch 686 avg loss: 0.750000 | max weight change: 0.000577 | max bias change: 0.000000
-Epoch 687 avg loss: 0.750000 | max weight change: 0.000576 | max bias change: 0.000000
-Epoch 688 avg loss: 0.750000 | max weight change: 0.000575 | max bias change: 0.000000
-Epoch 689 avg loss: 0.750000 | max weight change: 0.000574 | max bias change: 0.000000
-Epoch 690 avg loss: 0.750000 | max weight change: 0.000572 | max bias change: 0.000000
-Epoch 691 avg loss: 0.750000 | max weight change: 0.000571 | max bias change: 0.000000
-Epoch 692 avg loss: 0.750000 | max weight change: 0.000570 | max bias change: 0.000000
-Epoch 693 avg loss: 0.750000 | max weight change: 0.000569 | max bias change: 0.000000
-Epoch 694 avg loss: 0.750000 | max weight change: 0.000568 | max bias change: 0.000000
-Epoch 695 avg loss: 0.750000 | max weight change: 0.000567 | max bias change: 0.000000
-Epoch 696 avg loss: 0.750000 | max weight change: 0.000566 | max bias change: 0.000000
-Epoch 697 avg loss: 0.750000 | max weight change: 0.000564 | max bias change: 0.000000
-Epoch 698 avg loss: 0.750000 | max weight change: 0.000563 | max bias change: 0.000000
-Epoch 699 avg loss: 0.750000 | max weight change: 0.000562 | max bias change: 0.000000
-Epoch 700 avg loss: 0.750000 | max weight change: 0.000561 | max bias change: 0.000000
-Epoch 701 avg loss: 0.750000 | max weight change: 0.000560 | max bias change: 0.000000
-Epoch 702 avg loss: 0.750000 | max weight change: 0.000559 | max bias change: 0.000000
-Epoch 703 avg loss: 0.750000 | max weight change: 0.000558 | max bias change: 0.000000
-Epoch 704 avg loss: 0.750000 | max weight change: 0.000557 | max bias change: 0.000000
-Epoch 705 avg loss: 0.750000 | max weight change: 0.000555 | max bias change: 0.000000
-Epoch 706 avg loss: 0.750000 | max weight change: 0.000554 | max bias change: 0.000000
-Epoch 707 avg loss: 0.750000 | max weight change: 0.000553 | max bias change: 0.000000
-Epoch 708 avg loss: 0.750000 | max weight change: 0.000552 | max bias change: 0.000000
-Epoch 709 avg loss: 0.750000 | max weight change: 0.000551 | max bias change: 0.000000
-Epoch 710 avg loss: 0.750000 | max weight change: 0.000550 | max bias change: 0.000000
-Epoch 711 avg loss: 0.750000 | max weight change: 0.000549 | max bias change: 0.000000
-Epoch 712 avg loss: 0.750000 | max weight change: 0.000548 | max bias change: 0.000000
-Epoch 713 avg loss: 0.750000 | max weight change: 0.000547 | max bias change: 0.000000
-Epoch 714 avg loss: 0.750000 | max weight change: 0.000546 | max bias change: 0.000000
-Epoch 715 avg loss: 0.750000 | max weight change: 0.000544 | max bias change: 0.000000
-Epoch 716 avg loss: 0.750000 | max weight change: 0.000543 | max bias change: 0.000000
-Epoch 717 avg loss: 0.750000 | max weight change: 0.000542 | max bias change: 0.000000
-Epoch 718 avg loss: 0.750000 | max weight change: 0.000541 | max bias change: 0.000000
-Epoch 719 avg loss: 0.750000 | max weight change: 0.000540 | max bias change: 0.000000
-Epoch 720 avg loss: 0.750000 | max weight change: 0.000539 | max bias change: 0.000000
-Epoch 721 avg loss: 0.750000 | max weight change: 0.000538 | max bias change: 0.000000
-Epoch 722 avg loss: 0.750000 | max weight change: 0.000537 | max bias change: 0.000000
-Epoch 723 avg loss: 0.750000 | max weight change: 0.000536 | max bias change: 0.000000
-Epoch 724 avg loss: 0.750000 | max weight change: 0.000535 | max bias change: 0.000000
-Epoch 725 avg loss: 0.750000 | max weight change: 0.000534 | max bias change: 0.000000
-Epoch 726 avg loss: 0.750000 | max weight change: 0.000533 | max bias change: 0.000000
-Epoch 727 avg loss: 0.750000 | max weight change: 0.000532 | max bias change: 0.000000
-Epoch 728 avg loss: 0.750000 | max weight change: 0.000531 | max bias change: 0.000000
-Epoch 729 avg loss: 0.750000 | max weight change: 0.000529 | max bias change: 0.000000
-Epoch 730 avg loss: 0.750000 | max weight change: 0.000528 | max bias change: 0.000000
-Epoch 731 avg loss: 0.750000 | max weight change: 0.000527 | max bias change: 0.000000
-Epoch 732 avg loss: 0.750000 | max weight change: 0.000526 | max bias change: 0.000000
-Epoch 733 avg loss: 0.750000 | max weight change: 0.000525 | max bias change: 0.000000
-Epoch 734 avg loss: 0.750000 | max weight change: 0.000524 | max bias change: 0.000000
-Epoch 735 avg loss: 0.750000 | max weight change: 0.000523 | max bias change: 0.000000
-Epoch 736 avg loss: 0.750000 | max weight change: 0.000522 | max bias change: 0.000000
-Epoch 737 avg loss: 0.750000 | max weight change: 0.000521 | max bias change: 0.000000
-Epoch 738 avg loss: 0.750000 | max weight change: 0.000520 | max bias change: 0.000000
-Epoch 739 avg loss: 0.750000 | max weight change: 0.000519 | max bias change: 0.000000
-Epoch 740 avg loss: 0.750000 | max weight change: 0.000518 | max bias change: 0.000000
-Epoch 741 avg loss: 0.750000 | max weight change: 0.000517 | max bias change: 0.000000
-Epoch 742 avg loss: 0.750000 | max weight change: 0.000516 | max bias change: 0.000000
-Epoch 743 avg loss: 0.750000 | max weight change: 0.000515 | max bias change: 0.000000
-Epoch 744 avg loss: 0.750000 | max weight change: 0.000514 | max bias change: 0.000000
-Epoch 745 avg loss: 0.750000 | max weight change: 0.000513 | max bias change: 0.000000
-Epoch 746 avg loss: 0.750000 | max weight change: 0.000512 | max bias change: 0.000000
-Epoch 747 avg loss: 0.750000 | max weight change: 0.000511 | max bias change: 0.000000
-Epoch 748 avg loss: 0.750000 | max weight change: 0.000510 | max bias change: 0.000000
-Epoch 749 avg loss: 0.750000 | max weight change: 0.000509 | max bias change: 0.000000
-Epoch 750 avg loss: 0.750000 | max weight change: 0.000508 | max bias change: 0.000000
-Epoch 751 avg loss: 0.750000 | max weight change: 0.000507 | max bias change: 0.000000
-Epoch 752 avg loss: 0.750000 | max weight change: 0.000506 | max bias change: 0.000000
-Epoch 753 avg loss: 0.750000 | max weight change: 0.000505 | max bias change: 0.000000
-Epoch 754 avg loss: 0.750000 | max weight change: 0.000504 | max bias change: 0.000000
-Epoch 755 avg loss: 0.750000 | max weight change: 0.000503 | max bias change: 0.000000
-Epoch 756 avg loss: 0.750000 | max weight change: 0.000502 | max bias change: 0.000000
-Epoch 757 avg loss: 0.750000 | max weight change: 0.000501 | max bias change: 0.000000
-Epoch 758 avg loss: 0.750000 | max weight change: 0.000500 | max bias change: 0.000000
-Epoch 759 avg loss: 0.750000 | max weight change: 0.000499 | max bias change: 0.000000
-Epoch 760 avg loss: 0.750000 | max weight change: 0.000498 | max bias change: 0.000000
-Epoch 761 avg loss: 0.750000 | max weight change: 0.000497 | max bias change: 0.000000
-Epoch 762 avg loss: 0.750000 | max weight change: 0.000496 | max bias change: 0.000000
-Epoch 763 avg loss: 0.750000 | max weight change: 0.000495 | max bias change: 0.000000
-Epoch 764 avg loss: 0.750000 | max weight change: 0.000494 | max bias change: 0.000000
-Epoch 765 avg loss: 0.750000 | max weight change: 0.000493 | max bias change: 0.000000
-Epoch 766 avg loss: 0.750000 | max weight change: 0.000492 | max bias change: 0.000000
-Epoch 767 avg loss: 0.750000 | max weight change: 0.000491 | max bias change: 0.000000
-Epoch 768 avg loss: 0.750000 | max weight change: 0.000490 | max bias change: 0.000000
-Epoch 769 avg loss: 0.750000 | max weight change: 0.000489 | max bias change: 0.000000
-Epoch 770 avg loss: 0.750000 | max weight change: 0.000488 | max bias change: 0.000000
-Epoch 771 avg loss: 0.750000 | max weight change: 0.000487 | max bias change: 0.000000
-Epoch 772 avg loss: 0.750000 | max weight change: 0.000486 | max bias change: 0.000000
-Epoch 773 avg loss: 0.750000 | max weight change: 0.000485 | max bias change: 0.000000
-Epoch 774 avg loss: 0.750000 | max weight change: 0.000484 | max bias change: 0.000000
-Epoch 775 avg loss: 0.750000 | max weight change: 0.000483 | max bias change: 0.000000
-Epoch 776 avg loss: 0.750000 | max weight change: 0.000482 | max bias change: 0.000000
-Epoch 777 avg loss: 0.750000 | max weight change: 0.000481 | max bias change: 0.000000
-Epoch 778 avg loss: 0.750000 | max weight change: 0.000480 | max bias change: 0.000000
-Epoch 779 avg loss: 0.750000 | max weight change: 0.000479 | max bias change: 0.000000
-Epoch 780 avg loss: 0.750000 | max weight change: 0.000478 | max bias change: 0.000000
-Epoch 781 avg loss: 0.750000 | max weight change: 0.000477 | max bias change: 0.000000
-Epoch 782 avg loss: 0.750000 | max weight change: 0.000476 | max bias change: 0.000000
-Epoch 783 avg loss: 0.750000 | max weight change: 0.000475 | max bias change: 0.000000
-Epoch 784 avg loss: 0.750000 | max weight change: 0.000474 | max bias change: 0.000000
-Epoch 785 avg loss: 0.750000 | max weight change: 0.000473 | max bias change: 0.000000
-Epoch 786 avg loss: 0.750000 | max weight change: 0.000472 | max bias change: 0.000000
-Epoch 787 avg loss: 0.750000 | max weight change: 0.000471 | max bias change: 0.000000
-Epoch 788 avg loss: 0.750000 | max weight change: 0.000470 | max bias change: 0.000000
-Epoch 789 avg loss: 0.750000 | max weight change: 0.000470 | max bias change: 0.000000
-Epoch 790 avg loss: 0.750000 | max weight change: 0.000469 | max bias change: 0.000000
-Epoch 791 avg loss: 0.750000 | max weight change: 0.000468 | max bias change: 0.000000
-Epoch 792 avg loss: 0.750000 | max weight change: 0.000467 | max bias change: 0.000000
-Epoch 793 avg loss: 0.750000 | max weight change: 0.000466 | max bias change: 0.000000
-Epoch 794 avg loss: 0.750000 | max weight change: 0.000465 | max bias change: 0.000000
-Epoch 795 avg loss: 0.750000 | max weight change: 0.000464 | max bias change: 0.000000
-Epoch 796 avg loss: 0.750000 | max weight change: 0.000463 | max bias change: 0.000000
-Epoch 797 avg loss: 0.750000 | max weight change: 0.000462 | max bias change: 0.000000
-Epoch 798 avg loss: 0.750000 | max weight change: 0.000461 | max bias change: 0.000000
-Epoch 799 avg loss: 0.750000 | max weight change: 0.000460 | max bias change: 0.000000
-Epoch 800 avg loss: 0.750000 | max weight change: 0.000459 | max bias change: 0.000000
-Epoch 801 avg loss: 0.750000 | max weight change: 0.000458 | max bias change: 0.000000
-Epoch 802 avg loss: 0.750000 | max weight change: 0.000458 | max bias change: 0.000000
-Epoch 803 avg loss: 0.750000 | max weight change: 0.000457 | max bias change: 0.000000
-Epoch 804 avg loss: 0.750000 | max weight change: 0.000456 | max bias change: 0.000000
-Epoch 805 avg loss: 0.750000 | max weight change: 0.000455 | max bias change: 0.000000
-Epoch 806 avg loss: 0.750000 | max weight change: 0.000454 | max bias change: 0.000000
-Epoch 807 avg loss: 0.750000 | max weight change: 0.000453 | max bias change: 0.000000
-Epoch 808 avg loss: 0.750000 | max weight change: 0.000452 | max bias change: 0.000000
-Epoch 809 avg loss: 0.750000 | max weight change: 0.000451 | max bias change: 0.000000
-Epoch 810 avg loss: 0.750000 | max weight change: 0.000450 | max bias change: 0.000000
-Epoch 811 avg loss: 0.750000 | max weight change: 0.000449 | max bias change: 0.000000
-Epoch 812 avg loss: 0.750000 | max weight change: 0.000448 | max bias change: 0.000000
-Epoch 813 avg loss: 0.750000 | max weight change: 0.000448 | max bias change: 0.000000
-Epoch 814 avg loss: 0.750000 | max weight change: 0.000447 | max bias change: 0.000000
-Epoch 815 avg loss: 0.750000 | max weight change: 0.000446 | max bias change: 0.000000
-Epoch 816 avg loss: 0.750000 | max weight change: 0.000445 | max bias change: 0.000000
-Epoch 817 avg loss: 0.750000 | max weight change: 0.000444 | max bias change: 0.000000
-Epoch 818 avg loss: 0.750000 | max weight change: 0.000443 | max bias change: 0.000000
-Epoch 819 avg loss: 0.750000 | max weight change: 0.000442 | max bias change: 0.000000
-Epoch 820 avg loss: 0.750000 | max weight change: 0.000441 | max bias change: 0.000000
-Epoch 821 avg loss: 0.750000 | max weight change: 0.000440 | max bias change: 0.000000
-Epoch 822 avg loss: 0.750000 | max weight change: 0.000440 | max bias change: 0.000000
-Epoch 823 avg loss: 0.750000 | max weight change: 0.000439 | max bias change: 0.000000
-Epoch 824 avg loss: 0.750000 | max weight change: 0.000438 | max bias change: 0.000000
-Epoch 825 avg loss: 0.750000 | max weight change: 0.000437 | max bias change: 0.000000
-Epoch 826 avg loss: 0.750000 | max weight change: 0.000436 | max bias change: 0.000000
-Epoch 827 avg loss: 0.750000 | max weight change: 0.000435 | max bias change: 0.000000
-Epoch 828 avg loss: 0.750000 | max weight change: 0.000434 | max bias change: 0.000000
-Epoch 829 avg loss: 0.750000 | max weight change: 0.000433 | max bias change: 0.000000
-Epoch 830 avg loss: 0.750000 | max weight change: 0.000433 | max bias change: 0.000000
-Epoch 831 avg loss: 0.750000 | max weight change: 0.000432 | max bias change: 0.000000
-Epoch 832 avg loss: 0.750000 | max weight change: 0.000431 | max bias change: 0.000000
-Epoch 833 avg loss: 0.750000 | max weight change: 0.000430 | max bias change: 0.000000
-Epoch 834 avg loss: 0.750000 | max weight change: 0.000429 | max bias change: 0.000000
-Epoch 835 avg loss: 0.750000 | max weight change: 0.000428 | max bias change: 0.000000
-Epoch 836 avg loss: 0.750000 | max weight change: 0.000427 | max bias change: 0.000000
-Epoch 837 avg loss: 0.750000 | max weight change: 0.000427 | max bias change: 0.000000
-Epoch 838 avg loss: 0.750000 | max weight change: 0.000426 | max bias change: 0.000000
-Epoch 839 avg loss: 0.750000 | max weight change: 0.000425 | max bias change: 0.000000
-Epoch 840 avg loss: 0.750000 | max weight change: 0.000424 | max bias change: 0.000000
-Epoch 841 avg loss: 0.750000 | max weight change: 0.000423 | max bias change: 0.000000
-Epoch 842 avg loss: 0.750000 | max weight change: 0.000422 | max bias change: 0.000000
-Epoch 843 avg loss: 0.750000 | max weight change: 0.000421 | max bias change: 0.000000
-Epoch 844 avg loss: 0.750000 | max weight change: 0.000421 | max bias change: 0.000000
-Epoch 845 avg loss: 0.750000 | max weight change: 0.000420 | max bias change: 0.000000
-Epoch 846 avg loss: 0.750000 | max weight change: 0.000419 | max bias change: 0.000000
-Epoch 847 avg loss: 0.750000 | max weight change: 0.000418 | max bias change: 0.000000
-Epoch 848 avg loss: 0.750000 | max weight change: 0.000417 | max bias change: 0.000000
-Epoch 849 avg loss: 0.750000 | max weight change: 0.000416 | max bias change: 0.000000
-Epoch 850 avg loss: 0.750000 | max weight change: 0.000416 | max bias change: 0.000000
-Epoch 851 avg loss: 0.750000 | max weight change: 0.000415 | max bias change: 0.000000
-Epoch 852 avg loss: 0.750000 | max weight change: 0.000414 | max bias change: 0.000000
-Epoch 853 avg loss: 0.750000 | max weight change: 0.000413 | max bias change: 0.000000
-Epoch 854 avg loss: 0.750000 | max weight change: 0.000412 | max bias change: 0.000000
-Epoch 855 avg loss: 0.750000 | max weight change: 0.000411 | max bias change: 0.000000
-Epoch 856 avg loss: 0.750000 | max weight change: 0.000411 | max bias change: 0.000000
-Epoch 857 avg loss: 0.750000 | max weight change: 0.000410 | max bias change: 0.000000
-Epoch 858 avg loss: 0.750000 | max weight change: 0.000409 | max bias change: 0.000000
-Epoch 859 avg loss: 0.750000 | max weight change: 0.000408 | max bias change: 0.000000
-Epoch 860 avg loss: 0.750000 | max weight change: 0.000407 | max bias change: 0.000000
-Epoch 861 avg loss: 0.750000 | max weight change: 0.000407 | max bias change: 0.000000
-Epoch 862 avg loss: 0.750000 | max weight change: 0.000406 | max bias change: 0.000000
-Epoch 863 avg loss: 0.750000 | max weight change: 0.000405 | max bias change: 0.000000
-Epoch 864 avg loss: 0.750000 | max weight change: 0.000404 | max bias change: 0.000000
-Epoch 865 avg loss: 0.750000 | max weight change: 0.000403 | max bias change: 0.000000
-Epoch 866 avg loss: 0.750000 | max weight change: 0.000403 | max bias change: 0.000000
-Epoch 867 avg loss: 0.750000 | max weight change: 0.000402 | max bias change: 0.000000
-Epoch 868 avg loss: 0.750000 | max weight change: 0.000401 | max bias change: 0.000000
-Epoch 869 avg loss: 0.750000 | max weight change: 0.000400 | max bias change: 0.000000
-Epoch 870 avg loss: 0.750000 | max weight change: 0.000399 | max bias change: 0.000000
-Epoch 871 avg loss: 0.750000 | max weight change: 0.000399 | max bias change: 0.000000
-Epoch 872 avg loss: 0.750000 | max weight change: 0.000398 | max bias change: 0.000000
-Epoch 873 avg loss: 0.750000 | max weight change: 0.000397 | max bias change: 0.000000
-Epoch 874 avg loss: 0.750000 | max weight change: 0.000396 | max bias change: 0.000000
-Epoch 875 avg loss: 0.750000 | max weight change: 0.000395 | max bias change: 0.000000
-Epoch 876 avg loss: 0.750000 | max weight change: 0.000395 | max bias change: 0.000000
-Epoch 877 avg loss: 0.750000 | max weight change: 0.000394 | max bias change: 0.000000
-Epoch 878 avg loss: 0.750000 | max weight change: 0.000393 | max bias change: 0.000000
-Epoch 879 avg loss: 0.750000 | max weight change: 0.000392 | max bias change: 0.000000
-Epoch 880 avg loss: 0.750000 | max weight change: 0.000391 | max bias change: 0.000000
-Epoch 881 avg loss: 0.750000 | max weight change: 0.000391 | max bias change: 0.000000
-Epoch 882 avg loss: 0.750000 | max weight change: 0.000390 | max bias change: 0.000000
-Epoch 883 avg loss: 0.750000 | max weight change: 0.000389 | max bias change: 0.000000
-Epoch 884 avg loss: 0.750000 | max weight change: 0.000388 | max bias change: 0.000000
-Epoch 885 avg loss: 0.750000 | max weight change: 0.000388 | max bias change: 0.000000
-Epoch 886 avg loss: 0.750000 | max weight change: 0.000387 | max bias change: 0.000000
-Epoch 887 avg loss: 0.750000 | max weight change: 0.000386 | max bias change: 0.000000
-Epoch 888 avg loss: 0.750000 | max weight change: 0.000385 | max bias change: 0.000000
-Epoch 889 avg loss: 0.750000 | max weight change: 0.000384 | max bias change: 0.000000
-Epoch 890 avg loss: 0.750000 | max weight change: 0.000384 | max bias change: 0.000000
-Epoch 891 avg loss: 0.750000 | max weight change: 0.000383 | max bias change: 0.000000
-Epoch 892 avg loss: 0.750000 | max weight change: 0.000382 | max bias change: 0.000000
-Epoch 893 avg loss: 0.750000 | max weight change: 0.000381 | max bias change: 0.000000
-Epoch 894 avg loss: 0.750000 | max weight change: 0.000381 | max bias change: 0.000000
-Epoch 895 avg loss: 0.750000 | max weight change: 0.000380 | max bias change: 0.000000
-Epoch 896 avg loss: 0.750000 | max weight change: 0.000379 | max bias change: 0.000000
-Epoch 897 avg loss: 0.750000 | max weight change: 0.000378 | max bias change: 0.000000
-Epoch 898 avg loss: 0.750000 | max weight change: 0.000378 | max bias change: 0.000000
-Epoch 899 avg loss: 0.750000 | max weight change: 0.000377 | max bias change: 0.000000
-Epoch 900 avg loss: 0.750000 | max weight change: 0.000376 | max bias change: 0.000000
-Epoch 901 avg loss: 0.750000 | max weight change: 0.000375 | max bias change: 0.000000
-Epoch 902 avg loss: 0.750000 | max weight change: 0.000375 | max bias change: 0.000000
-Epoch 903 avg loss: 0.750000 | max weight change: 0.000374 | max bias change: 0.000000
-Epoch 904 avg loss: 0.750000 | max weight change: 0.000373 | max bias change: 0.000000
-Epoch 905 avg loss: 0.750000 | max weight change: 0.000372 | max bias change: 0.000000
-Epoch 906 avg loss: 0.750000 | max weight change: 0.000372 | max bias change: 0.000000
-Epoch 907 avg loss: 0.750000 | max weight change: 0.000371 | max bias change: 0.000000
-Epoch 908 avg loss: 0.750000 | max weight change: 0.000370 | max bias change: 0.000000
-Epoch 909 avg loss: 0.750000 | max weight change: 0.000369 | max bias change: 0.000000
-Epoch 910 avg loss: 0.750000 | max weight change: 0.000369 | max bias change: 0.000000
-Epoch 911 avg loss: 0.750000 | max weight change: 0.000368 | max bias change: 0.000000
-Epoch 912 avg loss: 0.750000 | max weight change: 0.000367 | max bias change: 0.000000
-Epoch 913 avg loss: 0.750000 | max weight change: 0.000366 | max bias change: 0.000000
-Epoch 914 avg loss: 0.750000 | max weight change: 0.000366 | max bias change: 0.000000
-Epoch 915 avg loss: 0.750000 | max weight change: 0.000365 | max bias change: 0.000000
-Epoch 916 avg loss: 0.750000 | max weight change: 0.000364 | max bias change: 0.000000
-Epoch 917 avg loss: 0.750000 | max weight change: 0.000363 | max bias change: 0.000000
-Epoch 918 avg loss: 0.750000 | max weight change: 0.000363 | max bias change: 0.000000
-Epoch 919 avg loss: 0.750000 | max weight change: 0.000362 | max bias change: 0.000000
-Epoch 920 avg loss: 0.750000 | max weight change: 0.000361 | max bias change: 0.000000
-Epoch 921 avg loss: 0.750000 | max weight change: 0.000361 | max bias change: 0.000000
-Epoch 922 avg loss: 0.750000 | max weight change: 0.000360 | max bias change: 0.000000
-Epoch 923 avg loss: 0.750000 | max weight change: 0.000359 | max bias change: 0.000000
-Epoch 924 avg loss: 0.750000 | max weight change: 0.000358 | max bias change: 0.000000
-Epoch 925 avg loss: 0.750000 | max weight change: 0.000358 | max bias change: 0.000000
-Epoch 926 avg loss: 0.750000 | max weight change: 0.000357 | max bias change: 0.000000
-Epoch 927 avg loss: 0.750000 | max weight change: 0.000356 | max bias change: 0.000000
-Epoch 928 avg loss: 0.750000 | max weight change: 0.000356 | max bias change: 0.000000
-Epoch 929 avg loss: 0.750000 | max weight change: 0.000355 | max bias change: 0.000000
-Epoch 930 avg loss: 0.750000 | max weight change: 0.000354 | max bias change: 0.000000
-Epoch 931 avg loss: 0.750000 | max weight change: 0.000353 | max bias change: 0.000000
-Epoch 932 avg loss: 0.750000 | max weight change: 0.000353 | max bias change: 0.000000
-Epoch 933 avg loss: 0.750000 | max weight change: 0.000352 | max bias change: 0.000000
-Epoch 934 avg loss: 0.750000 | max weight change: 0.000351 | max bias change: 0.000000
-Epoch 935 avg loss: 0.750000 | max weight change: 0.000351 | max bias change: 0.000000
-Epoch 936 avg loss: 0.750000 | max weight change: 0.000350 | max bias change: 0.000000
-Epoch 937 avg loss: 0.750000 | max weight change: 0.000349 | max bias change: 0.000000
-Epoch 938 avg loss: 0.750000 | max weight change: 0.000349 | max bias change: 0.000000
-Epoch 939 avg loss: 0.750000 | max weight change: 0.000348 | max bias change: 0.000000
-Epoch 940 avg loss: 0.750000 | max weight change: 0.000347 | max bias change: 0.000000
-Epoch 941 avg loss: 0.750000 | max weight change: 0.000346 | max bias change: 0.000000
-Epoch 942 avg loss: 0.750000 | max weight change: 0.000346 | max bias change: 0.000000
-Epoch 943 avg loss: 0.750000 | max weight change: 0.000345 | max bias change: 0.000000
-Epoch 944 avg loss: 0.750000 | max weight change: 0.000344 | max bias change: 0.000000
-Epoch 945 avg loss: 0.750000 | max weight change: 0.000344 | max bias change: 0.000000
-Epoch 946 avg loss: 0.750000 | max weight change: 0.000343 | max bias change: 0.000000
-Epoch 947 avg loss: 0.750000 | max weight change: 0.000342 | max bias change: 0.000000
-Epoch 948 avg loss: 0.750000 | max weight change: 0.000342 | max bias change: 0.000000
-Epoch 949 avg loss: 0.750000 | max weight change: 0.000341 | max bias change: 0.000000
-Epoch 950 avg loss: 0.750000 | max weight change: 0.000340 | max bias change: 0.000000
-Epoch 951 avg loss: 0.750000 | max weight change: 0.000340 | max bias change: 0.000000
-Epoch 952 avg loss: 0.750000 | max weight change: 0.000339 | max bias change: 0.000000
-Epoch 953 avg loss: 0.750000 | max weight change: 0.000338 | max bias change: 0.000000
-Epoch 954 avg loss: 0.750000 | max weight change: 0.000338 | max bias change: 0.000000
-Epoch 955 avg loss: 0.750000 | max weight change: 0.000337 | max bias change: 0.000000
-Epoch 956 avg loss: 0.750000 | max weight change: 0.000336 | max bias change: 0.000000
-Epoch 957 avg loss: 0.750000 | max weight change: 0.000336 | max bias change: 0.000000
-Epoch 958 avg loss: 0.750000 | max weight change: 0.000335 | max bias change: 0.000000
-Epoch 959 avg loss: 0.750000 | max weight change: 0.000334 | max bias change: 0.000000
-Epoch 960 avg loss: 0.750000 | max weight change: 0.000334 | max bias change: 0.000000
-Epoch 961 avg loss: 0.750000 | max weight change: 0.000333 | max bias change: 0.000000
-Epoch 962 avg loss: 0.750000 | max weight change: 0.000332 | max bias change: 0.000000
-Epoch 963 avg loss: 0.750000 | max weight change: 0.000332 | max bias change: 0.000000
-Epoch 964 avg loss: 0.750000 | max weight change: 0.000331 | max bias change: 0.000000
-Epoch 965 avg loss: 0.750000 | max weight change: 0.000330 | max bias change: 0.000000
-Epoch 966 avg loss: 0.750000 | max weight change: 0.000330 | max bias change: 0.000000
-Epoch 967 avg loss: 0.750000 | max weight change: 0.000329 | max bias change: 0.000000
-Epoch 968 avg loss: 0.750000 | max weight change: 0.000328 | max bias change: 0.000000
-Epoch 969 avg loss: 0.750000 | max weight change: 0.000328 | max bias change: 0.000000
-Epoch 970 avg loss: 0.750000 | max weight change: 0.000327 | max bias change: 0.000000
-Epoch 971 avg loss: 0.750000 | max weight change: 0.000326 | max bias change: 0.000000
-Epoch 972 avg loss: 0.750000 | max weight change: 0.000326 | max bias change: 0.000000
-Epoch 973 avg loss: 0.750000 | max weight change: 0.000325 | max bias change: 0.000000
-Epoch 974 avg loss: 0.750000 | max weight change: 0.000324 | max bias change: 0.000000
-Epoch 975 avg loss: 0.750000 | max weight change: 0.000324 | max bias change: 0.000000
-Epoch 976 avg loss: 0.750000 | max weight change: 0.000323 | max bias change: 0.000000
-Epoch 977 avg loss: 0.750000 | max weight change: 0.000322 | max bias change: 0.000000
-Epoch 978 avg loss: 0.750000 | max weight change: 0.000322 | max bias change: 0.000000
-Epoch 979 avg loss: 0.750000 | max weight change: 0.000321 | max bias change: 0.000000
-Epoch 980 avg loss: 0.750000 | max weight change: 0.000320 | max bias change: 0.000000
-Epoch 981 avg loss: 0.750000 | max weight change: 0.000320 | max bias change: 0.000000
-Epoch 982 avg loss: 0.750000 | max weight change: 0.000319 | max bias change: 0.000000
-Epoch 983 avg loss: 0.750000 | max weight change: 0.000319 | max bias change: 0.000000
-Epoch 984 avg loss: 0.750000 | max weight change: 0.000318 | max bias change: 0.000000
-Epoch 985 avg loss: 0.750000 | max weight change: 0.000317 | max bias change: 0.000000
-Epoch 986 avg loss: 0.750000 | max weight change: 0.000317 | max bias change: 0.000000
-Epoch 987 avg loss: 0.750000 | max weight change: 0.000316 | max bias change: 0.000000
-Epoch 988 avg loss: 0.750000 | max weight change: 0.000315 | max bias change: 0.000000
-Epoch 989 avg loss: 0.750000 | max weight change: 0.000315 | max bias change: 0.000000
-Epoch 990 avg loss: 0.750000 | max weight change: 0.000314 | max bias change: 0.000000
-Epoch 991 avg loss: 0.750000 | max weight change: 0.000313 | max bias change: 0.000000
-Epoch 992 avg loss: 0.750000 | max weight change: 0.000313 | max bias change: 0.000000
-Epoch 993 avg loss: 0.750000 | max weight change: 0.000312 | max bias change: 0.000000
-Epoch 994 avg loss: 0.750000 | max weight change: 0.000312 | max bias change: 0.000000
-Epoch 995 avg loss: 0.750000 | max weight change: 0.000311 | max bias change: 0.000000
-Epoch 996 avg loss: 0.750000 | max weight change: 0.000310 | max bias change: 0.000000
-Epoch 997 avg loss: 0.750000 | max weight change: 0.000310 | max bias change: 0.000000
-Epoch 998 avg loss: 0.750000 | max weight change: 0.000309 | max bias change: 0.000000
-Epoch 999 avg loss: 0.750000 | max weight change: 0.000308 | max bias change: 0.000000
-Epoch 1000 avg loss: 0.750000 | max weight change: 0.000308 | max bias change: 0.000000
-Epoch 1001 avg loss: 0.750000 | max weight change: 0.000307 | max bias change: 0.000000
-Epoch 1002 avg loss: 0.750000 | max weight change: 0.000307 | max bias change: 0.000000
-Epoch 1003 avg loss: 0.750000 | max weight change: 0.000306 | max bias change: 0.000000
-Epoch 1004 avg loss: 0.750000 | max weight change: 0.000305 | max bias change: 0.000000
-Epoch 1005 avg loss: 0.750000 | max weight change: 0.000305 | max bias change: 0.000000
-Epoch 1006 avg loss: 0.750000 | max weight change: 0.000304 | max bias change: 0.000000
-Epoch 1007 avg loss: 0.750000 | max weight change: 0.000304 | max bias change: 0.000000
-Epoch 1008 avg loss: 0.750000 | max weight change: 0.000303 | max bias change: 0.000000
-Epoch 1009 avg loss: 0.750000 | max weight change: 0.000302 | max bias change: 0.000000
-Epoch 1010 avg loss: 0.750000 | max weight change: 0.000302 | max bias change: 0.000000
-Epoch 1011 avg loss: 0.750000 | max weight change: 0.000301 | max bias change: 0.000000
-Epoch 1012 avg loss: 0.750000 | max weight change: 0.000301 | max bias change: 0.000000
-Epoch 1013 avg loss: 0.750000 | max weight change: 0.000300 | max bias change: 0.000000
-Epoch 1014 avg loss: 0.750000 | max weight change: 0.000299 | max bias change: 0.000000
-Epoch 1015 avg loss: 0.750000 | max weight change: 0.000299 | max bias change: 0.000000
-Epoch 1016 avg loss: 0.750000 | max weight change: 0.000298 | max bias change: 0.000000
-Epoch 1017 avg loss: 0.750000 | max weight change: 0.000298 | max bias change: 0.000000
-Epoch 1018 avg loss: 0.750000 | max weight change: 0.000297 | max bias change: 0.000000
-Epoch 1019 avg loss: 0.750000 | max weight change: 0.000296 | max bias change: 0.000000
-Epoch 1020 avg loss: 0.750000 | max weight change: 0.000296 | max bias change: 0.000000
-Epoch 1021 avg loss: 0.750000 | max weight change: 0.000295 | max bias change: 0.000000
-Epoch 1022 avg loss: 0.750000 | max weight change: 0.000295 | max bias change: 0.000000
-Epoch 1023 avg loss: 0.750000 | max weight change: 0.000294 | max bias change: 0.000000
-Epoch 1024 avg loss: 0.750000 | max weight change: 0.000293 | max bias change: 0.000000
-Epoch 1025 avg loss: 0.750000 | max weight change: 0.000293 | max bias change: 0.000000
-Epoch 1026 avg loss: 0.750000 | max weight change: 0.000292 | max bias change: 0.000000
-Epoch 1027 avg loss: 0.750000 | max weight change: 0.000292 | max bias change: 0.000000
-Epoch 1028 avg loss: 0.750000 | max weight change: 0.000291 | max bias change: 0.000000
-Epoch 1029 avg loss: 0.750000 | max weight change: 0.000291 | max bias change: 0.000000
-Epoch 1030 avg loss: 0.750000 | max weight change: 0.000290 | max bias change: 0.000000
-Epoch 1031 avg loss: 0.750000 | max weight change: 0.000289 | max bias change: 0.000000
-Epoch 1032 avg loss: 0.750000 | max weight change: 0.000289 | max bias change: 0.000000
-Epoch 1033 avg loss: 0.750000 | max weight change: 0.000288 | max bias change: 0.000000
-Epoch 1034 avg loss: 0.750000 | max weight change: 0.000288 | max bias change: 0.000000
-Epoch 1035 avg loss: 0.750000 | max weight change: 0.000287 | max bias change: 0.000000
-Epoch 1036 avg loss: 0.750000 | max weight change: 0.000286 | max bias change: 0.000000
-Epoch 1037 avg loss: 0.750000 | max weight change: 0.000286 | max bias change: 0.000000
-Epoch 1038 avg loss: 0.750000 | max weight change: 0.000285 | max bias change: 0.000000
-Epoch 1039 avg loss: 0.750000 | max weight change: 0.000285 | max bias change: 0.000000
-Epoch 1040 avg loss: 0.750000 | max weight change: 0.000284 | max bias change: 0.000000
-Epoch 1041 avg loss: 0.750000 | max weight change: 0.000284 | max bias change: 0.000000
-Epoch 1042 avg loss: 0.750000 | max weight change: 0.000283 | max bias change: 0.000000
-Epoch 1043 avg loss: 0.750000 | max weight change: 0.000282 | max bias change: 0.000000
-Epoch 1044 avg loss: 0.750000 | max weight change: 0.000282 | max bias change: 0.000000
-Epoch 1045 avg loss: 0.750000 | max weight change: 0.000281 | max bias change: 0.000000
-Epoch 1046 avg loss: 0.750000 | max weight change: 0.000281 | max bias change: 0.000000
-Epoch 1047 avg loss: 0.750000 | max weight change: 0.000280 | max bias change: 0.000000
-Epoch 1048 avg loss: 0.750000 | max weight change: 0.000280 | max bias change: 0.000000
-Epoch 1049 avg loss: 0.750000 | max weight change: 0.000279 | max bias change: 0.000000
-Epoch 1050 avg loss: 0.750000 | max weight change: 0.000279 | max bias change: 0.000000
-Epoch 1051 avg loss: 0.750000 | max weight change: 0.000278 | max bias change: 0.000000
-Epoch 1052 avg loss: 0.750000 | max weight change: 0.000277 | max bias change: 0.000000
-Epoch 1053 avg loss: 0.750000 | max weight change: 0.000277 | max bias change: 0.000000
-Epoch 1054 avg loss: 0.750000 | max weight change: 0.000276 | max bias change: 0.000000
-Epoch 1055 avg loss: 0.750000 | max weight change: 0.000276 | max bias change: 0.000000
-Epoch 1056 avg loss: 0.750000 | max weight change: 0.000275 | max bias change: 0.000000
-Epoch 1057 avg loss: 0.750000 | max weight change: 0.000275 | max bias change: 0.000000
-Epoch 1058 avg loss: 0.750000 | max weight change: 0.000274 | max bias change: 0.000000
-Epoch 1059 avg loss: 0.750000 | max weight change: 0.000274 | max bias change: 0.000000
-Epoch 1060 avg loss: 0.750000 | max weight change: 0.000273 | max bias change: 0.000000
-Epoch 1061 avg loss: 0.750000 | max weight change: 0.000273 | max bias change: 0.000000
-Epoch 1062 avg loss: 0.750000 | max weight change: 0.000272 | max bias change: 0.000000
-Epoch 1063 avg loss: 0.750000 | max weight change: 0.000271 | max bias change: 0.000000
-Epoch 1064 avg loss: 0.750000 | max weight change: 0.000271 | max bias change: 0.000000
-Epoch 1065 avg loss: 0.750000 | max weight change: 0.000270 | max bias change: 0.000000
-Epoch 1066 avg loss: 0.750000 | max weight change: 0.000270 | max bias change: 0.000000
-Epoch 1067 avg loss: 0.750000 | max weight change: 0.000269 | max bias change: 0.000000
-Epoch 1068 avg loss: 0.750000 | max weight change: 0.000269 | max bias change: 0.000000
-Epoch 1069 avg loss: 0.750000 | max weight change: 0.000268 | max bias change: 0.000000
-Epoch 1070 avg loss: 0.750000 | max weight change: 0.000268 | max bias change: 0.000000
-Epoch 1071 avg loss: 0.750000 | max weight change: 0.000267 | max bias change: 0.000000
-Epoch 1072 avg loss: 0.750000 | max weight change: 0.000267 | max bias change: 0.000000
-Epoch 1073 avg loss: 0.750000 | max weight change: 0.000266 | max bias change: 0.000000
-Epoch 1074 avg loss: 0.750000 | max weight change: 0.000266 | max bias change: 0.000000
-Epoch 1075 avg loss: 0.750000 | max weight change: 0.000265 | max bias change: 0.000000
-Epoch 1076 avg loss: 0.750000 | max weight change: 0.000264 | max bias change: 0.000000
-Epoch 1077 avg loss: 0.750000 | max weight change: 0.000264 | max bias change: 0.000000
-Epoch 1078 avg loss: 0.750000 | max weight change: 0.000263 | max bias change: 0.000000
-Epoch 1079 avg loss: 0.750000 | max weight change: 0.000263 | max bias change: 0.000000
-Epoch 1080 avg loss: 0.750000 | max weight change: 0.000262 | max bias change: 0.000000
-Epoch 1081 avg loss: 0.750000 | max weight change: 0.000262 | max bias change: 0.000000
-Epoch 1082 avg loss: 0.750000 | max weight change: 0.000261 | max bias change: 0.000000
-Epoch 1083 avg loss: 0.750000 | max weight change: 0.000261 | max bias change: 0.000000
-Epoch 1084 avg loss: 0.750000 | max weight change: 0.000260 | max bias change: 0.000000
-Epoch 1085 avg loss: 0.750000 | max weight change: 0.000260 | max bias change: 0.000000
-Epoch 1086 avg loss: 0.750000 | max weight change: 0.000259 | max bias change: 0.000000
-Epoch 1087 avg loss: 0.750000 | max weight change: 0.000259 | max bias change: 0.000000
-Epoch 1088 avg loss: 0.750000 | max weight change: 0.000258 | max bias change: 0.000000
-Epoch 1089 avg loss: 0.750000 | max weight change: 0.000258 | max bias change: 0.000000
-Epoch 1090 avg loss: 0.750000 | max weight change: 0.000257 | max bias change: 0.000000
-Epoch 1091 avg loss: 0.750000 | max weight change: 0.000257 | max bias change: 0.000000
-Epoch 1092 avg loss: 0.750000 | max weight change: 0.000256 | max bias change: 0.000000
-Epoch 1093 avg loss: 0.750000 | max weight change: 0.000256 | max bias change: 0.000000
-Epoch 1094 avg loss: 0.750000 | max weight change: 0.000255 | max bias change: 0.000000
-Epoch 1095 avg loss: 0.750000 | max weight change: 0.000255 | max bias change: 0.000000
-Epoch 1096 avg loss: 0.750000 | max weight change: 0.000254 | max bias change: 0.000000
-Epoch 1097 avg loss: 0.750000 | max weight change: 0.000254 | max bias change: 0.000000
-Epoch 1098 avg loss: 0.750000 | max weight change: 0.000253 | max bias change: 0.000000
-Epoch 1099 avg loss: 0.750000 | max weight change: 0.000253 | max bias change: 0.000000
-Epoch 1100 avg loss: 0.750000 | max weight change: 0.000252 | max bias change: 0.000000
-Ранняя остановка запущена на эпохе 1100 (нет улучшений для 1000 эпох)
+Epoch 0 — loss=0.761701
+Epoch 200 — loss=0.294044
+Epoch 400 — loss=0.292995
+Epoch 600 — loss=0.291957
+Epoch 800 — loss=0.290925
+Epoch 1000 — loss=0.289619
+Epoch 1200 — loss=0.291239
+Epoch 1400 — loss=0.286775
+Epoch 1600 — loss=0.285134
+Epoch 1800 — loss=0.283250
+Epoch 2000 — loss=0.281152
+Epoch 2200 — loss=0.339042
+Epoch 2400 — loss=0.278635
+Epoch 2600 — loss=0.277070
+Ранняя остановка на эпохе 2745 (нет улучшений 500 эпох)
 Training done!
 
 
@@ -1110,28 +23,28 @@ Training done!
 Layer 0 outputs (A): [0 0]
 
 --- Layer 1 (neurons=10) ---
-Neuron 0: Weights=[-0.01822491682325583 -0.03240074527587621], Bias=0.0000, Z=0.0000 → A=0.0000
-Neuron 1: Weights=[0.04174510972137027 -0.06416567845263398], Bias=0.0639, Z=0.0639 → A=0.0639
-Neuron 2: Weights=[-0.15023364130765032 0.04380425045670383], Bias=-1.4583, Z=-1.4583 → A=0.0000
-Neuron 3: Weights=[-0.0703074615779833 0.014218555562170174], Bias=0.0517, Z=0.0517 → A=0.0517
-Neuron 4: Weights=[-0.058307164228260634 0.029416396748623175], Bias=-0.4428, Z=-0.4428 → A=0.0000
-Neuron 5: Weights=[-0.05179126910894323 -0.07086291773288454], Bias=0.0000, Z=0.0000 → A=0.0000
-Neuron 6: Weights=[-0.049186837896000084 -9.86624479619945e-05], Bias=-0.1642, Z=-0.1642 → A=0.0000
-Neuron 7: Weights=[0.3075282813542881 -0.05168988306818731], Bias=2.5318, Z=2.5318 → A=2.5318
-Neuron 8: Weights=[-0.038445560953007246 0.04899402675804385], Bias=-0.4689, Z=-0.4689 → A=0.0000
-Neuron 9: Weights=[-0.5030983608081856 0.17417717201868219], Bias=-4.0448, Z=-4.0448 → A=0.0000
-Layer 1 outputs (A): [0 0.0639108802567469 0 0.05172587336439721 0 0 0 2.531828912389417 0 0]
+Neuron 0: Weights=[0.11727630470582238 -0.38159150769644923], Bias=-0.2647, Z=-0.2647 → A=-0.0026
+Neuron 1: Weights=[-0.15897923682794496 1.3040949263718833], Bias=-0.2368, Z=-0.2368 → A=-0.0024
+Neuron 2: Weights=[-2.952897256342078 0.46172326803729397], Bias=-0.7682, Z=-0.7682 → A=-0.0077
+Neuron 3: Weights=[-2.674602175099326 -0.5579493297257786], Bias=-0.2699, Z=-0.2699 → A=-0.0027
+Neuron 4: Weights=[2.159521564411095 -1.4992413907480626], Bias=-0.7256, Z=-0.7256 → A=-0.0073
+Neuron 5: Weights=[-1.5525338480685362 0.10240302009979815], Bias=-0.2777, Z=-0.2777 → A=-0.0028
+Neuron 6: Weights=[-0.6545299207356409 -0.4416750257313487], Bias=-0.0507, Z=-0.0507 → A=-0.0005
+Neuron 7: Weights=[0.01764778185815898 -0.7293830995947088], Bias=-0.4106, Z=-0.4106 → A=-0.0041
+Neuron 8: Weights=[-0.7159832404483022 -0.011422743222616], Bias=-0.0813, Z=-0.0813 → A=-0.0008
+Neuron 9: Weights=[0.08128176457163765 -0.5628679368754044], Bias=-0.1554, Z=-0.1554 → A=-0.0016
+Layer 1 outputs (A): [-0.0026474752358837555 -0.0023675132520286847 -0.007681533012244809 -0.0026991134922721544 -0.007256024243137534 -0.0027770029866762812 -0.0005074368330765973 -0.004105817321048571 -0.0008131225295775213 -0.0015536108174193783]
 
 --- Layer 2 (neurons=3) ---
-Neuron 0: Weights=[-0.04442041408546899 -0.047025073079738605 -0.008004536254235617 -0.010471658545533745 -0.056074448238556375 0.030483137762078952 -0.002873098802051757 -0.023894873331914285 0.049869798602287456 -0.0851915629536683], Bias=-0.2832, Z=-0.3473 → A=0.0000
-Neuron 1: Weights=[-0.05630063563546177 0.0207516275286732 0.050038516298686185 -0.04678248152363837 -0.04084946747886812 0.03466886416877191 -0.042209405034605005 -0.012557962411380536 -0.0721523047363421 0.05729886335740643], Bias=-0.1011, Z=-0.1340 → A=0.0000
-Neuron 2: Weights=[-0.0451357818092893 -0.112783530236571 -0.2539735740046036 0.016751983522779047 0.024088442142844172 0.05344571275560173 -0.025015862179440514 -0.19673390107032648 -0.02206434385596481 -0.26177711081087157], Bias=-1.7302, Z=-2.2347 → A=0.0000
-Layer 2 outputs (A): [0 0 0]
+Neuron 0: Weights=[0.01272402759840902 -0.20519249547820467 -1.3249809374369235 -1.8576275421011377 0.7392398785174212 -1.494083055110129 -0.20645328731963453 0.30025800178649037 -0.6832084514258763 0.1775230763817624], Bias=0.0324, Z=0.0460 → A=0.0460
+Neuron 1: Weights=[0.1088452964650412 0.15328196035378608 -0.6226758384111041 -0.8117263883698359 0.10460585516047656 -0.5144977816117339 0.3476017240306975 0.3450348725176234 0.11351601146192386 0.5711829734557877], Bias=-0.2755, Z=-0.2711 → A=-0.0027
+Neuron 2: Weights=[0.28801041496845947 0.8853668872837126 -1.6325714337709805 -1.7435520669193019 0.7020991809699013 -0.7060081061612302 -0.7881886524607478 -0.288734886048251 -0.331366114350064 -0.3694943197602202], Bias=0.1185, Z=0.1322 → A=0.1322
+Layer 2 outputs (A): [0.045975651009162725 -0.0027106072038119294 0.13218644685041403]
 
 Network Output:
- Output neuron 0: 0.0000 (rounded 0), Target: 0
- Output neuron 1: 0.0000 (rounded 0), Target: 0
- Output neuron 2: 0.0000 (rounded 0), Target: 0
+ Output neuron 0: 0.0460 (rounded 0), Target: 0
+ Output neuron 1: -0.0027 (rounded 0), Target: 0
+ Output neuron 2: 0.1322 (rounded 0), Target: 0
 
 === Sample 1: Input=[0 1] ===
 
@@ -1139,28 +52,28 @@ Network Output:
 Layer 0 outputs (A): [0 1]
 
 --- Layer 1 (neurons=10) ---
-Neuron 0: Weights=[-0.01822491682325583 -0.03240074527587621], Bias=0.0000, Z=-0.0324 → A=0.0000
-Neuron 1: Weights=[0.04174510972137027 -0.06416567845263398], Bias=0.0639, Z=-0.0003 → A=0.0000
-Neuron 2: Weights=[-0.15023364130765032 0.04380425045670383], Bias=-1.4583, Z=-1.4145 → A=0.0000
-Neuron 3: Weights=[-0.0703074615779833 0.014218555562170174], Bias=0.0517, Z=0.0659 → A=0.0659
-Neuron 4: Weights=[-0.058307164228260634 0.029416396748623175], Bias=-0.4428, Z=-0.4134 → A=0.0000
-Neuron 5: Weights=[-0.05179126910894323 -0.07086291773288454], Bias=0.0000, Z=-0.0709 → A=0.0000
-Neuron 6: Weights=[-0.049186837896000084 -9.86624479619945e-05], Bias=-0.1642, Z=-0.1643 → A=0.0000
-Neuron 7: Weights=[0.3075282813542881 -0.05168988306818731], Bias=2.5318, Z=2.4801 → A=2.4801
-Neuron 8: Weights=[-0.038445560953007246 0.04899402675804385], Bias=-0.4689, Z=-0.4199 → A=0.0000
-Neuron 9: Weights=[-0.5030983608081856 0.17417717201868219], Bias=-4.0448, Z=-3.8706 → A=0.0000
-Layer 1 outputs (A): [0 0 0 0.06594442892656739 0 0 0 2.4801390293212298 0 0]
+Neuron 0: Weights=[0.11727630470582238 -0.38159150769644923], Bias=-0.2647, Z=-0.6463 → A=-0.0065
+Neuron 1: Weights=[-0.15897923682794496 1.3040949263718833], Bias=-0.2368, Z=1.0673 → A=1.0673
+Neuron 2: Weights=[-2.952897256342078 0.46172326803729397], Bias=-0.7682, Z=-0.3064 → A=-0.0031
+Neuron 3: Weights=[-2.674602175099326 -0.5579493297257786], Bias=-0.2699, Z=-0.8279 → A=-0.0083
+Neuron 4: Weights=[2.159521564411095 -1.4992413907480626], Bias=-0.7256, Z=-2.2248 → A=-0.0222
+Neuron 5: Weights=[-1.5525338480685362 0.10240302009979815], Bias=-0.2777, Z=-0.1753 → A=-0.0018
+Neuron 6: Weights=[-0.6545299207356409 -0.4416750257313487], Bias=-0.0507, Z=-0.4924 → A=-0.0049
+Neuron 7: Weights=[0.01764778185815898 -0.7293830995947088], Bias=-0.4106, Z=-1.1400 → A=-0.0114
+Neuron 8: Weights=[-0.7159832404483022 -0.011422743222616], Bias=-0.0813, Z=-0.0927 → A=-0.0009
+Neuron 9: Weights=[0.08128176457163765 -0.5628679368754044], Bias=-0.1554, Z=-0.7182 → A=-0.0072
+Layer 1 outputs (A): [-0.006463390312848248 1.0673436011690147 -0.0030643003318718692 -0.00827860678952994 -0.022248438150618163 -0.0017529727856782998 -0.004924187090390084 -0.011399648316995659 -0.0009273499618036812 -0.007182290186173422]
 
 --- Layer 2 (neurons=3) ---
-Neuron 0: Weights=[-0.04442041408546899 -0.047025073079738605 -0.008004536254235617 -0.010471658545533745 -0.056074448238556375 0.030483137762078952 -0.002873098802051757 -0.023894873331914285 0.049869798602287456 -0.0851915629536683], Bias=-0.2832, Z=-0.3432 → A=0.0000
-Neuron 1: Weights=[-0.05630063563546177 0.0207516275286732 0.050038516298686185 -0.04678248152363837 -0.04084946747886812 0.03466886416877191 -0.042209405034605005 -0.012557962411380536 -0.0721523047363421 0.05729886335740643], Bias=-0.1011, Z=-0.1353 → A=0.0000
-Neuron 2: Weights=[-0.0451357818092893 -0.112783530236571 -0.2539735740046036 0.016751983522779047 0.024088442142844172 0.05344571275560173 -0.025015862179440514 -0.19673390107032648 -0.02206434385596481 -0.26177711081087157], Bias=-1.7302, Z=-2.2170 → A=0.0000
-Layer 2 outputs (A): [0 0 0]
+Neuron 0: Weights=[0.01272402759840902 -0.20519249547820467 -1.3249809374369235 -1.8576275421011377 0.7392398785174212 -1.494083055110129 -0.20645328731963453 0.30025800178649037 -0.6832084514258763 0.1775230763817624], Bias=0.0324, Z=-0.1841 → A=-0.0018
+Neuron 1: Weights=[0.1088452964650412 0.15328196035378608 -0.6226758384111041 -0.8117263883698359 0.10460585516047656 -0.5144977816117339 0.3476017240306975 0.3450348725176234 0.11351601146192386 0.5711829734557877], Bias=-0.2755, Z=-0.1152 → A=-0.0012
+Neuron 2: Weights=[0.28801041496845947 0.8853668872837126 -1.6325714337709805 -1.7435520669193019 0.7020991809699013 -0.7060081061612302 -0.7881886524607478 -0.288734886048251 -0.331366114350064 -0.3694943197602202], Bias=0.1185, Z=1.0768 → A=1.0768
+Layer 2 outputs (A): [-0.0018413505492129157 -0.0011522968950292908 1.0768200950289595]
 
 Network Output:
- Output neuron 0: 0.0000 (rounded 0), Target: 1
- Output neuron 1: 0.0000 (rounded 0), Target: 0
- Output neuron 2: 0.0000 (rounded 0), Target: 1
+ Output neuron 0: -0.0018 (rounded 0), Target: 1
+ Output neuron 1: -0.0012 (rounded 0), Target: 0
+ Output neuron 2: 1.0768 (rounded 1), Target: 1
 
 === Sample 2: Input=[1 0] ===
 
@@ -1168,28 +81,28 @@ Network Output:
 Layer 0 outputs (A): [1 0]
 
 --- Layer 1 (neurons=10) ---
-Neuron 0: Weights=[-0.01822491682325583 -0.03240074527587621], Bias=0.0000, Z=-0.0182 → A=0.0000
-Neuron 1: Weights=[0.04174510972137027 -0.06416567845263398], Bias=0.0639, Z=0.1057 → A=0.1057
-Neuron 2: Weights=[-0.15023364130765032 0.04380425045670383], Bias=-1.4583, Z=-1.6085 → A=0.0000
-Neuron 3: Weights=[-0.0703074615779833 0.014218555562170174], Bias=0.0517, Z=-0.0186 → A=0.0000
-Neuron 4: Weights=[-0.058307164228260634 0.029416396748623175], Bias=-0.4428, Z=-0.5011 → A=0.0000
-Neuron 5: Weights=[-0.05179126910894323 -0.07086291773288454], Bias=0.0000, Z=-0.0518 → A=0.0000
-Neuron 6: Weights=[-0.049186837896000084 -9.86624479619945e-05], Bias=-0.1642, Z=-0.2134 → A=0.0000
-Neuron 7: Weights=[0.3075282813542881 -0.05168988306818731], Bias=2.5318, Z=2.8394 → A=2.8394
-Neuron 8: Weights=[-0.038445560953007246 0.04899402675804385], Bias=-0.4689, Z=-0.5073 → A=0.0000
-Neuron 9: Weights=[-0.5030983608081856 0.17417717201868219], Bias=-4.0448, Z=-4.5479 → A=0.0000
-Layer 1 outputs (A): [0 0.10565598997811718 0 0 0 0 0 2.839357193743705 0 0]
+Neuron 0: Weights=[0.11727630470582238 -0.38159150769644923], Bias=-0.2647, Z=-0.1475 → A=-0.0015
+Neuron 1: Weights=[-0.15897923682794496 1.3040949263718833], Bias=-0.2368, Z=-0.3957 → A=-0.0040
+Neuron 2: Weights=[-2.952897256342078 0.46172326803729397], Bias=-0.7682, Z=-3.7211 → A=-0.0372
+Neuron 3: Weights=[-2.674602175099326 -0.5579493297257786], Bias=-0.2699, Z=-2.9445 → A=-0.0294
+Neuron 4: Weights=[2.159521564411095 -1.4992413907480626], Bias=-0.7256, Z=1.4339 → A=1.4339
+Neuron 5: Weights=[-1.5525338480685362 0.10240302009979815], Bias=-0.2777, Z=-1.8302 → A=-0.0183
+Neuron 6: Weights=[-0.6545299207356409 -0.4416750257313487], Bias=-0.0507, Z=-0.7053 → A=-0.0071
+Neuron 7: Weights=[0.01764778185815898 -0.7293830995947088], Bias=-0.4106, Z=-0.3929 → A=-0.0039
+Neuron 8: Weights=[-0.7159832404483022 -0.011422743222616], Bias=-0.0813, Z=-0.7973 → A=-0.0080
+Neuron 9: Weights=[0.08128176457163765 -0.5628679368754044], Bias=-0.1554, Z=-0.0741 → A=-0.0007
+Layer 1 outputs (A): [-0.0014747121888255316 -0.003957305620308135 -0.03721050557566559 -0.029445135243265416 1.4339191400973417 -0.018302341467361646 -0.007052736040433006 -0.003929339502466982 -0.007972954934060543 -0.0007407931717030019]
 
 --- Layer 2 (neurons=3) ---
-Neuron 0: Weights=[-0.04442041408546899 -0.047025073079738605 -0.008004536254235617 -0.010471658545533745 -0.056074448238556375 0.030483137762078952 -0.002873098802051757 -0.023894873331914285 0.049869798602287456 -0.0851915629536683], Bias=-0.2832, Z=-0.3561 → A=0.0000
-Neuron 1: Weights=[-0.05630063563546177 0.0207516275286732 0.050038516298686185 -0.04678248152363837 -0.04084946747886812 0.03466886416877191 -0.042209405034605005 -0.012557962411380536 -0.0721523047363421 0.05729886335740643], Bias=-0.1011, Z=-0.1346 → A=0.0000
-Neuron 2: Weights=[-0.0451357818092893 -0.112783530236571 -0.2539735740046036 0.016751983522779047 0.024088442142844172 0.05344571275560173 -0.025015862179440514 -0.19673390107032648 -0.02206434385596481 -0.26177711081087157], Bias=-1.7302, Z=-2.3007 → A=0.0000
-Layer 2 outputs (A): [0 0 0]
+Neuron 0: Weights=[0.01272402759840902 -0.20519249547820467 -1.3249809374369235 -1.8576275421011377 0.7392398785174212 -1.494083055110129 -0.20645328731963453 0.30025800178649037 -0.6832084514258763 0.1775230763817624], Bias=0.0324, Z=1.2301 → A=1.2301
+Neuron 1: Weights=[0.1088452964650412 0.15328196035378608 -0.6226758384111041 -0.8117263883698359 0.10460585516047656 -0.5144977816117339 0.3476017240306975 0.3450348725176234 0.11351601146192386 0.5711829734557877], Bias=-0.2755, Z=-0.0749 → A=-0.0007
+Neuron 2: Weights=[0.28801041496845947 0.8853668872837126 -1.6325714337709805 -1.7435520669193019 0.7020991809699013 -0.7060081061612302 -0.7881886524607478 -0.288734886048251 -0.331366114350064 -0.3694943197602202], Bias=0.1185, Z=1.2559 → A=1.2559
+Layer 2 outputs (A): [1.2301367970085695 -0.0007489896933858899 1.255946990818599]
 
 Network Output:
- Output neuron 0: 0.0000 (rounded 0), Target: 1
- Output neuron 1: 0.0000 (rounded 0), Target: 0
- Output neuron 2: 0.0000 (rounded 0), Target: 1
+ Output neuron 0: 1.2301 (rounded 1), Target: 1
+ Output neuron 1: -0.0007 (rounded 0), Target: 0
+ Output neuron 2: 1.2559 (rounded 1), Target: 1
 
 === Sample 3: Input=[1 1] ===
 
@@ -1197,43 +110,43 @@ Network Output:
 Layer 0 outputs (A): [1 1]
 
 --- Layer 1 (neurons=10) ---
-Neuron 0: Weights=[-0.01822491682325583 -0.03240074527587621], Bias=0.0000, Z=-0.0506 → A=0.0000
-Neuron 1: Weights=[0.04174510972137027 -0.06416567845263398], Bias=0.0639, Z=0.0415 → A=0.0415
-Neuron 2: Weights=[-0.15023364130765032 0.04380425045670383], Bias=-1.4583, Z=-1.5647 → A=0.0000
-Neuron 3: Weights=[-0.0703074615779833 0.014218555562170174], Bias=0.0517, Z=-0.0044 → A=0.0000
-Neuron 4: Weights=[-0.058307164228260634 0.029416396748623175], Bias=-0.4428, Z=-0.4717 → A=0.0000
-Neuron 5: Weights=[-0.05179126910894323 -0.07086291773288454], Bias=0.0000, Z=-0.1227 → A=0.0000
-Neuron 6: Weights=[-0.049186837896000084 -9.86624479619945e-05], Bias=-0.1642, Z=-0.2135 → A=0.0000
-Neuron 7: Weights=[0.3075282813542881 -0.05168988306818731], Bias=2.5318, Z=2.7877 → A=2.7877
-Neuron 8: Weights=[-0.038445560953007246 0.04899402675804385], Bias=-0.4689, Z=-0.4584 → A=0.0000
-Neuron 9: Weights=[-0.5030983608081856 0.17417717201868219], Bias=-4.0448, Z=-4.3737 → A=0.0000
-Layer 1 outputs (A): [0 0.0414903115254832 0 0 0 0 0 2.787667310675518 0 0]
+Neuron 0: Weights=[0.11727630470582238 -0.38159150769644923], Bias=-0.2647, Z=-0.5291 → A=-0.0053
+Neuron 1: Weights=[-0.15897923682794496 1.3040949263718833], Bias=-0.2368, Z=0.9084 → A=0.9084
+Neuron 2: Weights=[-2.952897256342078 0.46172326803729397], Bias=-0.7682, Z=-3.2593 → A=-0.0326
+Neuron 3: Weights=[-2.674602175099326 -0.5579493297257786], Bias=-0.2699, Z=-3.5025 → A=-0.0350
+Neuron 4: Weights=[2.159521564411095 -1.4992413907480626], Bias=-0.7256, Z=-0.0653 → A=-0.0007
+Neuron 5: Weights=[-1.5525338480685362 0.10240302009979815], Bias=-0.2777, Z=-1.7278 → A=-0.0173
+Neuron 6: Weights=[-0.6545299207356409 -0.4416750257313487], Bias=-0.0507, Z=-1.1469 → A=-0.0115
+Neuron 7: Weights=[0.01764778185815898 -0.7293830995947088], Bias=-0.4106, Z=-1.1223 → A=-0.0112
+Neuron 8: Weights=[-0.7159832404483022 -0.011422743222616], Bias=-0.0813, Z=-0.8087 → A=-0.0081
+Neuron 9: Weights=[0.08128176457163765 -0.5628679368754044], Bias=-0.1554, Z=-0.6369 → A=-0.0064
+Layer 1 outputs (A): [-0.0052906272657900245 0.9083643643410698 -0.03259327289529265 -0.0350246285405232 -0.0006532225065072095 -0.017278311266363665 -0.011469486297746493 -0.01122317049841407 -0.008087182366286704 -0.006369472540457046]
 
 --- Layer 2 (neurons=3) ---
-Neuron 0: Weights=[-0.04442041408546899 -0.047025073079738605 -0.008004536254235617 -0.010471658545533745 -0.056074448238556375 0.030483137762078952 -0.002873098802051757 -0.023894873331914285 0.049869798602287456 -0.0851915629536683], Bias=-0.2832, Z=-0.3518 → A=0.0000
-Neuron 1: Weights=[-0.05630063563546177 0.0207516275286732 0.050038516298686185 -0.04678248152363837 -0.04084946747886812 0.03466886416877191 -0.042209405034605005 -0.012557962411380536 -0.0721523047363421 0.05729886335740643], Bias=-0.1011, Z=-0.1352 → A=0.0000
-Neuron 2: Weights=[-0.0451357818092893 -0.112783530236571 -0.2539735740046036 0.016751983522779047 0.024088442142844172 0.05344571275560173 -0.025015862179440514 -0.19673390107032648 -0.02206434385596481 -0.26177711081087157], Bias=-1.7302, Z=-2.2833 → A=0.0000
-Layer 2 outputs (A): [0 0 0]
+Neuron 0: Weights=[0.01272402759840902 -0.20519249547820467 -1.3249809374369235 -1.8576275421011377 0.7392398785174212 -1.494083055110129 -0.20645328731963453 0.30025800178649037 -0.6832084514258763 0.1775230763817624], Bias=0.0324, Z=-0.0171 → A=-0.0002
+Neuron 1: Weights=[0.1088452964650412 0.15328196035378608 -0.6226758384111041 -0.8117263883698359 0.10460585516047656 -0.5144977816117339 0.3476017240306975 0.3450348725176234 0.11351601146192386 0.5711829734557877], Bias=-0.2755, Z=-0.0917 → A=-0.0009
+Neuron 2: Weights=[0.28801041496845947 0.8853668872837126 -1.6325714337709805 -1.7435520669193019 0.7020991809699013 -0.7060081061612302 -0.7881886524607478 -0.288734886048251 -0.331366114350064 -0.3694943197602202], Bias=0.1185, Z=1.0645 → A=1.0645
+Layer 2 outputs (A): [-0.00017088884871348055 -0.0009168927554814508 1.0645473171635633]
 
 Network Output:
- Output neuron 0: 0.0000 (rounded 0), Target: 0
- Output neuron 1: 0.0000 (rounded 0), Target: 1
- Output neuron 2: 0.0000 (rounded 0), Target: 1
-
-=== Predictions for AND ===
-Input: [0 0] → Output: 0.0000 (rounded 0), Target: 0
-Input: [0 1] → Output: 0.0000 (rounded 0), Target: 0
-Input: [1 0] → Output: 0.0000 (rounded 0), Target: 0
-Input: [1 1] → Output: 0.0000 (rounded 0), Target: 1
-
-=== Predictions for OR ===
-Input: [0 0] → Output: 0.0000 (rounded 0), Target: 0
-Input: [0 1] → Output: 0.0000 (rounded 0), Target: 1
-Input: [1 0] → Output: 0.0000 (rounded 0), Target: 1
-Input: [1 1] → Output: 0.0000 (rounded 0), Target: 1
+ Output neuron 0: -0.0002 (rounded 0), Target: 0
+ Output neuron 1: -0.0009 (rounded 0), Target: 1
+ Output neuron 2: 1.0645 (rounded 1), Target: 1
 
 === Predictions for XOR ===
-Input: [0 0] → Output: 0.0000 (rounded 0), Target: 0
-Input: [0 1] → Output: 0.0000 (rounded 0), Target: 1
-Input: [1 0] → Output: 0.0000 (rounded 0), Target: 1
-Input: [1 1] → Output: 0.0000 (rounded 0), Target: 0
+Input: [0 0] → Output: 0.0460 (rounded 0), Target: 0
+Input: [0 1] → Output: -0.0018 (rounded 0), Target: 1
+Input: [1 0] → Output: 1.2301 (rounded 1), Target: 1
+Input: [1 1] → Output: -0.0002 (rounded 0), Target: 0
+
+=== Predictions for AND ===
+Input: [0 0] → Output: -0.0027 (rounded 0), Target: 0
+Input: [0 1] → Output: -0.0012 (rounded 0), Target: 0
+Input: [1 0] → Output: -0.0007 (rounded 0), Target: 0
+Input: [1 1] → Output: -0.0009 (rounded 0), Target: 1
+
+=== Predictions for OR ===
+Input: [0 0] → Output: 0.1322 (rounded 0), Target: 0
+Input: [0 1] → Output: 1.0768 (rounded 1), Target: 1
+Input: [1 0] → Output: 1.2559 (rounded 1), Target: 1
+Input: [1 1] → Output: 1.0645 (rounded 1), Target: 1

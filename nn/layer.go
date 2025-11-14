@@ -5,21 +5,24 @@ import (
 	"math/rand"
 )
 
+// коэффициент утечки
+const leakyAlpha = 0.01
+
 // ========================
 // Структура слоя нейросети
 // ========================
 type Layer struct {
-	In          int         // количество входов
-	Out         int         // количество нейронов
-	Weights     [][]float64 // матрица весов: [Out][In]
-	Biases      []float64   // смещения
-	Z           []float64   // z = w*x + b
-	A           []float64   // активации после ReLU
-	DropoutProb float64     // вероятность dropout
+	In          int
+	Out         int
+	Weights     [][]float64
+	Biases      []float64
+	Z           []float64
+	A           []float64
+	DropoutProb float64
 }
 
 // ========================
-// Создание нового слоя (Xavier init)
+// Создание нового слоя (Xavier Init)
 // ========================
 func NewLayer(in, out int) *Layer {
 	L := &Layer{
@@ -29,15 +32,15 @@ func NewLayer(in, out int) *Layer {
 		Biases:      make([]float64, out),
 		Z:           make([]float64, out),
 		A:           make([]float64, out),
-		DropoutProb: 0.0, // по умолчанию dropout отключён (сеть сама задаёт)
+		DropoutProb: 0.0,
 	}
 
-	// Xavier normal init: std = sqrt(2 / (fan_in + fan_out))
+	// Xavier normal init
 	std := math.Sqrt(2.0 / float64(in+out))
 
 	for i := 0; i < out; i++ {
 		L.Weights[i] = make([]float64, in)
-		L.Biases[i] = 0.0 // как принято для ReLU
+		L.Biases[i] = 0.0
 
 		for j := 0; j < in; j++ {
 			L.Weights[i][j] = rand.NormFloat64() * std
@@ -47,9 +50,25 @@ func NewLayer(in, out int) *Layer {
 	return L
 }
 
+// ========================
+// Leaky ReLU
+// ========================
+func leakyReLU(x float64) float64 {
+	if x > 0 {
+		return x
+	}
+	return leakyAlpha * x
+}
+
+func leakyReLUPrime(x float64) float64 {
+	if x > 0 {
+		return 1
+	}
+	return leakyAlpha
+}
 
 // ========================
-// Прямой проход (forward pass) слоя
+// Forward pass
 // ========================
 func (L *Layer) Forward(x []float64) []float64 {
 	for i := 0; i < L.Out; i++ {
@@ -58,10 +77,9 @@ func (L *Layer) Forward(x []float64) []float64 {
 			sum += L.Weights[i][j] * x[j]
 		}
 		L.Z[i] = sum
-		L.A[i] = relu(sum)
+		L.A[i] = leakyReLU(sum)
 	}
 
-	// Возвращаем копию массива
 	out := make([]float64, L.Out)
 	copy(out, L.A)
 	return out

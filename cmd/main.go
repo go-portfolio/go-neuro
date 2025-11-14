@@ -9,7 +9,7 @@ import (
 )
 
 func main() {
-	// Создаём/пересоздаём общий лог
+
 	f, err := os.Create("full_log.txt")
 	if err != nil {
 		fmt.Println("Ошибка создания файла:", err)
@@ -18,7 +18,7 @@ func main() {
 	defer f.Close()
 
 	// ========================
-	// Входные данные
+	// Данные
 	// ========================
 	samples := [][]float64{
 		{0, 0}, {0, 1}, {1, 0}, {1, 1},
@@ -29,36 +29,42 @@ func main() {
 	}
 
 	// ========================
-	// Создаем сеть
+	// Создание сети (НОВАЯ SIG)
 	// ========================
-	net := nn.NewNetwork([]int{2, 10, 3})
+	net := nn.NewNetwork([]int{2, 10, 3}, 0.5) // добавили LR
 
 	fmt.Fprintln(f, "=== Training Start ===")
+
 	// ========================
-	// Обучение с логом в файл
+	// Обучение (НОВЫЙ МЕТОД)
 	// ========================
-	// SGD с мини-батчами
-	net.TrainMiniBatchSGD(samples, targets, 20000, 0.5, 2, f)
+	net.Train(samples, targets, 20000, 2, f)
 
 	fmt.Fprintln(f, "Training done!\n")
 
 	// ========================
-	// Проверка сети и вывод активаций на каждом слое
+	// Проверка слоёв
 	// ========================
 	for si, s := range samples {
 		fmt.Fprintf(f, "\n=== Sample %d: Input=%v ===\n", si, s)
-		out, activations, zvals := net.ForwardFull(s, false)
-
+		out, activations, zvals := net.ForwardDebug(s)
 
 		for li := 0; li < len(activations); li++ {
 			if li == 0 {
-				fmt.Fprintf(f, "\n--- Layer %d (Input Layer, neurons=%d) ---\n", li, len(activations[li]))
+				fmt.Fprintf(f, "\n--- Layer %d (Input Layer, neurons=%d) ---\n",
+					li, len(activations[li]))
 			} else {
 				layer := net.Layers[li-1]
 				fmt.Fprintf(f, "\n--- Layer %d (neurons=%d) ---\n", li, layer.Out)
 				for ni := 0; ni < layer.Out; ni++ {
-					fmt.Fprintf(f, "Neuron %d: Weights=%v, Bias=%.4f, Z=%.4f → A=%.4f\n",
-						ni, layer.Weights[ni], layer.Biases[ni], zvals[li-1][ni], activations[li][ni])
+					fmt.Fprintf(f,
+						"Neuron %d: Weights=%v, Bias=%.4f, Z=%.4f → A=%.4f\n",
+						ni,
+						layer.Weights[ni],
+						layer.Biases[ni],
+						zvals[li-1][ni],
+						activations[li][ni],
+					)
 				}
 			}
 			fmt.Fprintf(f, "Layer %d outputs (A): %v\n", li, activations[li])
@@ -75,13 +81,16 @@ func main() {
 	// Предсказания по задачам
 	// ========================
 	tasks := map[string]int{"XOR": 0, "AND": 1, "OR": 2}
+
 	for name, idx := range tasks {
 		fmt.Fprintf(f, "\n=== Predictions for %s ===\n", name)
 		for i, s := range samples {
 			out := net.Predict(s)
-			fmt.Fprintf(f, "Input: %v → Output: %.4f (rounded %d), Target: %.0f\n",
+			fmt.Fprintf(f,
+				"Input: %v → Output: %.4f (rounded %d), Target: %.0f\n",
 				s, out[idx], int(math.Round(out[idx])), targets[i][idx])
 		}
 	}
-	fmt.Printf("Модель создана успешно. Логи выложены в файл `full_log.txt`")
+
+	fmt.Println("Модель создана успешно. Логи сохранены в full_log.txt")
 }
