@@ -15,8 +15,9 @@ type Network struct {
 	Layers []Layer `json:"layers"`
 }
 
+
 // -----------------------------
-// Конструктор сети
+// Конструктор сети (Xavier init)
 // -----------------------------
 func NewNetwork(sizes []int) *Network {
 	rand.Seed(time.Now().UnixNano())
@@ -28,11 +29,15 @@ func NewNetwork(sizes []int) *Network {
 
 		w := make([][]float64, out)
 		b := make([]float64, out)
+
+		// Xavier / Glorot normal: std = sqrt(2 / (fan_in + fan_out))
+		std := math.Sqrt(2.0 / float64(in+out))
+
 		for o := 0; o < out; o++ {
-			b[o] = rand.NormFloat64() * 0.1
+			b[o] = 0.0 // часто инициализируют смещения нулями
 			w[o] = make([]float64, in)
 			for j := 0; j < in; j++ {
-				w[o][j] = rand.NormFloat64() * 0.1
+				w[o][j] = rand.NormFloat64() * std
 			}
 		}
 
@@ -51,19 +56,24 @@ func NewNetwork(sizes []int) *Network {
 }
 
 // -----------------------------
-// Функция активации
+// ReLU и производная
 // -----------------------------
-func sigmoid(x float64) float64 {
-	return 1 / (1 + math.Exp(-x))
+func relu(x float64) float64 {
+	if x > 0 {
+		return x
+	}
+	return 0
 }
 
-func sigmoidPrime(x float64) float64 {
-	s := sigmoid(x)
-	return s * (1 - s)
+func reluPrime(x float64) float64 {
+	if x > 0 {
+		return 1
+	}
+	return 0
 }
 
 // -----------------------------
-// Forward pass с Dropout
+// Forward pass с Dropout (инвертированный dropout)
 // -----------------------------
 func (net *Network) ForwardFull(input []float64, training bool) ([]float64, [][]float64, [][]float64) {
 	activations := [][]float64{input}
@@ -81,16 +91,18 @@ func (net *Network) ForwardFull(input []float64, training bool) ([]float64, [][]
 				sum += layer.Weights[j][k] * a[k]
 			}
 			z[j] = sum
-			a2[j] = sigmoid(sum)
+			a2[j] = relu(sum)
 		}
 
-		// --- Dropout ---
+		// --- Dropout (inverted dropout) ---
 		if training && layer.DropoutProb > 0 {
+			p := layer.DropoutProb
+			scale := 1.0 / (1.0 - p)
 			for j := 0; j < layer.Out; j++ {
-				if rand.Float64() < layer.DropoutProb {
+				if rand.Float64() < p {
 					a2[j] = 0
 				} else {
-					a2[j] /= (1 - layer.DropoutProb)
+					a2[j] *= scale
 				}
 			}
 		}
@@ -107,7 +119,7 @@ func (net *Network) ForwardFull(input []float64, training bool) ([]float64, [][]
 }
 
 // -----------------------------
-// Backpropagation
+// Backpropagation (ReLU)
 // -----------------------------
 func (net *Network) Backpropagate(target []float64, activations [][]float64, zvals [][]float64) [][]float64 {
 	L := len(net.Layers)
@@ -119,7 +131,8 @@ func (net *Network) Backpropagate(target []float64, activations [][]float64, zva
 
 	deltas[last] = make([]float64, len(outAct))
 	for i := range deltas[last] {
-		deltas[last][i] = (outAct[i] - target[i]) * sigmoidPrime(outZ[i])
+		// MSE loss: dL/da = a - y
+		deltas[last][i] = (outAct[i] - target[i]) * reluPrime(outZ[i])
 	}
 
 	for l := L - 2; l >= 0; l-- {
@@ -132,7 +145,7 @@ func (net *Network) Backpropagate(target []float64, activations [][]float64, zva
 			for k := range nextLayer.Biases {
 				sum += nextLayer.Weights[k][i] * deltas[l+1][k]
 			}
-			deltas[l][i] = sum * sigmoidPrime(z[i])
+			deltas[l][i] = sum * reluPrime(z[i])
 		}
 	}
 
@@ -155,6 +168,7 @@ func (net *Network) ApplyGradients(lr float64, deltas [][]float64, activations [
 
 			for j := 0; j < layer.In; j++ {
 				oldWeight := layer.Weights[i][j]
+				// L2 регуляризация (добавляется к градиенту весов)
 				layer.Weights[i][j] -= lr * (deltas[l][i]*activations[l][j] + lambda*layer.Weights[i][j])
 				weightChange := math.Abs(layer.Weights[i][j] - oldWeight)
 				if weightChange > maxWeightChange {
@@ -178,8 +192,7 @@ func (net *Network) Predict(input []float64) []float64 {
 			for j := 0; j < layer.In; j++ {
 				sum += layer.Weights[i][j] * a[j]
 			}
-			// Масштабируем на (1 - p) для компенсации dropout
-			next[i] = sigmoid(sum) // используем все нейроны
+			next[i] = relu(sum)
 		}
 		a = next
 	}
@@ -193,9 +206,9 @@ func (net *Network) TrainMiniBatchSGD(samples [][]float64, targets [][]float64, 
 	n := len(samples)
 	rand.Seed(time.Now().UnixNano())
 
-	lambda := 0.001       // L2 регуляризация
-	patience := 1000       // эпох без улучшения для Early Stopping
-	minEpochs := 100      // минимальное число эпох перед проверкой Early Stopping
+	lambda := 0.001  // L2 регуляризация
+	patience := 1000 // эпох без улучшения для Early Stopping
+	minEpochs := 100 // минимальное число эпох перед проверкой Early Stopping
 
 	bestLoss := math.MaxFloat64
 	wait := 0
@@ -218,7 +231,7 @@ func (net *Network) TrainMiniBatchSGD(samples [][]float64, targets [][]float64, 
 
 				out, activations, zvals := net.ForwardFull(x, true)
 
-				// loss
+				// loss (MSE)
 				sampleLoss := 0.0
 				for i := range y {
 					diff := out[i] - y[i]
