@@ -9,50 +9,24 @@ import (
 
 func main() {
 	// ========================
-	// Датасеты по категориям
+	// Входные данные
 	// ========================
-	datasets := map[string]struct {
-		Samples [][]float64
-		Targets [][]float64
-		Index   int // индекс выхода для этой задачи
-	}{
-		"XOR": {
-			Samples: [][]float64{
-				{0, 0}, {0, 1}, {1, 0}, {1, 1},
-			},
-			Targets: [][]float64{
-				{1, 0, 0}, {0, 1, 0}, {0, 1, 0}, {1, 0, 0},
-			},
-			Index: 0,
-		},
-		"AND": {
-			Samples: [][]float64{
-				{0, 0}, {0, 1}, {1, 0}, {1, 1},
-			},
-			Targets: [][]float64{
-				{0, 1, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0},
-			},
-			Index: 1,
-		},
-		"OR": {
-			Samples: [][]float64{
-				{0, 0}, {0, 1}, {1, 0}, {1, 1},
-			},
-			Targets: [][]float64{
-				{0, 0, 1}, {0, 0, 1}, {0, 0, 1}, {0, 0, 1},
-			},
-			Index: 2,
-		},
+	samples := [][]float64{
+		{0, 0},
+		{0, 1},
+		{1, 0},
+		{1, 1},
 	}
 
 	// ========================
-	// Объединяем все данные
+	// Целевые значения для XOR, AND, OR
+	// neuron0 → XOR, neuron1 → AND, neuron2 → OR
 	// ========================
-	allSamples := [][]float64{}
-	allTargets := [][]float64{}
-	for _, data := range datasets {
-		allSamples = append(allSamples, data.Samples...)
-		allTargets = append(allTargets, data.Targets...)
+	targets := [][]float64{
+		{0 ^ 0, 0 & 0, 0 | 0},
+		{0 ^ 1, 0 & 1, 0 | 1},
+		{1 ^ 0, 1 & 0, 1 | 0},
+		{1 ^ 1, 1 & 1, 1 | 1},
 	}
 
 	// ========================
@@ -65,38 +39,58 @@ func main() {
 	// ========================
 	epochs := 20000
 	lr := 0.5
-	net.TrainBatch(allSamples, allTargets, epochs, lr)
+	net.TrainBatch(samples, targets, epochs, lr)
 	fmt.Println("Training done!")
 
 	// ========================
-	// Сохранение модели
+	// Проверка сети и вывод активаций на каждом слое
 	// ========================
-	modelFile := "all_tasks_model.json"
-	if err := net.SaveModel(modelFile); err != nil {
-		panic(err)
+	for si, s := range samples {
+		fmt.Printf("\n=== Sample %d: Input=%v ===\n", si, s)
+
+		// Forward pass с сохранением активаций и Z
+		_, activations, zvals := net.ForwardFull(s)
+
+		// Вывод активаций на каждом слое, включая входной
+		for li := 0; li < len(activations); li++ {
+			if li == 0 {
+				fmt.Printf("\n--- Layer %d (Input Layer, neurons=%d) ---\n", li, len(activations[li]))
+			} else {
+				layer := net.Layers[li-1]
+				fmt.Printf("\n--- Layer %d (neurons=%d) ---\n", li, layer.Out)
+				fmt.Printf("Inputs: %d\n", layer.In)
+				for ni := 0; ni < layer.Out; ni++ {
+					fmt.Printf("Neuron %d: Weights=%v, Bias=%.4f\n", ni, layer.Weights[ni], layer.Biases[ni])
+					fmt.Printf("  Z=%.4f → A=%.4f\n", zvals[li-1][ni], activations[li][ni])
+				}
+			}
+			// Вывод выходных данных слоя
+			fmt.Printf("Layer %d outputs (A): %v\n", li, activations[li])
+		}
+
+		// Печать итогового выхода сети
+		fmt.Printf("\n=== Network Output ===\n")
+		for ni, v := range activations[len(activations)-1] {
+			fmt.Printf("Output neuron %d: %.4f (rounded %d), Target: %.0f\n",
+				ni, v, int(math.Round(v)), targets[si][ni])
+		}
 	}
-	fmt.Println("Model saved!")
 
 	// ========================
-	// Загрузка модели
+	// Вывод предсказаний по задачам
 	// ========================
-	loaded, err := nn.LoadModel(modelFile)
-	if err != nil {
-		panic(err)
+	tasks := map[string]int{
+		"XOR": 0,
+		"AND": 1,
+		"OR":  2,
 	}
-	fmt.Println("Model loaded!")
 
-	// ========================
-	// Проверка всех задач
-	// ========================
-	for name, data := range datasets {
+	for name, idx := range tasks {
 		fmt.Printf("\n=== Predictions for %s ===\n", name)
-		for i, s := range data.Samples {
-			out := loaded.Predict(s)
-			// выбираем соответствующий выход
-			val := out[data.Index]
+		for i, s := range samples {
+			out := net.Predict(s)
 			fmt.Printf("Input: %v → Output: %.4f (rounded %d), Target: %.0f\n",
-				s, val, int(math.Round(val)), data.Targets[i][data.Index])
+				s, out[idx], int(math.Round(out[idx])), targets[i][idx])
 		}
 	}
 }
