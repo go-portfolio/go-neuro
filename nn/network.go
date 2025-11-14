@@ -182,6 +182,14 @@ func (net *Network) TrainMiniBatchSGD(samples [][]float64, targets [][]float64, 
 	n := len(samples)
 	rand.Seed(time.Now().UnixNano())
 
+	// --- Параметры ---
+	lambda := 0.001       // L2 регуляризация
+	patience := 500       // эпох без улучшения для Early Stopping
+	minEpochs := 100      // минимальное число эпох перед проверкой Early Stopping
+
+	bestLoss := math.MaxFloat64
+	wait := 0
+
 	for e := 0; e < epochs; e++ {
 		// Перемешиваем данные каждый раз
 		perm := rand.Perm(n)
@@ -212,20 +220,51 @@ func (net *Network) TrainMiniBatchSGD(samples [][]float64, targets [][]float64, 
 				// Градиенты
 				deltas := net.Backpropagate(y, activations, zvals)
 
-				// Применяем градиенты сразу (по одному примеру)
-				wChange, bChange := net.ApplyGradients(lr, deltas, activations)
-				if wChange > maxWeightChange {
-					maxWeightChange = wChange
-				}
-				if bChange > maxBiasChange {
-					maxBiasChange = bChange
+				// Применяем градиенты с L2 регуляризацией
+				for l := range net.Layers {
+					layer := &net.Layers[l]
+					for i := 0; i < layer.Out; i++ {
+						oldBias := layer.Biases[i]
+						layer.Biases[i] -= lr * deltas[l][i]
+						biasChange := math.Abs(layer.Biases[i] - oldBias)
+						if biasChange > maxBiasChange {
+							maxBiasChange = biasChange
+						}
+
+						for j := 0; j < layer.In; j++ {
+							oldWeight := layer.Weights[i][j]
+							layer.Weights[i][j] -= lr * (deltas[l][i]*activations[l][j] + lambda*layer.Weights[i][j])
+							weightChange := math.Abs(layer.Weights[i][j] - oldWeight)
+							if weightChange > maxWeightChange {
+								maxWeightChange = weightChange
+							}
+						}
+					}
 				}
 			}
 		}
 
 		avgLoss := totalLoss / float64(n)
+		// --- Логируем и сбрасываем буфер ---
 		fmt.Fprintf(f, "Epoch %d avg loss: %.6f | max weight change: %.6f | max bias change: %.6f\n",
 			e, avgLoss, maxWeightChange, maxBiasChange)
+		f.Sync() // обязательно сбросить буфер на диск
+
+		// --- Early Stopping ---
+		if e >= minEpochs {
+			if avgLoss < bestLoss {
+				bestLoss = avgLoss
+				wait = 0
+			} else {
+				wait++
+				if wait >= patience {
+					fmt.Fprintf(f, "Ранняя остановка запущена для эпох %d (нет улучшений для %d эпох)\n", e, patience)
+					f.Sync()
+					break
+				}
+			}
+		}
 	}
 }
+
 
