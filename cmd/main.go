@@ -7,34 +7,30 @@ import (
 	"time"
 
 	"github.com/go-portfolio/go-neuro/nn"
+	"github.com/go-portfolio/go-neuro/nn/dataset"
+	"github.com/go-portfolio/go-neuro/nn/trainers"
 )
 
 func main() {
 	rand.Seed(time.Now().UnixNano())
 
-	samples := [][]float64{
-		{0, 0},
-		{0, 1},
-		{1, 0},
-		{1, 1},
-	}
-	targets := [][]float64{
-		{0},
-		{1},
-		{1},
-		{0},
-	}
+	// Выбираем датасет
+	ds := dataset.MustGet("xor")
 
+	// Архитектура нейросети
 	net := nn.NewNetwork([]int{2, 2, 1})
-	epochs := 20000
-	learningRate := 0.5
 
-	net.Train(samples, targets, epochs, learningRate)
+	// Выбираем алгоритм обучения
+	trainer := &trainers.SGDTrainer{LearningRate: 0.5}
 
-	fmt.Println("\nРезультаты после обучения:")
-	for i, s := range samples {
+	// Обучение
+	net.Fit(trainer, ds.Samples, ds.Targets, 20000)
+
+	// Тест
+	fmt.Println("\nРезультаты:")
+	for i, s := range ds.Samples {
 		out := net.Predict(s)
-		fmt.Printf("Вход: %v → Выход: %.4f (округлён %d), Цель: %v\n",
-			s, out[0], int(math.Round(out[0])), targets[i])
+		fmt.Printf("Вход: %v → %.4f (округлён %d), Цель: %v\n",
+			s, out[0], int(math.Round(out[0])), ds.Targets[i])
 	}
 }
