@@ -51,34 +51,48 @@ func main() {
 	}
 
 	// ========================
-	// Обучение и проверка
+	// Объединяем все данные для обучения одной сети
+	// ========================
+	allSamples := [][]float64{}
+	allTargets := [][]float64{}
+
+	for _, data := range datasets {
+		allSamples = append(allSamples, data.Samples...)
+		allTargets = append(allTargets, data.Targets...)
+	}
+
+	// ========================
+	// Создаем сеть
+	// 2 входа -> 4 скрытых -> 1 выход
+	// Скрытый слой больше, чтобы сеть могла справиться с разными задачами
+	// ========================
+	net := nn.NewNetwork([]int{2, 4, 1})
+
+	// Обучение
+	epochs := 20000
+	lr := 0.5
+	net.TrainBatch(allSamples, allTargets, epochs, lr)
+	fmt.Println("Training done!")
+
+	// Сохранение модели
+	modelFile := "all_tasks_model.json"
+	err := net.SaveModel(modelFile)
+	if err != nil {
+		panic(err)
+	}
+	fmt.Printf("Model saved to %s\n", modelFile)
+
+	// Загрузка модели
+	loaded, err := nn.LoadModel(modelFile)
+	if err != nil {
+		panic(err)
+	}
+	fmt.Println("Model loaded!")
+
+	// ========================
+	// Проверка всех задач
 	// ========================
 	for name, data := range datasets {
-		fmt.Printf("\n=== Training %s network ===\n", name)
-
-		// Сеть: 2 входа -> 2 скрытых -> 1 выход
-		net := nn.NewNetwork([]int{2, 2, 1})
-
-		// Обучение на всех примерах сразу
-		net.TrainBatch(data.Samples, data.Targets, 20000, 0.5)
-		fmt.Println("Training done!")
-
-		// Сохранение модели
-		modelFile := fmt.Sprintf("%s_model.json", name)
-		err := net.SaveModel(modelFile)
-		if err != nil {
-			panic(err)
-		}
-		fmt.Printf("Model saved to %s\n", modelFile)
-
-		// Загрузка модели
-		loaded, err := nn.LoadModel(modelFile)
-		if err != nil {
-			panic(err)
-		}
-		fmt.Println("Model loaded!")
-
-		// Проверка всех примеров
 		fmt.Printf("\n=== Predictions for %s ===\n", name)
 		for i, s := range data.Samples {
 			out := loaded.Predict(s)

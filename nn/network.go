@@ -169,61 +169,28 @@ func (net *Network) ApplyGradients(lr float64, deltas [][]float64, activations [
 
 func (net *Network) TrainBatch(samples [][]float64, targets [][]float64, epochs int, lr float64) {
 	for e := 0; e < epochs; e++ {
-		L := len(net.Layers)
-
-		// накопители градиентов
-		accDeltas := make([][]float64, L)
-		accWeightGrads := make([][][]float64, L)
-		for l := range net.Layers {
-			accDeltas[l] = make([]float64, len(net.Layers[l].Biases))
-			accWeightGrads[l] = make([][]float64, len(net.Layers[l].Weights))
-			for i := range net.Layers[l].Weights {
-				accWeightGrads[l][i] = make([]float64, len(net.Layers[l].Weights[i]))
-			}
-		}
-
 		totalLoss := 0.0
-
 		for idx, x := range samples {
 			y := targets[idx]
+			// прямой проход
+			out, activations, zvals := net.ForwardFull(x)
 
-			// forward
-			output, activations, zvals := net.ForwardFull(x)
-
-			// loss
+			// подсчет ошибки
 			for i := range y {
-				diff := output[i] - y[i]
+				diff := out[i] - y[i]
 				totalLoss += 0.5 * diff * diff
 			}
 
-			// backprop
+			// обратное распространение
 			deltas := net.Backpropagate(y, activations, zvals)
 
-			// accumulate gradients
-			for l := range net.Layers {
-				for i := range deltas[l] {
-					accDeltas[l][i] += deltas[l][i]
-					for j := range net.Layers[l].Weights[i] {
-						accWeightGrads[l][i][j] += deltas[l][i] * activations[l][j]
-					}
-				}
-			}
-		}
-
-		// apply averaged gradients
-		for l := range net.Layers {
-			for i := range net.Layers[l].Biases {
-				net.Layers[l].Biases[i] -= lr * accDeltas[l][i] / float64(len(samples))
-			}
-			for i := range net.Layers[l].Weights {
-				for j := range net.Layers[l].Weights[i] {
-					net.Layers[l].Weights[i][j] -= lr * accWeightGrads[l][i][j] / float64(len(samples))
-				}
-			}
+			// применение градиентов
+			net.ApplyGradients(lr, deltas, activations)
 		}
 
 		if e%1000 == 0 || e == epochs-1 {
-			fmt.Printf("Epoch %d, avg loss: %.6f\n", e, totalLoss/float64(len(samples)))
+			avgLoss := totalLoss / float64(len(samples))
+			fmt.Printf("Epoch %d, avg loss: %.6f\n", e, avgLoss)
 		}
 	}
 }
